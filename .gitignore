@@ -1,0 +1,4 @@
+*.log
+node_modules/
+assets/css/bootstrap/
+assets/css/font-awesome-4.2.0
