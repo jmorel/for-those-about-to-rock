@@ -1,0 +1,9 @@
+{% macro include_links(links) %}
+    {% if links | length %}
+        <div class="attribute-links">
+            {% for link in links %}
+                <a href="{{ link.url }}" class="attribute-link"><i class="fa fa-link fa-rotate-90"></i></a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}

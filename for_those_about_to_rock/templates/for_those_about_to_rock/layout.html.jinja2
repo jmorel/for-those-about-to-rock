@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Those About To Rock</title>
+
+    {% block stylesheets %}
+        <style type=""></style>
+        <link rel="stylesheet" type="text/css" href="{{ static('for_those_about_to_rock/fonts/static/static.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ static('for_those_about_to_rock/css/design.css') }}">
+{#        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.2.0/css/font-awesome.css">#}
+{#        <link rel="stylesheet" type="text/css" href="assets/css/design.css">#}
+    {% endblock stylesheets %}
+</head>
+<body>
+{% block body %}
+
+    <header>
+        <h1>For those about to rock</h1>
+
+        <p>A rocking chair anthology</p>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <div class="clear"></div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="assets/images/hexagonal-logo.png" style="float:left; height: 70px;">
+            For those about to rock is made by <a href="http://hexagonal.io">Jeremy Morel</a>. The source code is open
+            and available at <a href="http://github.com">GitHub</a>. If you like this website, please feel free to tip,
+            I could use another rocking chair.
+        </div>
+    </footer>
+{% endblock %}
+</body>
+</html>

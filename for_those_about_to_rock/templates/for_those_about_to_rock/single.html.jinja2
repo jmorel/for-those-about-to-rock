@@ -1,0 +1,70 @@
+{% from 'for_those_about_to_rock/single_macros.html.jinja2' import include_links %}
+
+<article class="rocking-chair">
+    <div class="pictures" style="background-image: url('{{ rocking_chair.picture }}')">
+        {% for picture in rocking_chair.pictures %}
+            <img src="{{ picture.path }}" alt="{{ rocking_chair.name }}"/>
+        {% endfor %}
+    </div>
+
+    <ul class="attributes attributes-left">
+        <li>
+            <div class="rocking-chair-name">{{ rocking_chair.name }}</div>
+        </li>
+        {% if rocking_chair.year %}
+            <li>
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {{ rocking_chair.year.year }}
+                    </div>
+                    <div class="attribute-name">
+                        Year
+                    </div>
+                </div>
+                {{ include_links(rocking_chair.year_link_set) }}
+            </li>
+        {% endif %}
+    </ul>
+    <ul class="attributes attributes-right">
+        {% for designer in rocking_chair.designers %}
+            <li>
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {{ designer.first_name }} {{ designer.last_name }}
+                    </div>
+                    <div class="attribute-name">
+                        Designer
+                    </div>
+                </div>
+                {{ include_links(rocking_chair.designer_link_set.filter(designer=designer)) }}
+            </li>
+        {% endfor %}
+        {% for manufacturer in rocking_chair.manufacturers %}
+            <li>
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {{ manufacturer.name }}
+                    </div>
+                    <div class="attribute-name">
+                        Manufacturer
+                    </div>
+                </div>
+                {{ include_links(rocking_chair.manufacturer_link_set.filter(manufacturer=manufacturer)) }}
+            </li>
+        {% endfor %}
+        {% if rocking_chair.price_set | length %}
+            {% set price = rocking_chair.price_set.first() %}
+            <li>
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {{ price.amount }} {{ price.currency }}
+                    </div>
+                    <div class="attribute-name">
+                        Price
+                    </div>
+                    {{ include_links(rocking_chair.price_link_set(price=price)) }}
+                </div>
+            </li>
+        {% endif %}
+    </ul>
+</article>
