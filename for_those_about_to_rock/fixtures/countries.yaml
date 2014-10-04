@@ -1,0 +1,498 @@
+- model: for_those_about_to_rock.country
+  fields: {name: "Afghanistan", code: AF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Åland Islands", code: AX }
+- model: for_those_about_to_rock.country
+  fields: {name: "Albania", code: AL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Algeria", code: DZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "American Samoa", code: AS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Andorra", code: AD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Angola", code: AO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Anguilla", code: AI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Antarctica", code: AQ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Antigua and Barbuda", code: AG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Argentina", code: AR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Armenia", code: AM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Aruba", code: AW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Australia", code: AU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Austria", code: AT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Azerbaijan", code: AZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bahamas", code: BS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bahrain", code: BH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bangladesh", code: BD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Barbados", code: BB }
+- model: for_those_about_to_rock.country
+  fields: {name: "Belarus", code: BY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Belgium", code: BE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Belize", code: BZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Benin", code: BJ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bermuda", code: BM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bhutan", code: BT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bolivia, Plurinational State of", code: BO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bonaire, Sint Eustatius and Saba", code: BQ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bosnia and Herzegovina", code: BA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Botswana", code: BW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bouvet Island", code: BV }
+- model: for_those_about_to_rock.country
+  fields: {name: "Brazil", code: BR }
+- model: for_those_about_to_rock.country
+  fields: {name: "British Indian Ocean Territory", code: IO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Brunei Darussalam", code: BN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Bulgaria", code: BG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Burkina Faso", code: BF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Burundi", code: BI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cambodia", code: KH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cameroon", code: CM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Canada", code: CA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cabo Verde", code: CV }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cayman Islands", code: KY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Central African Republic", code: CF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Chad", code: TD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Chile", code: CL }
+- model: for_those_about_to_rock.country
+  fields: {name: "China", code: CN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Christmas Island", code: CX }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cocos (Keeling) Islands", code: CC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Colombia", code: CO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Comoros", code: KM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Congo", code: CG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Congo, the Democratic Republic of the", code: CD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cook Islands", code: CK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Costa Rica", code: CR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Côte d'Ivoire", code: CI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Croatia", code: HR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cuba", code: CU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Curaçao", code: CW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Cyprus", code: CY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Czech Republic", code: CZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Denmark", code: DK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Djibouti", code: DJ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Dominica", code: DM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Dominican Republic", code: DO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Ecuador", code: EC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Egypt", code: EG }
+- model: for_those_about_to_rock.country
+  fields: {name: "El Salvador", code: SV }
+- model: for_those_about_to_rock.country
+  fields: {name: "Equatorial Guinea", code: GQ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Eritrea", code: ER }
+- model: for_those_about_to_rock.country
+  fields: {name: "Estonia", code: EE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Ethiopia", code: ET }
+- model: for_those_about_to_rock.country
+  fields: {name: "Falkland Islands (Malvinas)", code: FK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Faroe Islands", code: FO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Fiji", code: FJ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Finland", code: FI }
+- model: for_those_about_to_rock.country
+  fields: {name: "France", code: FR }
+- model: for_those_about_to_rock.country
+  fields: {name: "French Guiana", code: GF }
+- model: for_those_about_to_rock.country
+  fields: {name: "French Polynesia", code: PF }
+- model: for_those_about_to_rock.country
+  fields: {name: "French Southern Territories", code: TF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Gabon", code: GA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Gambia", code: GM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Georgia", code: GE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Germany", code: DE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Ghana", code: GH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Gibraltar", code: GI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Greece", code: GR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Greenland", code: GL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Grenada", code: GD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guadeloupe", code: GP }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guam", code: GU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guatemala", code: GT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guernsey", code: GG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guinea", code: GN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guinea-Bissau", code: GW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Guyana", code: GY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Haiti", code: HT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Heard Island and McDonald Islands", code: HM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Holy See (Vatican City State)", code: VA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Honduras", code: HN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Hong Kong", code: HK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Hungary", code: HU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Iceland", code: IS }
+- model: for_those_about_to_rock.country
+  fields: {name: "India", code: IN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Indonesia", code: ID }
+- model: for_those_about_to_rock.country
+  fields: {name: "Iran, Islamic Republic of", code: IR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Iraq", code: IQ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Ireland", code: IE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Isle of Man", code: IM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Israel", code: IL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Italy", code: IT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Jamaica", code: JM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Japan", code: JP }
+- model: for_those_about_to_rock.country
+  fields: {name: "Jersey", code: JE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Jordan", code: JO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Kazakhstan", code: KZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Kenya", code: KE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Kiribati", code: KI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Korea, Democratic People's Republic of", code: KP }
+- model: for_those_about_to_rock.country
+  fields: {name: "Korea, Republic of", code: KR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Kuwait", code: KW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Kyrgyzstan", code: KG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Lao People's Democratic Republic", code: LA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Latvia", code: LV }
+- model: for_those_about_to_rock.country
+  fields: {name: "Lebanon", code: LB }
+- model: for_those_about_to_rock.country
+  fields: {name: "Lesotho", code: LS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Liberia", code: LR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Libya", code: LY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Liechtenstein", code: LI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Lithuania", code: LT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Luxembourg", code: LU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Macao", code: MO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Macedonia, the former Yugoslav Republic of", code: MK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Madagascar", code: MG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Malawi", code: MW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Malaysia", code: MY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Maldives", code: MV }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mali", code: ML }
+- model: for_those_about_to_rock.country
+  fields: {name: "Malta", code: MT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Marshall Islands", code: MH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Martinique", code: MQ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mauritania", code: MR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mauritius", code: MU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mayotte", code: YT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mexico", code: MX }
+- model: for_those_about_to_rock.country
+  fields: {name: "Micronesia, Federated States of", code: FM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Moldova, Republic of", code: MD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Monaco", code: MC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mongolia", code: MN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Montenegro", code: ME }
+- model: for_those_about_to_rock.country
+  fields: {name: "Montserrat", code: MS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Morocco", code: MA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Mozambique", code: MZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Myanmar", code: MM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Namibia", code: NA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Nauru", code: NR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Nepal", code: NP }
+- model: for_those_about_to_rock.country
+  fields: {name: "Netherlands", code: NL }
+- model: for_those_about_to_rock.country
+  fields: {name: "New Caledonia", code: NC }
+- model: for_those_about_to_rock.country
+  fields: {name: "New Zealand", code: NZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Nicaragua", code: NI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Niger", code: NE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Nigeria", code: NG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Niue", code: NU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Norfolk Island", code: NF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Northern Mariana Islands", code: MP }
+- model: for_those_about_to_rock.country
+  fields: {name: "Norway", code: NO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Oman", code: OM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Pakistan", code: PK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Palau", code: PW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Palestine, State of", code: PS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Panama", code: PA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Papua New Guinea", code: PG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Paraguay", code: PY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Peru", code: PE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Philippines", code: PH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Pitcairn", code: PN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Poland", code: PL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Portugal", code: PT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Puerto Rico", code: PR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Qatar", code: QA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Réunion", code: RE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Romania", code: RO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Russian Federation", code: RU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Rwanda", code: RW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Barthélemy", code: BL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Helena, Ascension and Tristan da Cunha", code: SH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Kitts and Nevis", code: KN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Lucia", code: LC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Martin (French part)", code: MF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Pierre and Miquelon", code: PM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saint Vincent and the Grenadines", code: VC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Samoa", code: WS }
+- model: for_those_about_to_rock.country
+  fields: {name: "San Marino", code: SM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Sao Tome and Principe", code: ST }
+- model: for_those_about_to_rock.country
+  fields: {name: "Saudi Arabia", code: SA }
+- model: for_those_about_to_rock.country
+  fields: {name: "Senegal", code: SN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Serbia", code: RS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Seychelles", code: SC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Sierra Leone", code: SL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Singapore", code: SG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Sint Maarten (Dutch part)", code: SX }
+- model: for_those_about_to_rock.country
+  fields: {name: "Slovakia", code: SK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Slovenia", code: SI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Solomon Islands", code: SB }
+- model: for_those_about_to_rock.country
+  fields: {name: "Somalia", code: SO }
+- model: for_those_about_to_rock.country
+  fields: {name: "South Africa", code: ZA }
+- model: for_those_about_to_rock.country
+  fields: {name: "South Georgia and the South Sandwich Islands", code: GS }
+- model: for_those_about_to_rock.country
+  fields: {name: "South Sudan", code: SS }
+- model: for_those_about_to_rock.country
+  fields: {name: "Spain", code: ES }
+- model: for_those_about_to_rock.country
+  fields: {name: "Sri Lanka", code: LK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Sudan", code: SD }
+- model: for_those_about_to_rock.country
+  fields: {name: "Suriname", code: SR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Svalbard and Jan Mayen", code: SJ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Swaziland", code: SZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Sweden", code: SE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Switzerland", code: CH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Syrian Arab Republic", code: SY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Taiwan, Province of China", code: TW }
+- model: for_those_about_to_rock.country
+  fields: {name: "Tajikistan", code: TJ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Tanzania, United Republic of", code: TZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Thailand", code: TH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Timor-Leste", code: TL }
+- model: for_those_about_to_rock.country
+  fields: {name: "Togo", code: TG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Tokelau", code: TK }
+- model: for_those_about_to_rock.country
+  fields: {name: "Tonga", code: TO }
+- model: for_those_about_to_rock.country
+  fields: {name: "Trinidad and Tobago", code: TT }
+- model: for_those_about_to_rock.country
+  fields: {name: "Tunisia", code: TN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Turkey", code: TR }
+- model: for_those_about_to_rock.country
+  fields: {name: "Turkmenistan", code: TM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Turks and Caicos Islands", code: TC }
+- model: for_those_about_to_rock.country
+  fields: {name: "Tuvalu", code: TV }
+- model: for_those_about_to_rock.country
+  fields: {name: "Uganda", code: UG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Ukraine", code: UA }
+- model: for_those_about_to_rock.country
+  fields: {name: "United Arab Emirates", code: AE }
+- model: for_those_about_to_rock.country
+  fields: {name: "United Kingdom", code: GB }
+- model: for_those_about_to_rock.country
+  fields: {name: "United States", code: US }
+- model: for_those_about_to_rock.country
+  fields: {name: "United States Minor Outlying Islands", code: UM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Uruguay", code: UY }
+- model: for_those_about_to_rock.country
+  fields: {name: "Uzbekistan", code: UZ }
+- model: for_those_about_to_rock.country
+  fields: {name: "Vanuatu", code: VU }
+- model: for_those_about_to_rock.country
+  fields: {name: "Venezuela, Bolivarian Republic of", code: VE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Viet Nam", code: VN }
+- model: for_those_about_to_rock.country
+  fields: {name: "Virgin Islands, British", code: VG }
+- model: for_those_about_to_rock.country
+  fields: {name: "Virgin Islands, U.S.", code: VI }
+- model: for_those_about_to_rock.country
+  fields: {name: "Wallis and Futuna", code: WF }
+- model: for_those_about_to_rock.country
+  fields: {name: "Western Sahara", code: EH }
+- model: for_those_about_to_rock.country
+  fields: {name: "Yemen", code: YE }
+- model: for_those_about_to_rock.country
+  fields: {name: "Zambia", code: ZM }
+- model: for_those_about_to_rock.country
+  fields: {name: "Zimbabwe", code: ZW }

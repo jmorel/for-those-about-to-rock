@@ -1,0 +1,20 @@
+- model: for_those_about_to_rock.currency
+  fields:
+    name: Euro
+    code: EUR
+- model: for_those_about_to_rock.currency
+  fields:
+    name: US dollar
+    code: USD
+- model: for_those_about_to_rock.currency
+  fields:
+    name: British Pound
+    code: GBP
+- model: for_those_about_to_rock.currency
+  fields:
+    name: Canadian dollar
+    code: CAD
+- model: for_those_about_to_rock.currency
+  fields:
+    name: American dollar
+    code: AUD
