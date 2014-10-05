@@ -1,3 +1,3 @@
-[submodule "assets/css/bootstrap"]
-	path = assets/css/bootstrap
+[submodule "ftatr/static/ftatr/css/bootstrap"]
+	path = ftatr/static/ftatr/css/bootstrap
 	url = git@github.com:twbs/bootstrap.git

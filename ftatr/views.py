@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from for_those_about_to_rock.models import RockingChair
+from ftatr.models import RockingChair
 
 
 def index(request):
@@ -9,4 +9,4 @@ def index(request):
     context = {
         'rocking_chairs': rocking_chairs
     }
-    return render(request, 'for_those_about_to_rock/index.html.jinja2', context)
+    return render(request, 'ftatr/index.html.jinja2', context)

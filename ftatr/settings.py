@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_jinja',
-    'for_those_about_to_rock',
+    'ftatr',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'for_those_about_to_rock.urls'
+ROOT_URLCONF = 'ftatr.urls'
 
 TEMPLATE_LOADERS = (
     'django_jinja.loaders.AppLoader',
@@ -59,7 +60,7 @@ TEMPLATE_LOADERS = (
 
 DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja2'
 
-WSGI_APPLICATION = 'for_those_about_to_rock.wsgi.application'
+WSGI_APPLICATION = 'ftatr.wsgi.application'
 
 
 # Database
