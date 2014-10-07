@@ -36,7 +36,7 @@
                         Designer
                     </div>
                 </div>
-{#                {{ include_links(rocking_chair.designer_link_set.filter(designer=designer)) }}#}
+                {{ include_links(rocking_chair.designer_links.filter(designer=designer)) }}
             </li>
         {% endfor %}
         {% for manufacturer in rocking_chair.manufacturers.all() %}

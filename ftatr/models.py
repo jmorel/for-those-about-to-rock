@@ -10,16 +10,15 @@ class RockingChair(models.Model):
         db_table = 'rocking_chair'
 
     name = models.CharField(max_length=255)
+    year = models.IntegerField(max_length=4, null=True, blank=True)
 
-    year = models.ForeignKey('Year', related_name='rocking_chairs', blank=True, null=True)
-    price = models.ForeignKey('Price', related_name='rocking_chairs', blank=True, null=True)
+    # price = models.OneToOneField('Price', blank=True, null=True)
     designers = models.ManyToManyField('Designer', related_name='rocking_chairs', blank=True)
     manufacturers = models.ManyToManyField('Manufacturer', related_name='rocking_chairs', blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # publication planning management
     # todo: task to auto publish planned publication
     # is_published = models.BooleanField(default=False)
     # published_at = models.DateTimeField(null=True, default=None)
@@ -33,7 +32,7 @@ def get_upload_to(instance, filename):
     md5sum.update(filename.encode('utf-8'))
     md5sum.update(str(datetime.datetime.now()).encode('utf-8'))
     md5sum = md5sum.hexdigest()
-    return os.path.join(MEDIA_ROOT, md5sum[:1], md5sum[:2], md5sum)
+    return os.path.join(md5sum[:1], md5sum[:2], md5sum)
 
 
 class Picture(models.Model):
@@ -54,6 +53,7 @@ class Price(models.Model):
 
     amount = models.FloatField()
 
+    # rocking_chair = models.OneToOneField('RockingChair')
     currency = models.ForeignKey('Currency')
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
@@ -95,24 +95,11 @@ class Manufacturer(models.Model):
         return self.name
 
 
-class Year(models.Model):
-    class Meta:
-        db_table = 'year'
-
-    year = models.IntegerField(max_length=4, unique=True)
-
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return str(self.year)
-
-
 class Link(models.Model):
     class Meta:
         db_table = 'rocking_chair_links'
 
-    url = models.TextField()
+    url = models.CharField(max_length=255)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='links')
 
@@ -121,7 +108,10 @@ class Link(models.Model):
 
 
 class DesignerLink(models.Model):
-    url = models.TextField()
+    class Meta:
+        db_table = 'designer_link'
+
+    url = models.CharField(max_length=255)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='designer_links')
     designer = models.ForeignKey('Designer', related_name='links')
@@ -129,12 +119,12 @@ class DesignerLink(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        db_table = 'designer_link'
-
 
 class ManufacturerLink(models.Model):
-    url = models.TextField()
+    class Meta:
+        db_table = 'manufacturer_link'
+
+    url = models.CharField(max_length=255)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='manufacturer_links')
     manufacturer = models.ForeignKey('Manufacturer', related_name='links')
@@ -142,12 +132,12 @@ class ManufacturerLink(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        db_table = 'manufacturer_link'
-
 
 class PriceLink(models.Model):
-    url = models.TextField()
+    class Meta:
+        db_table = 'price_link'
+
+    url = models.CharField(max_length=255)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='price_links')
     price = models.ForeignKey('Price', related_name='links')
@@ -155,21 +145,17 @@ class PriceLink(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        db_table = 'price_link'
-
 
 class YearLink(models.Model):
-    url = models.TextField()
+    class Meta:
+        db_table = 'year_link'
+
+    url = models.CharField(max_length=255)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='year_links')
-    year = models.ForeignKey('Year', related_name='links')
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        db_table = 'year_link'
 
 
 class Currency(models.Model):
