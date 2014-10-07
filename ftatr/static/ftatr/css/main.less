@@ -71,6 +71,33 @@ header {
     }
 }
 
+// PAGINATION
+
+a.paginate {
+  text-align: center;
+  padding-top: 1.5*@item-border;
+  display: block;
+  background: white;
+  color: @yellow;
+  margin: 2*@item-border auto;
+  border-radius: 2*@item-border;
+  width: 4*@item-border;
+  height: 4*@item-border;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20pt;
+  line-height: 20pt;
+
+  &:hover {
+    color: @grey;
+  }
+
+  span.count {
+    text-transform: lowercase;
+    font-size: 14pt;
+  }
+}
+
 // ROCKING CHAIR
 
 article.rocking-chair {

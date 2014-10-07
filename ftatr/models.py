@@ -16,15 +16,15 @@ class RockingChair(models.Model):
     designers = models.ManyToManyField('Designer', related_name='rocking_chairs', blank=True)
     manufacturers = models.ManyToManyField('Manufacturer', related_name='rocking_chairs', blank=True)
 
+    published_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # todo: task to auto publish planned publication
-    # is_published = models.BooleanField(default=False)
-    # published_at = models.DateTimeField(null=True, default=None)
-
     def __str__(self):
         return self.name
+
+    def is_published(self):
+        return self.published_at and (self.published_at < datetime.datetime.now())
 
 
 def get_upload_to(instance, filename):

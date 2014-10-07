@@ -39,6 +39,28 @@ header p {
   text-align: center;
   color: #333333;
 }
+a.paginate {
+  text-align: center;
+  padding-top: 45px;
+  display: block;
+  background: white;
+  color: #ffff00;
+  margin: 60px auto;
+  border-radius: 60px;
+  width: 120px;
+  height: 120px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20pt;
+  line-height: 20pt;
+}
+a.paginate:hover {
+  color: #333333;
+}
+a.paginate span.count {
+  text-transform: lowercase;
+  font-size: 14pt;
+}
 article.rocking-chair {
   clear: both;
   padding-top: 150px;
