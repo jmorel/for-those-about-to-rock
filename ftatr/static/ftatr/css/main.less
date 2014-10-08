@@ -4,7 +4,9 @@
 @grey: #333333;
 @white: #ffffff;
 @yellow: yellow;
+@yellow-dark: darken(@yellow, 15%);
 @yellow-darker: darken(@yellow, 30%);
+@yellow-light: lighten(@yellow, 15%);
 
 // max page width
 @main-width: 900px;
@@ -34,6 +36,14 @@ body {
     background-size: 5px 5px;
     background-position: center;
     background-repeat: repeat-y;
+}
+
+a {
+    color: inherit;
+
+    &:hover {
+      background-color: @yellow;
+    }
 }
 
 // HEADER
@@ -124,6 +134,7 @@ article.rocking-chair {
         margin-top: @item-border/2;
         padding: 0;
         list-style: none;
+        max-width: 50%;
 
         &.attributes-left {
             float: right;
@@ -142,7 +153,7 @@ article.rocking-chair {
         li {
             display: block;
             margin-bottom: @item-border/2;
-            height: 75px;
+//            height: 75px;
         }
 
         .rocking-chair-name {
@@ -209,5 +220,10 @@ footer {
         margin-right: auto;
         padding-top: 2* @item-border;
         padding-bottom: @item-border;
+        text-align: center;
+    }
+
+    a.hexagonal-link {
+        background: none;
     }
 }

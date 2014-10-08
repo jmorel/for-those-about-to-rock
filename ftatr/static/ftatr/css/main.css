@@ -14,6 +14,12 @@ body {
   background-position: center;
   background-repeat: repeat-y;
 }
+a {
+  color: inherit;
+}
+a:hover {
+  background-color: #ffff00;
+}
 header {
   color: #fff;
   height: 600px;
@@ -82,6 +88,7 @@ article.rocking-chair ul.attributes {
   margin-top: 15px;
   padding: 0;
   list-style: none;
+  max-width: 50%;
 }
 article.rocking-chair ul.attributes.attributes-left {
   float: right;
@@ -98,7 +105,6 @@ article.rocking-chair ul.attributes.attributes-right {
 article.rocking-chair ul.attributes li {
   display: block;
   margin-bottom: 15px;
-  height: 75px;
 }
 article.rocking-chair ul.attributes .rocking-chair-name {
   padding-top: 5px;
@@ -147,4 +153,8 @@ footer div.footer-content {
   margin-right: auto;
   padding-top: 60px;
   padding-bottom: 30px;
+  text-align: center;
+}
+footer a.hexagonal-link {
+  background: none;
 }
