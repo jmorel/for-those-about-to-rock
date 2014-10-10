@@ -1,22 +1,6 @@
 @import '../fonts/static/static.css';
+@import 'variables';
 
-// colors
-@grey: #333333;
-@white: #ffffff;
-@yellow: yellow;
-@yellow-dark: darken(@yellow, 15%);
-@yellow-darker: darken(@yellow, 30%);
-@yellow-light: lighten(@yellow, 15%);
-
-// max page width
-@main-width: 900px;
-
-// rocking chair 
-// pictures
-@item-radius: 300px;
-@item-border: 30px;
-@paginate-spacing: 60px;
-@article-spacing: 120px;
 
 * {
     box-sizing: border-box;
@@ -25,17 +9,22 @@
 
 // BODY / GENERAL
 
+html {
+    font-size: @body-font-size;
+}
+
 body {
     margin: 0;
     padding: 0;
     color: #333;
     font-family: 'Static';
+    font-size: 1rem;
     background-color: @yellow;
     background-image: linear-gradient(
             90deg,
             @white 0,
-            @white 5px);
-    background-size: 5px 5px;
+            @white @body-background-vertical-width);
+    background-size: @body-background-vertical-width @body-background-vertical-width;
     background-position: center;
     background-repeat: repeat-y;
 }
@@ -56,7 +45,7 @@ a {
 
 header {
     color: #fff;
-    height: 600px;
+    height: 18em;
     background-image: radial-gradient(
             ellipse closest-side,
             @white 0%,
@@ -73,16 +62,15 @@ header {
         font-style: italic;
         text-transform: uppercase;
         color: @grey;
-        font-size: 110pt;
-        line-height: 110pt;
-        padding-top: 0.66em;
+        font-size: 4.6rem;
+        line-height: 1em;
+        padding-top: 0.5em;
         margin: 0 auto 0 auto;
         width: @main-width;
     }
 
     p {
-        font-size: 2em;
-        padding-bottom: 1em;
+        font-size: 1rem;
         text-align: center;
         color: @grey;
     }
@@ -96,17 +84,16 @@ div.paginate {
 
     a {
         text-align: center;
-        padding-top: 1.5*@item-border;
         display: block;
         background: @yellow;
-        border: 5px solid white;
+        border: @body-background-vertical-width solid white;
         color: @yellow-dark;
         margin: 0 auto;
-        border-radius: 2*@item-border;
-        width: 4*@item-border;
-        height: 4*@item-border;
-        font-size: 18pt;
-        line-height: 18pt;
+        border-radius: @paginate-radius;
+        width: 2*@paginate-radius;
+        height: 2*@paginate-radius;
+        font-size: 0.75rem;
+        line-height: 2*@paginate-radius;
         text-decoration: none;
         text-transform: uppercase;
 
@@ -119,18 +106,19 @@ div.paginate {
         position: absolute;
         color: @yellow-dark;
         top: 0;
-        line-height: 4*@item-border;
-        height: 4*@item-border;
-        font-size: 14pt;
+        line-height: 2*@paginate-radius;
+        height: 2*@paginate-radius;
+        padding-left: 2*@body-background-vertical-width;
+        font-size: 0.5rem;
     }
 
     &.previous .count {
         right: 50%;
-        margin-right: 2.5*@item-border;
+        margin-right: @paginate-radius;
     }
     &.next .count {
         left: 50%;
-        margin-left: 2.5*@item-border;
+        margin-left: @paginate-radius;
     }
 
 }
@@ -146,10 +134,10 @@ article.rocking-chair {
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        border: @item-border white solid;
-        border-radius: @item-radius;
-        width: @item-radius*2;
-        height: @item-radius*2;
+        border: @article-border-width white solid;
+        border-radius: @article-radius;
+        width: 2*@article-radius;
+        height: 2*@article-radius;
 
         background-size: cover;
         background-position: center center;
@@ -158,7 +146,7 @@ article.rocking-chair {
     ul.attributes {
         display: inline-block;
         margin: 0;
-        margin-top: @item-border/2;
+        margin-top: 2*@article-attribute-spacing;
         padding: 0;
         list-style: none;
         max-width: 50%;
@@ -167,26 +155,24 @@ article.rocking-chair {
             float: right;
             right: 50%;
             text-align: right;
-            margin-right: @item-border/2;
+            margin-right: @article-attribute-spacing;
         }
 
         &.attributes-right {
             float: left;
             left: 50%;
             text-align: left;
-            margin-left: @item-border/2;
+            margin-left: @article-attribute-spacing;
         }
 
         li {
             display: block;
-            margin-bottom: @item-border/2;
-            //            height: 75px;
+            margin-bottom: @article-attribute-spacing;
         }
 
         .rocking-chair-name {
-            padding-top: 5px;
-            font-size: 90px;
-            line-height: 75px;
+            font-size: 2.3rem;
+            line-height: 1em;
         }
 
         .attribute {
@@ -194,23 +180,24 @@ article.rocking-chair {
         }
 
         .attribute-name {
+            font-size: 0.5rem;
             background-color: @yellow-dark;
             color: @yellow;
-            padding: 2px 5px;
-            margin-top: -5pt;
+            padding: 0.2em 0.4em;
+            margin-top: -0.2em;
             z-index: -1;
         }
 
         .attribute-value {
-            font-size: 40pt;
-            line-height: 40pt;
+            font-size: 1.5rem;
+            line-height: 1em;
         }
 
         .attribute-links {
             position: absolute;
             display: inline-block;
             vertical-align: top;
-            font-size: 15pt;
+            font-size: 0.6rem;
 
             a {
                 color: @yellow-dark;
@@ -246,14 +233,15 @@ footer {
     background-position: center top;
     background-size: 120% 180%;
     background-repeat: no-repeat;
-    margin-top: @paginate-spacing;
+    margin-top: @footer-spacing;
+    font-size: 0.5rem;
 
     div.footer-content {
         width: @main-width;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 2* @item-border;
-        padding-bottom: @item-border;
+        padding-top: @footer-spacing;
+        padding-bottom: @footer-spacing/2;
         text-align: center;
     }
 

@@ -3,11 +3,15 @@
   box-sizing: border-box;
   position: relative;
 }
+html {
+  font-size: 32px;
+}
 body {
   margin: 0;
   padding: 0;
   color: #333;
   font-family: 'Static';
+  font-size: 1rem;
   background-color: #ffff00;
   background-image: linear-gradient(90deg, #ffffff 0, #ffffff 5px);
   background-size: 5px 5px;
@@ -25,7 +29,7 @@ a:hover {
 }
 header {
   color: #fff;
-  height: 600px;
+  height: 18em;
   background-image: radial-gradient(ellipse closest-side, #ffffff 0%, #ffffff 99%, transparent 99%, transparent);
   background-position: center bottom;
   background-size: 120% 180%;
@@ -37,15 +41,14 @@ header h1 {
   font-style: italic;
   text-transform: uppercase;
   color: #333333;
-  font-size: 110pt;
-  line-height: 110pt;
-  padding-top: 0.66em;
+  font-size: 4.6rem;
+  line-height: 1em;
+  padding-top: 0.5em;
   margin: 0 auto 0 auto;
   width: 900px;
 }
 header p {
-  font-size: 2em;
-  padding-bottom: 1em;
+  font-size: 1rem;
   text-align: center;
   color: #333333;
 }
@@ -54,17 +57,16 @@ div.paginate {
 }
 div.paginate a {
   text-align: center;
-  padding-top: 45px;
   display: block;
   background: #ffff00;
-  border: 5px solid white;
+  border: 5px solid #ffffff;
   color: #b2b300;
   margin: 0 auto;
   border-radius: 60px;
   width: 120px;
   height: 120px;
-  font-size: 18pt;
-  line-height: 18pt;
+  font-size: 0.75rem;
+  line-height: 120px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -77,15 +79,16 @@ div.paginate .count {
   top: 0;
   line-height: 120px;
   height: 120px;
-  font-size: 14pt;
+  padding-left: 10px;
+  font-size: 0.5rem;
 }
 div.paginate.previous .count {
   right: 50%;
-  margin-right: 75px;
+  margin-right: 60px;
 }
 div.paginate.next .count {
   left: 50%;
-  margin-left: 75px;
+  margin-left: 60px;
 }
 article.rocking-chair {
   clear: both;
@@ -105,7 +108,7 @@ article.rocking-chair .pictures {
 article.rocking-chair ul.attributes {
   display: inline-block;
   margin: 0;
-  margin-top: 15px;
+  margin-top: 30px;
   padding: 0;
   list-style: none;
   max-width: 50%;
@@ -127,29 +130,29 @@ article.rocking-chair ul.attributes li {
   margin-bottom: 15px;
 }
 article.rocking-chair ul.attributes .rocking-chair-name {
-  padding-top: 5px;
-  font-size: 90px;
-  line-height: 75px;
+  font-size: 2.3rem;
+  line-height: 1em;
 }
 article.rocking-chair ul.attributes .attribute {
   display: inline-block;
 }
 article.rocking-chair ul.attributes .attribute-name {
+  font-size: 0.5rem;
   background-color: #b2b300;
   color: #ffff00;
-  padding: 2px 5px;
-  margin-top: -5pt;
+  padding: 0.2em 0.4em;
+  margin-top: -0.2em;
   z-index: -1;
 }
 article.rocking-chair ul.attributes .attribute-value {
-  font-size: 40pt;
-  line-height: 40pt;
+  font-size: 1.5rem;
+  line-height: 1em;
 }
 article.rocking-chair ul.attributes .attribute-links {
   position: absolute;
   display: inline-block;
   vertical-align: top;
-  font-size: 15pt;
+  font-size: 0.6rem;
 }
 article.rocking-chair ul.attributes .attribute-links a {
   color: #b2b300;
@@ -171,6 +174,7 @@ footer {
   background-size: 120% 180%;
   background-repeat: no-repeat;
   margin-top: 60px;
+  font-size: 0.5rem;
 }
 footer div.footer-content {
   width: 900px;
