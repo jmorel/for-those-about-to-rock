@@ -15,6 +15,8 @@
 // pictures
 @item-radius: 300px;
 @item-border: 30px;
+@paginate-spacing: 60px;
+@article-spacing: 120px;
 
 * {
     box-sizing: border-box;
@@ -46,6 +48,10 @@ a {
     }
 }
 
+.clear {
+    clear: both;
+}
+
 // HEADER
 
 header {
@@ -60,6 +66,7 @@ header {
     background-position: center bottom;
     background-size: 120% 180%;
     background-repeat: no-repeat;
+    margin-bottom: @paginate-spacing;
 
     h1 {
         text-align: center;
@@ -85,6 +92,8 @@ header {
 
 div.paginate {
 
+    margin: @paginate-spacing 0;
+
     a {
         text-align: center;
         padding-top: 1.5*@item-border;
@@ -92,7 +101,7 @@ div.paginate {
         background: @yellow;
         border: 5px solid white;
         color: @yellow-dark;
-        margin: 2*@item-border auto;
+        margin: 0 auto;
         border-radius: 2*@item-border;
         width: 4*@item-border;
         height: 4*@item-border;
@@ -131,7 +140,7 @@ div.paginate {
 article.rocking-chair {
 
     clear: both;
-    padding-top: @item-radius / 2;
+    margin: @article-spacing 0;
 
     .pictures {
         margin-left: auto;
@@ -226,12 +235,8 @@ article.rocking-chair {
 
 // FOOTER
 
-.clear {
-    clear: both;
-}
 
 footer {
-    margin-top: @item-radius/2;
     background-image: radial-gradient(
             ellipse closest-side,
             @white 0%,
@@ -241,6 +246,7 @@ footer {
     background-position: center top;
     background-size: 120% 180%;
     background-repeat: no-repeat;
+    margin-top: @paginate-spacing;
 
     div.footer-content {
         width: @main-width;

@@ -20,6 +20,9 @@ a {
 a:hover {
   background-color: #ffff00;
 }
+.clear {
+  clear: both;
+}
 header {
   color: #fff;
   height: 600px;
@@ -27,6 +30,7 @@ header {
   background-position: center bottom;
   background-size: 120% 180%;
   background-repeat: no-repeat;
+  margin-bottom: 60px;
 }
 header h1 {
   text-align: center;
@@ -45,6 +49,9 @@ header p {
   text-align: center;
   color: #333333;
 }
+div.paginate {
+  margin: 60px 0;
+}
 div.paginate a {
   text-align: center;
   padding-top: 45px;
@@ -52,7 +59,7 @@ div.paginate a {
   background: #ffff00;
   border: 5px solid white;
   color: #b2b300;
-  margin: 60px auto;
+  margin: 0 auto;
   border-radius: 60px;
   width: 120px;
   height: 120px;
@@ -82,7 +89,7 @@ div.paginate.next .count {
 }
 article.rocking-chair {
   clear: both;
-  padding-top: 150px;
+  margin: 120px 0;
 }
 article.rocking-chair .pictures {
   margin-left: auto;
@@ -158,15 +165,12 @@ article.rocking-chair ul.attributes.attributes-right .attribute-links {
   left: 100%;
   padding-left: 0.5em;
 }
-.clear {
-  clear: both;
-}
 footer {
-  margin-top: 150px;
   background-image: radial-gradient(ellipse closest-side, #ffffff 0%, #ffffff 99%, transparent 99%, transparent);
   background-position: center top;
   background-size: 120% 180%;
   background-repeat: no-repeat;
+  margin-top: 60px;
 }
 footer div.footer-content {
   width: 900px;
