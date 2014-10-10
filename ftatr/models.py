@@ -53,7 +53,7 @@ class Price(models.Model):
 
     amount = models.FloatField()
 
-    # rocking_chair = models.OneToOneField('RockingChair')
+    rocking_chair = models.OneToOneField('RockingChair', related_name='price', blank=True, null=True)
     currency = models.ForeignKey('Currency')
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)

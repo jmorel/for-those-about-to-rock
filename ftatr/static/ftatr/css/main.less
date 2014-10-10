@@ -30,9 +30,9 @@ body {
     font-family: 'Static';
     background-color: @yellow;
     background-image: linear-gradient(
-        90deg,
-        @white 0,
-        @white 5px);
+            90deg,
+            @white 0,
+            @white 5px);
     background-size: 5px 5px;
     background-position: center;
     background-repeat: repeat-y;
@@ -42,7 +42,7 @@ a {
     color: inherit;
 
     &:hover {
-      background-color: @yellow;
+        background-color: @yellow;
     }
 }
 
@@ -52,11 +52,11 @@ header {
     color: #fff;
     height: 600px;
     background-image: radial-gradient(
-        ellipse closest-side,
-        @white 0%,
-        @white 99%,
-        transparent 99%,
-        transparent);
+            ellipse closest-side,
+            @white 0%,
+            @white 99%,
+            transparent 99%,
+            transparent);
     background-position: center bottom;
     background-size: 120% 180%;
     background-repeat: no-repeat;
@@ -83,29 +83,47 @@ header {
 
 // PAGINATION
 
-a.paginate {
-  text-align: center;
-  padding-top: 1.5*@item-border;
-  display: block;
-  background: white;
-  color: @yellow;
-  margin: 2*@item-border auto;
-  border-radius: 2*@item-border;
-  width: 4*@item-border;
-  height: 4*@item-border;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 20pt;
-  line-height: 20pt;
+div.paginate {
 
-  &:hover {
-    color: @grey;
-  }
+    a {
+        text-align: center;
+        padding-top: 1.5*@item-border;
+        display: block;
+        background: @yellow;
+        border: 5px solid white;
+        color: @yellow-dark;
+        margin: 2*@item-border auto;
+        border-radius: 2*@item-border;
+        width: 4*@item-border;
+        height: 4*@item-border;
+        font-size: 18pt;
+        line-height: 18pt;
+        text-decoration: none;
+        text-transform: uppercase;
 
-  span.count {
-    text-transform: lowercase;
-    font-size: 14pt;
-  }
+        &:hover {
+            color: @grey;
+        }
+    }
+
+    .count {
+        position: absolute;
+        color: @yellow-dark;
+        top: 0;
+        line-height: 4*@item-border;
+        height: 4*@item-border;
+        font-size: 14pt;
+    }
+
+    &.previous .count {
+        right: 50%;
+        margin-right: 2.5*@item-border;
+    }
+    &.next .count {
+        left: 50%;
+        margin-left: 2.5*@item-border;
+    }
+
 }
 
 // ROCKING CHAIR
@@ -153,7 +171,7 @@ article.rocking-chair {
         li {
             display: block;
             margin-bottom: @item-border/2;
-//            height: 75px;
+            //            height: 75px;
         }
 
         .rocking-chair-name {
@@ -167,7 +185,7 @@ article.rocking-chair {
         }
 
         .attribute-name {
-            background-color: @yellow-darker;
+            background-color: @yellow-dark;
             color: @yellow;
             padding: 2px 5px;
             margin-top: -5pt;
@@ -180,18 +198,28 @@ article.rocking-chair {
         }
 
         .attribute-links {
+            position: absolute;
             display: inline-block;
             vertical-align: top;
-            font-size: 20pt;
-            line-height: 40pt;
+            font-size: 15pt;
 
             a {
-                color: @yellow-darker;
+                color: @yellow-dark;
 
                 &:hover {
                     color: @grey;
                 }
             }
+        }
+
+        &.attributes-left .attribute-links {
+            right: 100%;
+            padding-right: 0.5em;
+        }
+
+        &.attributes-right .attribute-links {
+            left: 100%;
+            padding-left: 0.5em;
         }
     }
 }
@@ -205,11 +233,11 @@ article.rocking-chair {
 footer {
     margin-top: @item-radius/2;
     background-image: radial-gradient(
-        ellipse closest-side,
-        @white 0%,
-        @white 99%,
-        transparent 99%,
-        transparent);
+            ellipse closest-side,
+            @white 0%,
+            @white 99%,
+            transparent 99%,
+            transparent);
     background-position: center top;
     background-size: 120% 180%;
     background-repeat: no-repeat;

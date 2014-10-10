@@ -45,27 +45,40 @@ header p {
   text-align: center;
   color: #333333;
 }
-a.paginate {
+div.paginate a {
   text-align: center;
   padding-top: 45px;
   display: block;
-  background: white;
-  color: #ffff00;
+  background: #ffff00;
+  border: 5px solid white;
+  color: #b2b300;
   margin: 60px auto;
   border-radius: 60px;
   width: 120px;
   height: 120px;
+  font-size: 18pt;
+  line-height: 18pt;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 20pt;
-  line-height: 20pt;
 }
-a.paginate:hover {
+div.paginate a:hover {
   color: #333333;
 }
-a.paginate span.count {
-  text-transform: lowercase;
+div.paginate .count {
+  position: absolute;
+  color: #b2b300;
+  top: 0;
+  line-height: 120px;
+  height: 120px;
   font-size: 14pt;
+}
+div.paginate.previous .count {
+  right: 50%;
+  margin-right: 75px;
+}
+div.paginate.next .count {
+  left: 50%;
+  margin-left: 75px;
 }
 article.rocking-chair {
   clear: both;
@@ -115,7 +128,7 @@ article.rocking-chair ul.attributes .attribute {
   display: inline-block;
 }
 article.rocking-chair ul.attributes .attribute-name {
-  background-color: #666600;
+  background-color: #b2b300;
   color: #ffff00;
   padding: 2px 5px;
   margin-top: -5pt;
@@ -126,16 +139,24 @@ article.rocking-chair ul.attributes .attribute-value {
   line-height: 40pt;
 }
 article.rocking-chair ul.attributes .attribute-links {
+  position: absolute;
   display: inline-block;
   vertical-align: top;
-  font-size: 20pt;
-  line-height: 40pt;
+  font-size: 15pt;
 }
 article.rocking-chair ul.attributes .attribute-links a {
-  color: #666600;
+  color: #b2b300;
 }
 article.rocking-chair ul.attributes .attribute-links a:hover {
   color: #333333;
+}
+article.rocking-chair ul.attributes.attributes-left .attribute-links {
+  right: 100%;
+  padding-right: 0.5em;
+}
+article.rocking-chair ul.attributes.attributes-right .attribute-links {
+  left: 100%;
+  padding-left: 0.5em;
 }
 .clear {
   clear: both;

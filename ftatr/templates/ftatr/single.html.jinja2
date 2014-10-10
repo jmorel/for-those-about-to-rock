@@ -14,6 +14,7 @@
         {% if rocking_chair.year %}
             <li>
                 <div class="attribute">
+                    {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
                     <div class="attribute-value">
                         {{ rocking_chair.year }}
                     </div>
@@ -21,7 +22,6 @@
                         Year
                     </div>
                 </div>
-                {{ include_links(rocking_chair.year_link_set) }}
             </li>
         {% endif %}
     </ul>
@@ -29,6 +29,7 @@
         {% for designer in rocking_chair.designers.all() %}
             <li>
                 <div class="attribute">
+                    {{ include_links(rocking_chair.designer_links.filter(designer=designer)) }}
                     <div class="attribute-value">
                         {{ designer.first_name }} {{ designer.last_name }}
                     </div>
@@ -36,12 +37,12 @@
                         Designer
                     </div>
                 </div>
-                {{ include_links(rocking_chair.designer_links.filter(designer=designer)) }}
             </li>
         {% endfor %}
         {% for manufacturer in rocking_chair.manufacturers.all() %}
             <li>
                 <div class="attribute">
+                    {{ include_links(rocking_chair.manufacturer_links.filter(manufacturer=manufacturer)) }}
                     <div class="attribute-value">
                         {{ manufacturer.name }}
                     </div>
@@ -49,20 +50,18 @@
                         Manufacturer
                     </div>
                 </div>
-{#                {{ include_links(rocking_chair.manufacturer_link_set.filter(manufacturer=manufacturer)) }}#}
             </li>
         {% endfor %}
-        {% if rocking_chair.price_set | length %}
-            {% set price = rocking_chair.price_set.first() %}
+        {% if rocking_chair.price %}
             <li>
                 <div class="attribute">
+                    {{ include_links(rocking_chair.price_links.all()) }}
                     <div class="attribute-value">
-                        {{ price.amount }} {{ price.currency }}
+                        {{ rocking_chair.price.amount | round(0) }} {{ rocking_chair.price.currency.code }}
                     </div>
                     <div class="attribute-name">
                         Price
                     </div>
-                    {{ include_links(rocking_chair.price_link_set(price=price)) }}
                 </div>
             </li>
         {% endif %}

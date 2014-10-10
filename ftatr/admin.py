@@ -1,6 +1,6 @@
 from django.contrib import admin
 from ftatr.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, YearLink, \
-    Link, Currency
+    Link, Currency, PriceLink
 
 
 class DesignerLinkInline(admin.TabularInline):
@@ -28,8 +28,25 @@ class PictureInline(admin.TabularInline):
     extra = 1
 
 
+class PriceInline(admin.TabularInline):
+    model = Price
+
+
+class PriceLinkInline(admin.TabularInline):
+    model = PriceLink
+    extra = 1
+
+
 class RockingChairAdmin(admin.ModelAdmin):
-    inlines = [LinkInline, PictureInline, DesignerLinkInline, ManufacturerLinkInline, YearLinkInline]
+    inlines = [
+        PictureInline,
+        PriceInline,
+        PriceLinkInline,
+        LinkInline,
+        DesignerLinkInline,
+        ManufacturerLinkInline,
+        YearLinkInline,
+    ]
 
 
 admin.site.register(RockingChair, RockingChairAdmin)

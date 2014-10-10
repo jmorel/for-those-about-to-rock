@@ -2,13 +2,15 @@
 
 {% block content %}
     {% if rocking_chairs.has_previous() %}
-        <a href="{{ url('index') }}?page={{ rocking_chairs.previous_page_number() }}"
-           class="paginate">
-            previous<br>
-            <span class="count">
+        <div class="paginate previous">
+            <a href="{{ url('index') }}?page={{ rocking_chairs.previous_page_number() }}">
+                previous<br>
+            </a>
+
+            <div class="count">
                 {{ rocking_chairs.start_index() - 1 }} more
-            </span>
-        </a>
+            </div>
+        </div>
     {% endif %}
 
     {% for rocking_chair in rocking_chairs %}
@@ -17,12 +19,15 @@
 
     {% if rocking_chairs.has_next() %}
         <div class="clear"></div>
-        <a href="{{ url('index') }}?page={{ rocking_chairs.next_page_number() }}"
-           class="paginate">
-            next<br>
-            <span class="count">
+        <div class="paginate next">
+            <a href="{{ url('index') }}?page={{ rocking_chairs.next_page_number() }}">
+                next<br>
+            </a>
+
+            <div class="count">
                 {{ paginator.count - rocking_chairs.end_index() }} more
-            </span>
-        </a>
+            </div>
+
+        </div>
     {% endif %}
 {% endblock %}
