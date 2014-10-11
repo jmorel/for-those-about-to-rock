@@ -2,4 +2,12 @@
 
 {% block content %}
     {% include 'ftatr/single.html.jinja2' %}
+
+    <div class="clear"></div>
+
+    <div class="paginate">
+        <a href="{{ url('index') }}">
+            view all
+        </a>
+    </div>
 {% endblock %}
