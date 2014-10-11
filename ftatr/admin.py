@@ -38,6 +38,7 @@ class PriceLinkInline(admin.TabularInline):
 
 
 class RockingChairAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name', )}
     inlines = [
         PictureInline,
         PriceInline,
@@ -49,8 +50,15 @@ class RockingChairAdmin(admin.ModelAdmin):
     ]
 
 
+class DesignerAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('first_name', 'last_name', )}
+
+
+class ManufacturerAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name', )}
+
 admin.site.register(RockingChair, RockingChairAdmin)
-admin.site.register(Designer)
-admin.site.register(Manufacturer)
+admin.site.register(Designer, DesignerAdmin)
+admin.site.register(Manufacturer, ManufacturerAdmin)
 admin.site.register(Picture)
 admin.site.register(Currency)

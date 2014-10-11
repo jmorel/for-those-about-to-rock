@@ -1,7 +1,7 @@
 {% from 'ftatr/single_macros.html.jinja2' import include_links %}
 
 <div class="clear"></div>
-<article class="rocking-chair">
+<article class="rocking-chair" id="{{ rocking_chair.slug }}">
     <div class="pictures" style="background-image: url('{{ rocking_chair.picture }}')">
         {% for picture in rocking_chair.pictures.all() %}
             <img src="{{ picture.picture.url }}" alt="{{ rocking_chair.name }}"/>
@@ -10,7 +10,21 @@
 
     <ul class="attributes attributes-left">
         <li>
-            <div class="rocking-chair-name">{{ rocking_chair.name }}</div>
+            <div class="rocking-chair-name">
+                <a href="{{ url('show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
+                    {{ rocking_chair.name }}
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class="rocking-chair-social">
+                <a href="http://twitter.com">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://facebook.com">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </div>
         </li>
         {% if rocking_chair.year %}
             <li>

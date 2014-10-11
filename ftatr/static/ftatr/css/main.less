@@ -170,9 +170,31 @@ article.rocking-chair {
             margin-bottom: @article-attribute-spacing;
         }
 
-        .rocking-chair-name {
+        .rocking-chair-name,
+        .rocking-chair-social{
             font-size: 2.3rem;
             line-height: 1em;
+        }
+
+        .rocking-chair-name {
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .rocking-chair-social {
+            a {
+                color: @yellow-dark;
+                text-decoration: none;
+
+                &:hover {
+                    color: @grey;
+                    text-decoration: none;
+                }
+            }
         }
 
         .attribute {

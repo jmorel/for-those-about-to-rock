@@ -129,9 +129,24 @@ article.rocking-chair ul.attributes li {
   display: block;
   margin-bottom: 15px;
 }
-article.rocking-chair ul.attributes .rocking-chair-name {
+article.rocking-chair ul.attributes .rocking-chair-name,
+article.rocking-chair ul.attributes .rocking-chair-social {
   font-size: 2.3rem;
   line-height: 1em;
+}
+article.rocking-chair ul.attributes .rocking-chair-name a {
+  text-decoration: none;
+}
+article.rocking-chair ul.attributes .rocking-chair-name a:hover {
+  text-decoration: underline;
+}
+article.rocking-chair ul.attributes .rocking-chair-social a {
+  color: #b2b300;
+  text-decoration: none;
+}
+article.rocking-chair ul.attributes .rocking-chair-social a:hover {
+  color: #333333;
+  text-decoration: none;
 }
 article.rocking-chair ul.attributes .attribute {
   display: inline-block;

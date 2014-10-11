@@ -1,6 +1,6 @@
 import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from ftatr.models import RockingChair
 
 
@@ -23,4 +23,11 @@ def index(request):
     return render(request, 'ftatr/index.html.jinja2', {
         'rocking_chairs': paged_rocking_chairs,
         'paginator': paginator
+    })
+
+
+def show(request, slug):
+    rocking_chair = get_object_or_404(RockingChair, slug=slug)
+    return render(request, 'ftatr/show.html.jinja2', {
+        'rocking_chair': rocking_chair,
     })

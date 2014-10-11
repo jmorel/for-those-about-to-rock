@@ -16,6 +16,7 @@ class RockingChair(models.Model):
     designers = models.ManyToManyField('Designer', related_name='rocking_chairs', blank=True)
     manufacturers = models.ManyToManyField('Manufacturer', related_name='rocking_chairs', blank=True)
 
+    slug = models.SlugField(unique=True)
     published_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
@@ -73,6 +74,7 @@ class Designer(models.Model):
 
     nationalities = models.ManyToManyField('Country', blank=True)
 
+    slug = models.SlugField(unique=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -88,6 +90,7 @@ class Manufacturer(models.Model):
 
     country = models.ForeignKey('Country', blank=True, null=True)
 
+    slug = models.SlugField(unique=True)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
