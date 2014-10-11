@@ -6,8 +6,6 @@
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ static('ftatr/css/Font-Awesome/css/font-awesome.min.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ static('ftatr/css/main.css') }}">
-        {% block inner_stylesheets %}
-        {% endblock %}
     {% endblock stylesheets %}
 
     {# favicon #}
@@ -33,6 +31,7 @@
     <meta name="application-name" content="For Those About To Rock">
 
 </head>
+
 <body>
 {% block body %}
 
@@ -50,9 +49,9 @@
     <footer>
         <div class="footer-content">
             <p>
-                For Those About To Rock is made and maintained by me, <a href="http://hexagonal.io">Jeremy Morel</a>.<br>
-                The source code is open and available at <a href="http://github.com">GitHub</a>. <br>
-                If you like this website, please feel free to <a href="">tip</a>, I could use another rocking chair.
+                For Those About To Rock is made and maintained by me, <a href="http://hexagonal.io">Jeremy</a>.<br>
+                I tweet at <a href="https://twitter.com/jmorel_fr">@jmorel_fr</a> but prefer <a href="mailto:jeremy@forthoseabouttorock.io">email</a> for actual conversation.<br>
+                The source code is open and available at <a href="https://github.com/jmorel/for-those-about-to-rock">GitHub</a>.
             </p>
             <a href="http://hexagonal.io" class="hexagonal-link">
                 <img src="{{ static('ftatr/images/hexagonal-logo.png') }}">
@@ -62,7 +61,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    {# analytics tracking #}
+    {# Google Analytics #}
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -72,8 +71,10 @@
         ga('create', 'UA-55571533-1', 'auto');
         ga('send', 'pageview');
     </script>
-    {% block inner_javascripts %}
-    {% endblock %}
+
+    {# Twitter #}
+    <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
 {% endblock %}
 </body>
+
 </html>

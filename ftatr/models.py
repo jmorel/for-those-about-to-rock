@@ -27,6 +27,21 @@ class RockingChair(models.Model):
     def is_published(self):
         return self.published_at and (self.published_at < datetime.datetime.now())
 
+    @property
+    def twitter_text(self):
+        designers = list(self.designers.all())
+
+        if not designers:
+            return self.name
+
+        authors = ', '.join([designer.full_name for designer in designers[:-1]])
+        if authors:
+            authors = "{} and {}".format(authors, designers[-1].full_name)
+        else:
+            authors = designers[-1].full_name
+
+        return "{} by {}".format(self.name, authors)
+
 
 def get_upload_to(instance, filename):
     md5sum = hashlib.md5()
@@ -80,6 +95,10 @@ class Designer(models.Model):
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
+
+    @property
+    def full_name(self):
+        return "{} {}".format(self.first_name, self.last_name).strip()
 
 
 class Manufacturer(models.Model):

@@ -19,6 +19,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'm_p!ki=cue6*^l6ao)=3!ek1u#j6rg6+4%n7gu6wxf-8%k+$q3'
+FACEBOOK_APP_ID = '351060788405753'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,6 +57,11 @@ ROOT_URLCONF = 'ftatr.urls'
 TEMPLATE_LOADERS = (
     'django_jinja.loaders.AppLoader',
     'django_jinja.loaders.FileSystemLoader'
+)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'ftatr.context_processors.facebook'
 )
 
 DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja2'
