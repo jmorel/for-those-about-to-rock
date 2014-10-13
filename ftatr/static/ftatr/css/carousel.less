@@ -1,0 +1,97 @@
+@import 'variables';
+@import '../bootstrap/less/mixins';
+@import '../bootstrap/less/carousel';
+
+.background-reset {
+    background: none;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner {
+    .item {
+        opacity: 0;
+        transition-property: opacity;
+        text-align: center;
+        font-size: 0;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .active {
+        opacity: 1;
+    }
+
+    .active.left,
+    .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .next.left,
+    .prev.right {
+        opacity: 1;
+    }
+}
+
+.carousel-control {
+    color: @yellow-dark;
+    text-shadow: none;
+    opacity: 1;
+    width: @paginate-radius;
+    font-size: 3rem;
+    z-index: 2;
+    height: 2*@article-radius;
+    line-height: 2*@article-radius;
+
+    &:hover {
+        color: @grey;
+    }
+
+    &.left {
+        .background-reset;
+        left: 0;
+        margin-left: -@article-border-width - @carousel-control-spacing;
+        text-align: left;
+    }
+    &.right {
+        .background-reset;
+        right: 0;
+        margin-right: -@article-border-width - @carousel-control-spacing;
+        text-align: right;
+    }
+}
+
+.carousel-indicators {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+
+    li {
+        background-color: transparent;
+        border: 1px solid @yellow;
+
+        &.active {
+            background-color: @yellow;
+        }
+    }
+}

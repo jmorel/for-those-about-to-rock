@@ -44,11 +44,12 @@ class RockingChair(models.Model):
 
 
 def get_upload_to(instance, filename):
+    name, extension = os.path.splitext(filename)
     md5sum = hashlib.md5()
     md5sum.update(filename.encode('utf-8'))
     md5sum.update(str(datetime.datetime.now()).encode('utf-8'))
     md5sum = md5sum.hexdigest()
-    return os.path.join(md5sum[:1], md5sum[:2], md5sum)
+    return os.path.join(md5sum[:1], md5sum[:2], md5sum+extension)
 
 
 class Picture(models.Model):

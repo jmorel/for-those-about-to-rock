@@ -2,10 +2,33 @@
 
 <div class="clear"></div>
 <article class="rocking-chair" id="{{ rocking_chair.slug }}">
-    <div class="pictures" style="background-image: url('{{ rocking_chair.picture }}')">
-        {% for picture in rocking_chair.pictures.all() %}
-            <img src="{{ picture.picture.url }}" alt="{{ rocking_chair.name }}"/>
-        {% endfor %}
+    <div class="pictures">
+    {% set carousel_id = 'carousel-' ~ rocking_chair.slug %}
+        <div id="{{ carousel_id }}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for i in range(rocking_chair.pictures.all() | length) %}
+                    <li data-target="#{{ carousel_id }}"
+                        data-slide-to="{{ i }}"
+                        class="{% if loop.first %}active{% endif %}"></li>
+                {% endfor %}
+            </ol>
+
+            <div class="carousel-inner">
+                {% for picture in rocking_chair.pictures.all() %}
+                    <div class="item {% if loop.first %}active{% endif %}">
+                        <img src="{{ picture.picture.url }}"
+                             alt="{{ rocking_chair.name }}"/>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <a class="left carousel-control" href="#{{ carousel_id }}" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a class="right carousel-control" href="#{{ carousel_id }}" role="button" data-slide="next">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
     </div>
 
     <ul class="attributes attributes-left">
