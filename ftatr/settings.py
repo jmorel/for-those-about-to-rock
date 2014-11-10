@@ -102,3 +102,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# WARNING
+# this needs to be at the very end of the file so that variables are overriden
+try:
+    from ftatr.settings_local import *
+except ImportError:
+    pass

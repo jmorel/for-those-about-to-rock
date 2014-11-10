@@ -1,0 +1,14 @@
+DEBUG = False
+TEMPLATE_DEBUG = False
+SECRET_KEY = 'secret'
+FACEBOOK_APP_ID = '351060788405753'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ftatr',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 3306
+    }
+}
