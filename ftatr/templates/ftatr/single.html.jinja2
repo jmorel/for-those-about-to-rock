@@ -4,7 +4,7 @@
 <article class="rocking-chair" id="{{ rocking_chair.slug }}">
     <div class="pictures">
     {% set carousel_id = 'carousel-' ~ rocking_chair.slug %}
-        <div id="{{ carousel_id }}" class="carousel slide" data-ride="carousel">
+        <div id="{{ carousel_id }}" class="carousel slide">
             <ol class="carousel-indicators">
                 {% for i in range(rocking_chair.pictures.all() | length) %}
                     <li data-target="#{{ carousel_id }}"
@@ -16,8 +16,7 @@
             <div class="carousel-inner">
                 {% for picture in rocking_chair.pictures.all() %}
                     <div class="item {% if loop.first %}active{% endif %}">
-                        <img src="{{ picture.picture.url }}"
-                             alt="{{ rocking_chair.name }}"/>
+                        <img src="{{ picture.picture.url }}" alt="{{ rocking_chair.name }}"/>
                     </div>
                 {% endfor %}
             </div>
