@@ -6,3 +6,4 @@ assets/css/font-awesome-4.2.0
 .idea/
 */__pycache__/
 media/
+ftatr/settings_local.py
