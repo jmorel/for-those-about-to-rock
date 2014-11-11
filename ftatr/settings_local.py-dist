@@ -1,14 +1,20 @@
+# keep to false for prod environment
 DEBUG = False
 TEMPLATE_DEBUG = False
+
 SECRET_KEY = 'secret'
 FACEBOOK_APP_ID = '351060788405753'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ftatr',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'ftatr',
+        'PASSWORD': 'ftatr',
         'HOST': 'localhost',
         'PORT': 3306
     }
 }
+
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
