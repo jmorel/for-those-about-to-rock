@@ -3,8 +3,10 @@
 <div class="clear"></div>
 <article class="rocking-chair" id="{{ rocking_chair.slug }}">
     <div class="pictures">
+    {% set multiple_pictures = (rocking_chair.pictures.all()|length > 1) %}
     {% set carousel_id = 'carousel-' ~ rocking_chair.slug %}
         <div id="{{ carousel_id }}" class="carousel slide">
+        {% if multiple_pictures %}
             <ol class="carousel-indicators">
                 {% for i in range(rocking_chair.pictures.all() | length) %}
                     <li data-target="#{{ carousel_id }}"
@@ -12,6 +14,7 @@
                         class="{% if loop.first %}active{% endif %}"></li>
                 {% endfor %}
             </ol>
+            {% endif %}
 
             <div class="carousel-inner">
                 {% for picture in rocking_chair.pictures.all() %}
@@ -21,12 +24,14 @@
                 {% endfor %}
             </div>
 
+            {% if multiple_pictures %}
             <a class="left carousel-control" href="#{{ carousel_id }}" role="button" data-slide="prev">
                 <i class="fa fa-chevron-left"></i>
             </a>
             <a class="right carousel-control" href="#{{ carousel_id }}" role="button" data-slide="next">
                 <i class="fa fa-chevron-right"></i>
             </a>
+            {% endif %}
         </div>
     </div>
 

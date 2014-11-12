@@ -3,10 +3,12 @@
         <div class="attribute-links">
             {% for link in links %}
                 <a href="{{ link.url }}" class="attribute-link">
-                    {% if reverse %}
-                        <i class="fa fa-external-link fa-flip-horizontal"></i>
+                    {% if 'twitter.com' in link.url %}
+                        <i class="fa fa-twitter"></i>
+                    {% elif 'facebook.com' in link.url %}
+                        <i class="fa fa-facebook"></i>
                     {% else %}
-                        <i class="fa fa-external-link"></i>
+                        <i class="fa fa-external-link {% if reverse %}fa-flip-horizontal{% endif %}"></i>
                     {% endif %}
                 </a>
             {% endfor %}
