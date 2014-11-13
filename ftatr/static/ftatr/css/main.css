@@ -312,10 +312,12 @@ body {
   background-repeat: repeat-y;
 }
 a {
-  color: inherit;
+  color: #7f8000;
+  text-decoration: none;
 }
 a:hover {
-  background-color: #ffff00;
+  color: #333333;
+  text-decoration: none;
 }
 .clear {
   clear: both;
@@ -399,7 +401,7 @@ article.rocking-chair .pictures {
   background-position: center center;
 }
 article.rocking-chair ul.attributes {
-  display: inline-block;
+  display: block;
   margin: 0;
   margin-top: 30px;
   padding: 0;
@@ -422,24 +424,15 @@ article.rocking-chair ul.attributes li {
   display: block;
   margin-bottom: 15px;
 }
-article.rocking-chair ul.attributes .rocking-chair-name,
-article.rocking-chair ul.attributes .rocking-chair-social {
+article.rocking-chair ul.attributes .rocking-chair-name {
   font-size: 2.3rem;
   line-height: 1em;
 }
 article.rocking-chair ul.attributes .rocking-chair-name a {
-  text-decoration: none;
+  color: inherit;
 }
 article.rocking-chair ul.attributes .rocking-chair-name a:hover {
   text-decoration: underline;
-}
-article.rocking-chair ul.attributes .rocking-chair-social a {
-  color: #7f8000;
-  text-decoration: none;
-}
-article.rocking-chair ul.attributes .rocking-chair-social a:hover {
-  color: #333333;
-  text-decoration: none;
 }
 article.rocking-chair ul.attributes .attribute {
   display: inline-block;
@@ -457,24 +450,18 @@ article.rocking-chair ul.attributes .attribute-value {
   line-height: 1em;
 }
 article.rocking-chair ul.attributes .attribute-links {
-  position: absolute;
+  position: relative;
+  top: 0;
   display: inline-block;
   vertical-align: top;
   font-size: 0.6rem;
 }
 article.rocking-chair ul.attributes .attribute-links a {
   color: #7f8000;
+  text-decoration: none;
 }
 article.rocking-chair ul.attributes .attribute-links a:hover {
   color: #333333;
-}
-article.rocking-chair ul.attributes.attributes-left .attribute-links {
-  right: 100%;
-  padding-right: 0.5em;
-}
-article.rocking-chair ul.attributes.attributes-right .attribute-links {
-  left: 100%;
-  padding-left: 0.5em;
 }
 footer {
   background-image: radial-gradient(ellipse closest-side, #ffffff 0%, #ffffff 99%, transparent 99%, transparent);
@@ -483,6 +470,14 @@ footer {
   background-repeat: no-repeat;
   margin-top: 60px;
   font-size: 0.5rem;
+}
+footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+footer a:hover {
+  background-color: #ffff00;
+  text-decoration: underline;
 }
 footer div.footer-content {
   width: 900px;

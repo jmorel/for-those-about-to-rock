@@ -31,10 +31,12 @@ body {
 }
 
 a {
-    color: inherit;
+    color: @yellow-dark;
+    text-decoration: none;
 
     &:hover {
-        background-color: @yellow;
+        color: @grey;
+        text-decoration: none;
     }
 }
 
@@ -145,7 +147,7 @@ article.rocking-chair {
     }
 
     ul.attributes {
-        display: inline-block;
+        display: block;
         margin: 0;
         margin-top: 2*@article-attribute-spacing;
         padding: 0;
@@ -171,30 +173,16 @@ article.rocking-chair {
             margin-bottom: @article-attribute-spacing;
         }
 
-        .rocking-chair-name,
-        .rocking-chair-social{
+        .rocking-chair-name {
             font-size: 2.3rem;
             line-height: 1em;
-        }
 
-        .rocking-chair-name {
             a {
-                text-decoration: none;
-
+                color: inherit;
                 &:hover {
                     text-decoration: underline;
                 }
-            }
-        }
-        .rocking-chair-social {
-            a {
-                color: @yellow-dark;
-                text-decoration: none;
 
-                &:hover {
-                    color: @grey;
-                    text-decoration: none;
-                }
             }
         }
 
@@ -217,28 +205,20 @@ article.rocking-chair {
         }
 
         .attribute-links {
-            position: absolute;
+            position: relative;
+            top: 0;
             display: inline-block;
             vertical-align: top;
             font-size: 0.6rem;
 
             a {
                 color: @yellow-dark;
+                text-decoration: none;
 
                 &:hover {
                     color: @grey;
                 }
             }
-        }
-
-        &.attributes-left .attribute-links {
-            right: 100%;
-            padding-right: 0.5em;
-        }
-
-        &.attributes-right .attribute-links {
-            left: 100%;
-            padding-left: 0.5em;
         }
     }
 }
@@ -258,6 +238,16 @@ footer {
     background-repeat: no-repeat;
     margin-top: @footer-spacing;
     font-size: 0.5rem;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+
+        &:hover {
+            background-color: @yellow;
+            text-decoration: underline;
+        }
+    }
 
     div.footer-content {
         width: @main-width;
