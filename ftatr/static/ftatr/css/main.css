@@ -253,7 +253,7 @@
   opacity: 1;
 }
 .carousel-control {
-  color: #b2b300;
+  color: #7f8000;
   text-shadow: none;
   opacity: 1;
   width: 60px;
@@ -353,7 +353,7 @@ div.paginate a {
   display: block;
   background: #ffff00;
   border: 5px solid #ffffff;
-  color: #b2b300;
+  color: #7f8000;
   margin: 0 auto;
   border-radius: 60px;
   width: 120px;
@@ -368,7 +368,7 @@ div.paginate a:hover {
 }
 div.paginate .count {
   position: absolute;
-  color: #b2b300;
+  color: #7f8000;
   top: 0;
   line-height: 120px;
   height: 120px;
@@ -434,7 +434,7 @@ article.rocking-chair ul.attributes .rocking-chair-name a:hover {
   text-decoration: underline;
 }
 article.rocking-chair ul.attributes .rocking-chair-social a {
-  color: #b2b300;
+  color: #7f8000;
   text-decoration: none;
 }
 article.rocking-chair ul.attributes .rocking-chair-social a:hover {
@@ -446,7 +446,7 @@ article.rocking-chair ul.attributes .attribute {
 }
 article.rocking-chair ul.attributes .attribute-name {
   font-size: 0.5rem;
-  background-color: #b2b300;
+  background-color: #7f8000;
   color: #ffff00;
   padding: 0.2em 0.4em;
   margin-top: -0.2em;
@@ -463,7 +463,7 @@ article.rocking-chair ul.attributes .attribute-links {
   font-size: 0.6rem;
 }
 article.rocking-chair ul.attributes .attribute-links a {
-  color: #b2b300;
+  color: #7f8000;
 }
 article.rocking-chair ul.attributes .attribute-links a:hover {
   color: #333333;
