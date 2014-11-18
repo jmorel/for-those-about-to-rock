@@ -1,6 +1,6 @@
 [submodule "ftatr/static/ftatr/Font-Awesome"]
 	path = ftatr/static/ftatr/Font-Awesome
-	url = git@github.com:FortAwesome/Font-Awesome.git
+	url = https://github.com/FortAwesome/Font-Awesome.git
 [submodule "ftatr/static/ftatr/bootstrap"]
 	path = ftatr/static/ftatr/bootstrap
-	url = git@github.com:twbs/bootstrap.git
+	url = https://github.com/twbs/bootstrap.git
