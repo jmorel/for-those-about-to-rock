@@ -1,0 +1,1 @@
+web: gunicorn ftatr/wsgi.py --log-file -
