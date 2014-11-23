@@ -22,9 +22,9 @@ SECRET_KEY = 'm_p!ki=cue6*^l6ao)=3!ek1u#j6rg6+4%n7gu6wxf-8%k+$q3'
 FACEBOOK_APP_ID = '351060788405753'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['.forthoseabouttorock.io']
 
