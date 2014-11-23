@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_jinja',
+    'easy_thumbnails',
+    'django_jinja.contrib._easy_thumbnails',
     'ftatr',
 )
 
@@ -67,9 +70,20 @@ DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja2'
 
 WSGI_APPLICATION = 'ftatr.wsgi.application'
 
+# Thumbnails
+THUMBNAIL_ALIASES = {
+    '': {
+        # project wide target
+        '540x540': {
+            'size': (540, 540),
+        }
+    }
+}
+
 
 # Database
 import dj_database_url
+
 DATABASES = {'default': dj_database_url.config(default='postgres://postgres:root@localhost:5432/ftatr')}
 
 
