@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" href="{{ static('ftatr/css/main.css') }}">
     {% endblock stylesheets %}
 
+    {# rss feeds #}
+    <link rel="alternate" type="application/rss+xml" title="Latest rocking chairs" href="{{ url('rocking-chair-feed') }}">
+
     {# favicon #}
     <link rel="shortcut icon" href="{{ static('images/favicon.ico') }}">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ static('ftatr/images/apple-touch-icon-57x57.png') }}">
