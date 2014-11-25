@@ -26,7 +26,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['.forthoseabouttorock.io']
+ALLOWED_HOSTS = ['.forthoseabouttorock.io', 'ftatr-eu.herokuapp.com']
 
 
 # Application definition
