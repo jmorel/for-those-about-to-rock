@@ -224,8 +224,8 @@
   transition-property: opacity;
   text-align: center;
   font-size: 0;
-  clip-path: url(#carousel-clip-path);
-  -webkit-clip-path: url(#carousel-clip-path);
+  border-radius: 270px;
+  overflow: hidden;
 }
 .carousel-inner .item:before {
   content: '';
