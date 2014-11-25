@@ -1,4 +1,4 @@
-{% from 'ftatr/single_macros.html.jinja2' import include_links %}
+{% from 'rocking_chair/single_macros.html.jinja2' import include_links %}
 
 <div class="clear"></div>
 <article class="rocking-chair" id="{{ rocking_chair.slug }}">
@@ -38,7 +38,7 @@
     <ul class="attributes attributes-left">
         <li>
             <div class="rocking-chair-name">
-                <a href="{{ url('rocking-chair-show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
+                <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
                     {{ rocking_chair.name }}
                 </a>
             </div>
@@ -46,10 +46,10 @@
         <li>
             <div class="attribute">
                 <div class="attribute-value">
-                    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri(url('rocking-chair-show', slug=rocking_chair.slug)) | urlencode }}&via=jmorel_fr&text={{ rocking_chair.twitter_text }}">
+                    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&via=jmorel_fr&text={{ rocking_chair.twitter_text }}">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="https://www.facebook.com/dialog/share?href={{ request.build_absolute_uri(url('rocking-chair-show', slug=rocking_chair.slug)) | urlencode }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ request.build_absolute_uri(request.get_full_path()) | urlencode }}#{{ rocking_chair.slug }}&display=popup">
+                    <a href="https://www.facebook.com/dialog/share?href={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ request.build_absolute_uri(request.get_full_path()) | urlencode }}#{{ rocking_chair.slug }}&display=popup">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </div>

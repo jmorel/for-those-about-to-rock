@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'django_jinja.contrib._easy_thumbnails',
     'ftatr',
+    'rocking_chair',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,6 +70,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja2'
 
 WSGI_APPLICATION = 'ftatr.wsgi.application'
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Thumbnails
 THUMBNAIL_ALIASES = {

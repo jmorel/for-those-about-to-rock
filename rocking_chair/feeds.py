@@ -1,7 +1,7 @@
 import datetime
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
-from ftatr.models import RockingChair
+from rocking_chair.models import RockingChair
 
 
 class LatestRockingChairsFeed(Feed):
@@ -23,5 +23,5 @@ class LatestRockingChairsFeed(Feed):
         return item.twitter_text
 
     def item_link(self, item):
-        return reverse('rocking-chair-show', args={'slug': item.slug})
+        return reverse('rocking_chair:show', args={'slug': item.slug})
 

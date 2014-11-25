@@ -1,6 +1,5 @@
 import datetime
 from django.db import models
-from ftatr.settings import MEDIA_ROOT
 import hashlib
 import os
 

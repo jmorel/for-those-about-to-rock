@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ftatr.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, YearLink, \
+from rocking_chair.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, YearLink, \
     Link, Currency, PriceLink
 
 

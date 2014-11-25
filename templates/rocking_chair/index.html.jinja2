@@ -1,9 +1,9 @@
-{% extends 'ftatr/layout.html.jinja2' %}
+{% extends 'layout.html.jinja2' %}
 
 {% block content %}
     {% if rocking_chairs.has_previous() %}
         <div class="paginate previous">
-            <a href="{{ url('rocking-chair-index') }}?page={{ rocking_chairs.previous_page_number() }}">
+            <a href="{{ url('rocking_chair:index') }}?page={{ rocking_chairs.previous_page_number() }}">
                 previous<br>
             </a>
 
@@ -14,15 +14,15 @@
     {% endif %}
 
     {% for rocking_chair in rocking_chairs %}
-        {% include 'ftatr/single.html.jinja2' %}
+        {% include 'rocking_chair/single.html.jinja2' %}
     {% endfor %}
 
-    {% include 'ftatr/clipping.html.jinja2' %}
+    {% include 'rocking_chair/clipping.html.jinja2' %}
 
     {% if rocking_chairs.has_next() %}
         <div class="clear"></div>
         <div class="paginate next">
-            <a href="{{ url('rocking-chair-index') }}?page={{ rocking_chairs.next_page_number() }}">
+            <a href="{{ url('rocking_chair:index') }}?page={{ rocking_chairs.next_page_number() }}">
                 next<br>
             </a>
 
