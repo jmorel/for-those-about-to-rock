@@ -1,6 +1,10 @@
+from collections import OrderedDict
+import datetime
+from django.conf.urls import patterns, url
 from django.contrib import admin
-from rocking_chair.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, YearLink, \
-    Link, Currency, PriceLink
+from django.shortcuts import render
+from rocking_chair.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, \
+    YearLink, Link, Currency, PriceLink
 
 
 class DesignerLinkInline(admin.TabularInline):
@@ -49,6 +53,42 @@ class RockingChairAdmin(admin.ModelAdmin):
         YearLinkInline,
     ]
 
+    def get_urls(self):
+        urls = super().get_urls()
+        custom_urls = patterns(
+            '',
+            url(r'^timeline/$', self.admin_site.admin_view(self.timeline_view), name='rocking_chair_timeline')
+        )
+        return custom_urls + urls
+
+    def timeline_view(self, request):
+        unscheduled = RockingChair.objects \
+            .filter(published_at=None)
+        scheduled = RockingChair.objects \
+            .exclude(published_at=None) \
+            .order_by('-published_at')
+        # Build timeline
+        timeline = OrderedDict()
+        today = datetime.date.today()
+        if scheduled:
+            date = max(today, scheduled.first().published_at.date())
+            min_date = min(today, scheduled.last().published_at.date())
+            while date >= min_date:
+                timeline[date] = []
+                date = date - datetime.timedelta(days=1)
+
+            for rocking_chair in scheduled:
+                day = rocking_chair.published_at.date()
+                timeline[day].append(rocking_chair)
+
+        return render(request, 'admin/rocking_chair/timeline.html', {
+            'unscheduled': unscheduled,
+            'timeline': timeline,
+            'opts': self.opts,
+            'title': 'Rocking-chair publishing timeline',
+            'today': today
+        })
+
 
 class DesignerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('first_name', 'last_name', )}
@@ -56,6 +96,7 @@ class DesignerAdmin(admin.ModelAdmin):
 
 class ManufacturerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
+
 
 admin.site.register(RockingChair, RockingChairAdmin)
 admin.site.register(Designer, DesignerAdmin)

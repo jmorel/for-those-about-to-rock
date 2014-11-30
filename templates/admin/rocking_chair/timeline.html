@@ -1,0 +1,76 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+        &rsaquo; <a
+            href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+        &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+        &rsaquo; {% trans 'Timeline' %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="module" style="float: left; margin-right: 15px">
+        <h2>
+            Unscheduled rocking-chairs
+        </h2>
+        <ul>
+            {% for rocking_chair in unpublished %}
+                <li>
+                    <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.name }}</a>
+                </li>
+                {% empty %}
+                <li>None</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="module" style="float: left;">
+        <h2>
+            Timeline
+        </h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Rocking chair</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for day, rocking_chairs in timeline.items %}
+                {% if day == today %}
+                    <tr>
+                        <td colspan="2">
+                            <h3>Today</h3>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% for rocking_chair in rocking_chairs %}
+                        {% if forloop.first %}
+                            <td rowspan="{{ rocking_chairs | length }}" style="vertical-align: middle;">
+                                {{ day | date:'Y-m-d' }}
+                            </td>
+                        {% endif %}
+                        <td>
+                            {{ rocking_chair.published_at | date:'H:i' }}
+                        </td>
+                        <td>
+                            <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.twitter_text }}</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">
+                            {{ day | date:'Y-m-d' }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
