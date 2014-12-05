@@ -1,20 +1,20 @@
-- model: ftatr.currency
+- model: rocking_chair.currency
   fields:
     name: Euro
     code: EUR
-- model: ftatr.currency
+- model: rocking_chair.currency
   fields:
     name: US dollar
     code: USD
-- model: ftatr.currency
+- model: rocking_chair.currency
   fields:
     name: British Pound
     code: GBP
-- model: ftatr.currency
+- model: rocking_chair.currency
   fields:
     name: Canadian dollar
     code: CAD
-- model: ftatr.currency
+- model: rocking_chair.currency
   fields:
     name: American dollar
     code: AUD

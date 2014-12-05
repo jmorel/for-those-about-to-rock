@@ -1,498 +1,498 @@
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Afghanistan", code: AF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Åland Islands", code: AX }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Albania", code: AL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Algeria", code: DZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "American Samoa", code: AS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Andorra", code: AD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Angola", code: AO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Anguilla", code: AI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Antarctica", code: AQ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Antigua and Barbuda", code: AG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Argentina", code: AR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Armenia", code: AM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Aruba", code: AW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Australia", code: AU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Austria", code: AT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Azerbaijan", code: AZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bahamas", code: BS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bahrain", code: BH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bangladesh", code: BD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Barbados", code: BB }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Belarus", code: BY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Belgium", code: BE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Belize", code: BZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Benin", code: BJ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bermuda", code: BM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bhutan", code: BT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bolivia, Plurinational State of", code: BO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bonaire, Sint Eustatius and Saba", code: BQ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bosnia and Herzegovina", code: BA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Botswana", code: BW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bouvet Island", code: BV }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Brazil", code: BR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "British Indian Ocean Territory", code: IO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Brunei Darussalam", code: BN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Bulgaria", code: BG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Burkina Faso", code: BF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Burundi", code: BI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cambodia", code: KH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cameroon", code: CM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Canada", code: CA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cabo Verde", code: CV }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cayman Islands", code: KY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Central African Republic", code: CF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Chad", code: TD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Chile", code: CL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "China", code: CN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Christmas Island", code: CX }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cocos (Keeling) Islands", code: CC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Colombia", code: CO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Comoros", code: KM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Congo", code: CG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Congo, the Democratic Republic of the", code: CD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cook Islands", code: CK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Costa Rica", code: CR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Côte d'Ivoire", code: CI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Croatia", code: HR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cuba", code: CU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Curaçao", code: CW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Cyprus", code: CY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Czech Republic", code: CZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Denmark", code: DK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Djibouti", code: DJ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Dominica", code: DM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Dominican Republic", code: DO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Ecuador", code: EC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Egypt", code: EG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "El Salvador", code: SV }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Equatorial Guinea", code: GQ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Eritrea", code: ER }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Estonia", code: EE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Ethiopia", code: ET }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Falkland Islands (Malvinas)", code: FK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Faroe Islands", code: FO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Fiji", code: FJ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Finland", code: FI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "France", code: FR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "French Guiana", code: GF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "French Polynesia", code: PF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "French Southern Territories", code: TF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Gabon", code: GA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Gambia", code: GM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Georgia", code: GE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Germany", code: DE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Ghana", code: GH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Gibraltar", code: GI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Greece", code: GR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Greenland", code: GL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Grenada", code: GD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guadeloupe", code: GP }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guam", code: GU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guatemala", code: GT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guernsey", code: GG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guinea", code: GN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guinea-Bissau", code: GW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Guyana", code: GY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Haiti", code: HT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Heard Island and McDonald Islands", code: HM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Holy See (Vatican City State)", code: VA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Honduras", code: HN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Hong Kong", code: HK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Hungary", code: HU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Iceland", code: IS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "India", code: IN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Indonesia", code: ID }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Iran, Islamic Republic of", code: IR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Iraq", code: IQ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Ireland", code: IE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Isle of Man", code: IM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Israel", code: IL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Italy", code: IT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Jamaica", code: JM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Japan", code: JP }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Jersey", code: JE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Jordan", code: JO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Kazakhstan", code: KZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Kenya", code: KE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Kiribati", code: KI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Korea, Democratic People's Republic of", code: KP }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Korea, Republic of", code: KR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Kuwait", code: KW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Kyrgyzstan", code: KG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Lao People's Democratic Republic", code: LA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Latvia", code: LV }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Lebanon", code: LB }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Lesotho", code: LS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Liberia", code: LR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Libya", code: LY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Liechtenstein", code: LI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Lithuania", code: LT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Luxembourg", code: LU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Macao", code: MO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Macedonia, the former Yugoslav Republic of", code: MK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Madagascar", code: MG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Malawi", code: MW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Malaysia", code: MY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Maldives", code: MV }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mali", code: ML }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Malta", code: MT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Marshall Islands", code: MH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Martinique", code: MQ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mauritania", code: MR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mauritius", code: MU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mayotte", code: YT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mexico", code: MX }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Micronesia, Federated States of", code: FM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Moldova, Republic of", code: MD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Monaco", code: MC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mongolia", code: MN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Montenegro", code: ME }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Montserrat", code: MS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Morocco", code: MA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Mozambique", code: MZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Myanmar", code: MM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Namibia", code: NA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Nauru", code: NR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Nepal", code: NP }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Netherlands", code: NL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "New Caledonia", code: NC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "New Zealand", code: NZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Nicaragua", code: NI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Niger", code: NE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Nigeria", code: NG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Niue", code: NU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Norfolk Island", code: NF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Northern Mariana Islands", code: MP }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Norway", code: NO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Oman", code: OM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Pakistan", code: PK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Palau", code: PW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Palestine, State of", code: PS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Panama", code: PA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Papua New Guinea", code: PG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Paraguay", code: PY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Peru", code: PE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Philippines", code: PH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Pitcairn", code: PN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Poland", code: PL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Portugal", code: PT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Puerto Rico", code: PR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Qatar", code: QA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Réunion", code: RE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Romania", code: RO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Russian Federation", code: RU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Rwanda", code: RW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Barthélemy", code: BL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Helena, Ascension and Tristan da Cunha", code: SH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Kitts and Nevis", code: KN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Lucia", code: LC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Martin (French part)", code: MF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Pierre and Miquelon", code: PM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saint Vincent and the Grenadines", code: VC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Samoa", code: WS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "San Marino", code: SM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Sao Tome and Principe", code: ST }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Saudi Arabia", code: SA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Senegal", code: SN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Serbia", code: RS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Seychelles", code: SC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Sierra Leone", code: SL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Singapore", code: SG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Sint Maarten (Dutch part)", code: SX }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Slovakia", code: SK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Slovenia", code: SI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Solomon Islands", code: SB }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Somalia", code: SO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "South Africa", code: ZA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "South Georgia and the South Sandwich Islands", code: GS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "South Sudan", code: SS }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Spain", code: ES }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Sri Lanka", code: LK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Sudan", code: SD }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Suriname", code: SR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Svalbard and Jan Mayen", code: SJ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Swaziland", code: SZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Sweden", code: SE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Switzerland", code: CH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Syrian Arab Republic", code: SY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Taiwan, Province of China", code: TW }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Tajikistan", code: TJ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Tanzania, United Republic of", code: TZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Thailand", code: TH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Timor-Leste", code: TL }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Togo", code: TG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Tokelau", code: TK }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Tonga", code: TO }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Trinidad and Tobago", code: TT }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Tunisia", code: TN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Turkey", code: TR }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Turkmenistan", code: TM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Turks and Caicos Islands", code: TC }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Tuvalu", code: TV }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Uganda", code: UG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Ukraine", code: UA }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "United Arab Emirates", code: AE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "United Kingdom", code: GB }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "United States", code: US }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "United States Minor Outlying Islands", code: UM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Uruguay", code: UY }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Uzbekistan", code: UZ }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Vanuatu", code: VU }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Venezuela, Bolivarian Republic of", code: VE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Viet Nam", code: VN }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Virgin Islands, British", code: VG }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Virgin Islands, U.S.", code: VI }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Wallis and Futuna", code: WF }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Western Sahara", code: EH }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Yemen", code: YE }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Zambia", code: ZM }
-- model: ftatr.country
+- model: rocking_chair.country
   fields: {name: "Zimbabwe", code: ZW }
