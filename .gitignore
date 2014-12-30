@@ -8,3 +8,6 @@ assets/css/font-awesome-4.2.0
 media/
 static/
 ftatr/settings_local.py
+Thumbs.db
+/resources/
+*.pyc
