@@ -26,7 +26,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['.forthoseabouttorock.io', 'ftatr-eu.herokuapp.com']
+ALLOWED_HOSTS = ['.forthoseabouttorock.io', 'forthoseabouttorock.hexagonal.io']
 
 
 # Application definition
@@ -86,9 +86,16 @@ THUMBNAIL_ALIASES = {
 
 
 # Database
-import dj_database_url
-
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:root@localhost:5432/ftatr')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ftatr',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': 5432
+    }
+}
 
 
 # Internationalization

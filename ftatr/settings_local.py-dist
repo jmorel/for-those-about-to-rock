@@ -6,12 +6,12 @@ SECRET_KEY = 'secret'
 FACEBOOK_APP_ID = '351060788405753'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ftatr',
-        'USER': 'ftatr',
-        'PASSWORD': 'ftatr',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
-        'PORT': 3306
+        'PORT': 5432
     }
 }
 
