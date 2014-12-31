@@ -1,4 +1,4 @@
-{% extends 'rocking_chair/layout.html.jinja2' %}
+{% extends 'layout.html.jinja2' %}
 
 {% block content %}
     {% include 'rocking_chair/single.html.jinja2' %}
@@ -6,7 +6,7 @@
     <div class="clear"></div>
 
     <div class="paginate">
-        <a href="{{ url('rocking-chair-index') }}">
+        <a href="{{ url('rocking_chair:index') }}">
             view all
         </a>
     </div>
