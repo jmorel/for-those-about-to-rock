@@ -17,11 +17,14 @@
             Unscheduled rocking-chairs
         </h2>
         <ul>
-            {% for rocking_chair in unpublished %}
+            {% for rocking_chair in unscheduled %}
                 <li>
-                    <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.name }}</a>
+                    <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">
+                        {{ rocking_chair.name }}
+                    </a>
+                    (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
                 </li>
-                {% empty %}
+            {% empty %}
                 <li>None</li>
             {% endfor %}
         </ul>
@@ -59,6 +62,7 @@
                         </td>
                         <td>
                             <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.twitter_text }}</a>
+                            (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
                         </td>
                     </tr>
                 {% empty %}
