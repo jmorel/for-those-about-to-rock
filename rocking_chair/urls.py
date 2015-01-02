@@ -5,5 +5,5 @@ urlpatterns = patterns(
     '',
     url(r'^$', views.index, name='index'),
     url(r'^feed$', feeds.LatestRockingChairsFeed(), name='feed'),
-    url(r'^(?P<slug>\w+)$', views.show, name='show'),
+    url(r'^(?P<slug>[-\w]+)$', views.show, name='show'),
 )
