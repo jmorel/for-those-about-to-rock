@@ -11,7 +11,7 @@ def index(request):
         .exclude(published_at=None) \
         .order_by('-published_at')
     # set up paginator
-    paginator = Paginator(rocking_chairs, 2)
+    paginator = Paginator(rocking_chairs, 10)
     page = request.GET.get('page')
     try:
         paged_rocking_chairs = paginator.page(page)
