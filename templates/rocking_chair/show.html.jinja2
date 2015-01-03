@@ -1,5 +1,10 @@
 {% extends 'layout.html.jinja2' %}
 
+{% block title %}{{ rocking_chair.twitter_text }}{% endblock %}
+{% block og_title %}{{ rocking_chair.twitter_text }}{% endblock %}
+{% block og_url %}{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}{% endblock %}
+{% block og_image %}{{ rocking_chair.pictures.first().picture | thumbnail_url('540x540') }}{% endblock %}
+
 {% block content %}
     {% include 'rocking_chair/single.html.jinja2' %}
 

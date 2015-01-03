@@ -1,5 +1,7 @@
 {% extends 'layout.html.jinja2' %}
 
+{% block og_image %}{{ rocking_chairs[0].pictures.first().picture | thumbnail_url('540x540') }}{% endblock %}
+
 {% block content %}
     {% if rocking_chairs.has_previous() %}
         <div class="paginate previous">

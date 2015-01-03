@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For Those About To Rock</title>
+    <title>{% block title %}For Those About To Rock{% endblock %}</title>
 
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ static('ftatr/Font-Awesome/css/font-awesome.min.css') }}"/>
@@ -33,6 +33,13 @@
     <meta name="msapplication-config" content="{{ static('ftatr/images/browserconfig.xml') }}">
     <meta name="application-name" content="For Those About To Rock">
 
+    {# Fb Open Graph tags #}
+    <meta property="og:title" content="{% block og_title %}Latest rocking chairs{% endblock %}">
+    <meta property="og:site_name" content="For Those About To Rock : A Rocking-Chair Anthology">
+    <meta property="og:url" content="{% block og_url %}{{ url('rocking_chair:index') }}{% endblock %}">
+    <meta property="og:description" content="For Those About To Rock is an anthology of modern rocking chair. Every day a new rocking chair is posted, with both gorgeous images and full details about its designer(s), manufacturer(s) etc.">
+    <meta property="og:image" content="{% block og_image %}{% endblock %}">
+    <meta property="fb:app_id" content="{{ FACEBOOK_APP_ID }}">
 </head>
 
 <body>
@@ -66,6 +73,7 @@
 {% block javascripts %}
     {# jQuery #}
     <script type="text/javascript" src="{{ static('ftatr/js/jquery-2.1.1.min.js') }}"></script>
+
     {# Bootstrap #}
     <script type="text/javascript" src="{{ static('ftatr/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
@@ -82,6 +90,25 @@
 
     {# Twitter #}
     <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+
+    {# Facebook #}
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '{{ FACEBOOK_APP_ID }}',
+                xfbml      : true,
+                version    : 'v2.2'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 {% endblock %}
 </body>
 

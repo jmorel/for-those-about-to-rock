@@ -49,7 +49,10 @@
                     <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&via=RChairAnthology&text={{ rocking_chair.twitter_text }}">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="https://www.facebook.com/dialog/share?href={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ request.build_absolute_uri(request.get_full_path()) | urlencode }}#{{ rocking_chair.slug }}&display=popup">
+{#                    <a href="https://www.facebook.com/dialog/share?href={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ request.build_absolute_uri(request.get_full_path()) | urlencode }}#{{ rocking_chair.slug }}&display=popup">#}
+{#                        <i class="fa fa-facebook"></i>#}
+{#                    </a>#}
+                    <a href="https://www.facebook.com/dialog/share_open_graph?app_id={{ FACEBOOK_APP_ID }}&display=popup&action_type=og.likes&action_properties=%7B%22object%22%3A%22https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F%22%7D&redirect_uri={{ request.build_absolute_uri(request.get_full_path()) | urlencode }}#{{ rocking_chair.slug }}">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </div>
