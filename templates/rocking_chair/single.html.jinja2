@@ -46,11 +46,11 @@
         <li>
             <div class="attribute">
                 <div class="attribute-value">
-                    {% set share_url = request.build_absolute_uri(request.get_full_path())|urlencode %}
+                    {% set share_url = request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug))|urlencode %}
                     <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ rocking_chair.twitter_text }}">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="https://www.facebook.com/dialog/share?href={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ rocking_chair.slug }}&display=popup">
+                    <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ rocking_chair.slug }}&display=popup">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </div>
