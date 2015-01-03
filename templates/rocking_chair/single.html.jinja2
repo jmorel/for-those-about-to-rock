@@ -46,7 +46,7 @@
         <li>
             <div class="attribute">
                 <div class="attribute-value">
-                    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&via=jmorel_fr&text={{ rocking_chair.twitter_text }}">
+                    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&via=RChairAnthology&text={{ rocking_chair.twitter_text }}">
                         <i class="fa fa-twitter"></i>
                     </a>
                     <a href="https://www.facebook.com/dialog/share?href={{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) | urlencode }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ request.build_absolute_uri(request.get_full_path()) | urlencode }}#{{ rocking_chair.slug }}&display=popup">
