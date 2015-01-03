@@ -28,8 +28,11 @@ class RockingChair(models.Model):
 
     @property
     def twitter_text(self):
-        designers = list(self.designers.all())
+        return "{} by {}".format(self.name, self.designer_names)
 
+    @property
+    def designer_names(self):
+        designers = list(self.designers.all())
         if not designers:
             return self.name
 
@@ -38,8 +41,7 @@ class RockingChair(models.Model):
             authors = "{} and {}".format(authors, designers[-1].full_name)
         else:
             authors = designers[-1].full_name
-
-        return "{} by {}".format(self.name, authors)
+        return authors
 
 
 def get_upload_to(self, filename):

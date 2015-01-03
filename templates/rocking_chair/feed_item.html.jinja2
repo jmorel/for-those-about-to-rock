@@ -1,0 +1,17 @@
+<p>
+    {{ rocking_chair.name }}
+</p>
+
+<ul>
+    <li> Designer(s): {{ rocking_chair.designer_names }}</li>
+    {% for manufacturer in rocking_chair.manufacturers.all() %}
+        <li>Manufacturer: {{ manufacturer.name }}</li>
+    {% endfor %}
+    {% if rocking_chair.year %}
+        <li>Year: {{ rocking_chair.year }}</li>
+    {% endif %}
+</ul>
+
+{% for picture in rocking_chair.pictures.all() %}
+    <img src="{{ picture.picture | thumbnail_url('540x540') }}" alt="{{ rocking_chair.name }}"/>
+{% endfor %}
