@@ -2,8 +2,8 @@
 
 {% block title %}{{ rocking_chair.twitter_text }}{% endblock %}
 {% block og_title %}{{ rocking_chair.twitter_text }}{% endblock %}
-{% block og_url %}{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}{% endblock %}
-{% block og_image %}{{ rocking_chair.pictures.first().picture | thumbnail_url('540x540') }}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug)) }}#{{ rocking_chair.slug }}{% endblock %}
+{% block og_image %}{{ request.build_absolute_uri(rocking_chair.pictures.first().picture | thumbnail_url('540x540')) }}{% endblock %}
 
 {% block content %}
     {% include 'rocking_chair/single.html.jinja2' %}

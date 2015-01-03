@@ -36,7 +36,7 @@
     {# Fb Open Graph tags #}
     <meta property="og:title" content="{% block og_title %}Latest rocking chairs{% endblock %}">
     <meta property="og:site_name" content="For Those About To Rock : A Rocking-Chair Anthology">
-    <meta property="og:url" content="{% block og_url %}{{ url('rocking_chair:index') }}{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri(url('rocking_chair:index')) }}{% endblock %}">
     <meta property="og:description" content="For Those About To Rock is an anthology of modern rocking chair. Every day a new rocking chair is posted, with both gorgeous images and full details about its designer(s), manufacturer(s) etc.">
     <meta property="og:image" content="{% block og_image %}{% endblock %}">
     <meta property="fb:app_id" content="{{ FACEBOOK_APP_ID }}">
