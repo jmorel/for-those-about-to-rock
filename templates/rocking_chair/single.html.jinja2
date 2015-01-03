@@ -104,7 +104,7 @@
             <li>
                 <div class="attribute">
                     <div class="attribute-value">
-                        {{ rocking_chair.price.amount | round(0) }} {{ rocking_chair.price.currency.code }}
+                        {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
                     </div>
                     <div class="attribute-name">
                         Price
