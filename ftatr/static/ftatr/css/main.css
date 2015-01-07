@@ -296,7 +296,7 @@
   box-sizing: border-box;
   position: relative;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   html {
     font-size: 28px;
   }
@@ -335,7 +335,7 @@ header {
   background-position: center bottom;
   background-repeat: no-repeat;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   header {
     background-size: 180% 180%;
     margin-bottom: 60px;
@@ -358,7 +358,7 @@ header h1 {
   padding-top: 0.5em;
   margin: 0 auto 0 auto;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   header h1 {
     font-size: 2rem;
   }
@@ -415,7 +415,7 @@ div.paginate.next .count {
 article.rocking-chair {
   clear: both;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   article.rocking-chair {
     margin: 30px 0;
     padding: 15px;
@@ -433,7 +433,7 @@ article.rocking-chair .pictures {
   background-size: cover;
   background-position: center center;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   article.rocking-chair .pictures {
     border: 5px #ffffff solid;
     border-radius: 140px;
@@ -450,7 +450,7 @@ article.rocking-chair .pictures {
     height: 600px;
   }
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   article.rocking-chair .attributes-container {
     margin-top: 15px;
     background-color: rgba(255, 255, 0, 0.5);
@@ -513,7 +513,7 @@ article.rocking-chair ul.attributes li {
   display: block;
   margin-bottom: 15px;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   article.rocking-chair ul.attributes li {
     text-align: center;
   }
@@ -542,7 +542,7 @@ article.rocking-chair ul.attributes .attribute-name {
 article.rocking-chair ul.attributes .attribute-value {
   line-height: 1em;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   article.rocking-chair ul.attributes .attribute-value {
     font-size: 1.3rem;
   }
@@ -573,7 +573,7 @@ footer {
   background-image: radial-gradient(ellipse closest-side, #ffffff 0%, #ffffff 99%, transparent 99%, transparent);
   background-position: center top;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   footer {
     background-size: 180% 180%;
     padding-top: 30px;
@@ -597,7 +597,7 @@ footer div.footer-content {
   margin-right: auto;
   text-align: center;
 }
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   footer div.footer-content {
     width: 100%;
     padding: 15px;

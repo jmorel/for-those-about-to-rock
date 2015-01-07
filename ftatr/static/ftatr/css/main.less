@@ -10,11 +10,11 @@
 // BODY / GENERAL
 
 html {
-    @media (max-width: @screen-xsmall-max) {
-        font-size: @body-font-size-xsmall;
+    @media (max-width: @screen-small-max) {
+        font-size: @body-font-size-small;
     }
-    @media (min-width: @screen-small-min) {
-        font-size: @body-font-size;
+    @media (min-width: @screen-large-min) {
+        font-size: @body-font-size-large;
     }
 }
 
@@ -60,13 +60,13 @@ header {
             transparent);
     background-position: center bottom;
     background-repeat: no-repeat;
-    @media (max-width: @screen-xsmall-max) {
+    @media (max-width: @screen-small-max) {
         background-size: 180% 180%;
         margin-bottom: @paginate-spacing;
-        padding: @header-padding-xsmall;
+        padding: @header-padding-small;
 
     }
-    @media (min-width: @screen-small-min) {
+    @media (min-width: @screen-large-min) {
         background-size: 120% 180%;
         margin-bottom: @paginate-spacing;
         height: 18em;
@@ -80,12 +80,12 @@ header {
         line-height: 1em;
         padding-top: 0.5em;
         margin: 0 auto 0 auto;
-        @media (max-width: @screen-xsmall-max) {
+        @media (max-width: @screen-small-max) {
             font-size: 2rem;
         }
-        @media (min-width: @screen-small-min) {
+        @media (min-width: @screen-large-min) {
             font-size: 4.6rem;
-            width: @main-width;
+            width: @content-max-width;
         }
     }
 
@@ -148,12 +148,12 @@ div.paginate {
 article.rocking-chair {
 
     clear: both;
-    @media (max-width: @screen-xsmall-max) {
-        margin: @article-spacing-xsmall 0;
-        padding: @article-padding-xsmall;
+    @media (max-width: @screen-small-max) {
+        margin: @article-spacing-small 0;
+        padding: @article-padding-small;
     }
-    @media (min-width: @screen-small-min) {
-        margin: @article-spacing 0;
+    @media (min-width: @screen-large-min) {
+        margin: @article-spacing-large 0;
     }
 
     .pictures {
@@ -163,24 +163,24 @@ article.rocking-chair {
         background-size: cover;
         background-position: center center;
 
-        @media (max-width: @screen-xsmall-max) {
-            border: @article-border-width-xsmall white solid;
-            border-radius: @article-radius-xsmall;
-            width: 2*@article-radius-xsmall;
-            height: 2*@article-radius-xsmall;
+        @media (max-width: @screen-small-max) {
+            border: @article-border-width-small white solid;
+            border-radius: @article-radius-small;
+            width: 2*@article-radius-small;
+            height: 2*@article-radius-small;
             z-index: 10;
         }
-        @media (min-width: @screen-small-min) {
-            border: @article-border-width white solid;
-            border-radius: @article-radius;
-            width: 2*@article-radius;
-            height: 2*@article-radius;
+        @media (min-width: @screen-large-min) {
+            border: @article-border-width-large white solid;
+            border-radius: @article-radius-large;
+            width: 2*@article-radius-large;
+            height: 2*@article-radius-large;
         }
     }
 
     .attributes-container {
-        @media (max-width: @screen-xsmall-max) {
-            margin-top: @article-padding-xsmall;
+        @media (max-width: @screen-small-max) {
+            margin-top: @article-padding-small;
             background-color: rgba(255, 255, 0, 0.5);
 //            background:
 //                linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) 15px) center top no-repeat,
@@ -191,26 +191,26 @@ article.rocking-chair {
             &:before {
                 content: '';
                 display: block;
-                height: @article-padding-xsmall;
+                height: @article-padding-small;
                 width: 100%;
                 position: absolute;
-                top: -@article-padding-xsmall;
+                top: -@article-padding-small;
                 left: 0;
-                background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-xsmall) center top no-repeat,
+                background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-small) center top no-repeat,
             }
             &:after {
                 content: '';
                 display: block;
-                height: @article-padding-xsmall;
+                height: @article-padding-small;
                 width: 100%;
                 position: absolute;
-                bottom: -@article-padding-xsmall;
+                bottom: -@article-padding-small;
                 left: 0;
-                background: linear-gradient(rgba(255, 255, 0, 0.5) 0, transparent @article-padding-xsmall) center bottom no-repeat;
+                background: linear-gradient(rgba(255, 255, 0, 0.5) 0, transparent @article-padding-small) center bottom no-repeat;
             }
         }
-        @media (min-width: @screen-small-min) {
-            margin-top: 2*@article-attribute-spacing;
+        @media (min-width: @screen-large-min) {
+            margin-top: 2*@article-attribute-spacing-large;
         }
     }
 
@@ -220,33 +220,33 @@ article.rocking-chair {
         list-style: none;
         padding: 0;
 
-        @media (min-width: @screen-small-min) {
+        @media (min-width: @screen-large-min) {
             max-width: 50%;
         }
 
         &.attributes-left {
-            @media (min-width: @screen-small-min) {
+            @media (min-width: @screen-large-min) {
                 float: right;
                 right: 50%;
                 text-align: right;
-                margin-right: @article-attribute-spacing;
+                margin-right: @article-attribute-spacing-large;
             }
         }
 
         &.attributes-right {
-            @media (min-width: @screen-small-min) {
+            @media (min-width: @screen-large-min) {
                 float: left;
                 left: 50%;
                 text-align: left;
-                margin-left: @article-attribute-spacing;
+                margin-left: @article-attribute-spacing-large;
             }
         }
 
         li {
             display: block;
-            margin-bottom: @article-attribute-spacing;
+            margin-bottom: @article-attribute-spacing-large;
 
-            @media (max-width: @screen-xsmall-max) {
+            @media (max-width: @screen-small-max) {
                 text-align: center;
             }
         }
@@ -278,10 +278,10 @@ article.rocking-chair {
         }
 
         .attribute-value {
-            @media (max-width: @screen-xsmall-max) {
+            @media (max-width: @screen-small-max) {
                 font-size: 1.3rem;
             }
-            @media (min-width: @screen-small-min) {
+            @media (min-width: @screen-large-min) {
                 font-size: 1.5rem;
             }
             line-height: 1em;
@@ -321,12 +321,12 @@ footer {
             transparent);
     background-position: center top;
 
-    @media (max-width: @screen-xsmall-max) {
+    @media (max-width: @screen-small-max) {
         background-size: 180% 180%;
-        padding-top: 2*@footer-padding-xsmall;
+        padding-top: 2*@footer-padding-small;
     }
 
-    @media (min-width: @screen-small-min) {
+    @media (min-width: @screen-large-min) {
         background-size: 120% 180%;
     }
 
@@ -345,12 +345,12 @@ footer {
         margin-right: auto;
         text-align: center;
 
-        @media (max-width: @screen-xsmall-max) {
+        @media (max-width: @screen-small-max) {
             width: 100%;
-            padding: @footer-padding-xsmall;
+            padding: @footer-padding-small;
         }
-        @media (min-width: @screen-small-min) {
-            width: @main-width;
+        @media (min-width: @screen-large-min) {
+            width: @content-max-width;
             padding-top: @footer-spacing;
             padding-bottom: @footer-spacing/2;
         }

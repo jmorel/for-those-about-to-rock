@@ -1,42 +1,57 @@
 @import '../bootstrap/less/variables';
 
-// colors
+// Colors
 @grey: #333333;
 @white: #ffffff;
 @yellow: yellow;
+@yellow-transparent: rgba(255, 255, 0, 0.5);
 @yellow-dark: darken(@yellow, 25%);
 @yellow-darker: darken(@yellow, 30%);
 @yellow-light: lighten(@yellow, 15%);
 @yellow-lighter: lighten(@yellow, 30%);
 
-// max page width
-@main-width: 900px;
-@screen-xsmall-max: 899px;
-@screen-small-min: 900px;
+// Responsive breakpoints
+@screen-small-max: 599px;
+@screen-medium-min: 600px;
+@screen-medium-max: 899px;
+@screen-large-min: 900px;
 
-@body-font-size: 32px;
-@body-font-size-xsmall: 28px;
+// Maximum page width
+@content-max-width: 900px;
 
+// Font sizes
+@body-font-size-small: 28px;
+@body-font-size-large: 32px;
+
+// Width for the body's background's vertical stripe
 @body-background-vertical-width: 5px;
 
+// Header dimensions
+@header-padding-small: 15px;
 
+// Paginate (next/previous buttons) dimensions
 @paginate-spacing: 60px;
 @paginate-radius: 60px;
 
-@article-spacing: 120px;
-@article-radius: 300px;
-@article-border-width: 30px;
-@article-inner-radius: @article-radius - @article-border-width;
-@article-attribute-spacing: 15px;
+// Rocking chair item dimensions
+// small
+@article-spacing-small: 30px;
+@article-radius-small: 140px;
+@article-border-width-small: 5px;
+@article-padding-small: 15px;
+// large
+@article-spacing-large: 120px;
+@article-radius-large: 300px;
+@article-border-width-large: 30px;
+@article-inner-radius-large: @article-radius-large - @article-border-width-large;
 
-@article-spacing-xsmall: 30px;
-@article-radius-xsmall: 140px;
-@article-border-width-xsmall: 5px;
-@article-attribute-spacing: 15px;
-@article-padding-xsmall: 15px;
+// Rocking chair's images
+@carousel-control-spacing-large: 120px;
 
+// Rocking chair's attributes
+@article-attribute-spacing-large: 15px;
+
+// Footer dimensions
 @footer-spacing: 60px;
-@footer-padding-xsmall: 15px;
-@header-padding-xsmall: 15px;
+@footer-padding-small: 15px;
 
-@carousel-control-spacing: 120px;
