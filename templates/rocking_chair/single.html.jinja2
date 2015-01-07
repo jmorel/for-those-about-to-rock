@@ -3,17 +3,17 @@
 <div class="clear"></div>
 <article class="rocking-chair" id="{{ rocking_chair.slug }}">
     <div class="pictures">
-    {% set multiple_pictures = (rocking_chair.pictures.all()|length > 1) %}
-    {% set carousel_id = 'carousel-' ~ rocking_chair.slug %}
+        {% set multiple_pictures = (rocking_chair.pictures.all()|length > 1) %}
+        {% set carousel_id = 'carousel-' ~ rocking_chair.slug %}
         <div id="{{ carousel_id }}" class="carousel slide">
-        {% if multiple_pictures %}
-            <ol class="carousel-indicators">
-                {% for i in range(rocking_chair.pictures.all() | length) %}
-                    <li data-target="#{{ carousel_id }}"
-                        data-slide-to="{{ i }}"
-                        class="{% if loop.first %}active{% endif %}"></li>
-                {% endfor %}
-            </ol>
+            {% if multiple_pictures %}
+                <ol class="carousel-indicators">
+                    {% for i in range(rocking_chair.pictures.all() | length) %}
+                        <li data-target="#{{ carousel_id }}"
+                            data-slide-to="{{ i }}"
+                            class="{% if loop.first %}active{% endif %}"></li>
+                    {% endfor %}
+                </ol>
             {% endif %}
 
             <div class="carousel-inner">
@@ -25,94 +25,96 @@
             </div>
 
             {% if multiple_pictures %}
-            <a class="left carousel-control" href="#{{ carousel_id }}" role="button" data-slide="prev">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            <a class="right carousel-control" href="#{{ carousel_id }}" role="button" data-slide="next">
-                <i class="fa fa-chevron-right"></i>
-            </a>
+                <a class="left carousel-control" href="#{{ carousel_id }}" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <a class="right carousel-control" href="#{{ carousel_id }}" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
             {% endif %}
         </div>
     </div>
 
-    <ul class="attributes attributes-left">
-        <li>
-            <div class="rocking-chair-name">
-                <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
-                    {{ rocking_chair.name }}
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="attribute">
-                <div class="attribute-value">
-                    {% set share_url = request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug))|urlencode %}
-                    <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ rocking_chair.twitter_text }}">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ rocking_chair.slug }}&display=popup">
-                        <i class="fa fa-facebook"></i>
+    <div class="attributes-container">
+        <ul class="attributes attributes-left">
+            <li>
+                <div class="rocking-chair-name">
+                    <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
+                        {{ rocking_chair.name }}
                     </a>
                 </div>
-                <div class="attribute-name">
-                    Share on
-                </div>
+            </li>
+            <li>
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {% set share_url = request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug))|urlencode %}
+                        <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ rocking_chair.twitter_text }}">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ rocking_chair.slug }}&display=popup">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="attribute-name">
+                        Share on
+                    </div>
 
-            </div>
-        </li>
-        {% if rocking_chair.year %}
-            <li>
-                {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
-                <div class="attribute">
-                    <div class="attribute-value">
-                        {{ rocking_chair.year }}
-                    </div>
-                    <div class="attribute-name">
-                        Year
-                    </div>
                 </div>
             </li>
-        {% endif %}
-    </ul>
-    <ul class="attributes attributes-right">
-        {% for designer in rocking_chair.designers.all() %}
-            <li>
-                <div class="attribute">
-                    <div class="attribute-value">
-                        {{ designer.first_name }} {{ designer.last_name }}
+            {% if rocking_chair.year %}
+                <li>
+                    {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {{ rocking_chair.year }}
+                        </div>
+                        <div class="attribute-name">
+                            Year
+                        </div>
                     </div>
-                    <div class="attribute-name">
-                        Designer
+                </li>
+            {% endif %}
+        </ul>
+        <ul class="attributes attributes-right">
+            {% for designer in rocking_chair.designers.all() %}
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {{ designer.first_name }} {{ designer.last_name }}
+                        </div>
+                        <div class="attribute-name">
+                            Designer
+                        </div>
                     </div>
-                </div>
-                {{ include_links(rocking_chair.designer_links.filter(designer=designer)) }}
-            </li>
-        {% endfor %}
-        {% for manufacturer in rocking_chair.manufacturers.all() %}
-            <li>
-                <div class="attribute">
-                    <div class="attribute-value">
-                        {{ manufacturer.name }}
+                    {{ include_links(rocking_chair.designer_links.filter(designer=designer)) }}
+                </li>
+            {% endfor %}
+            {% for manufacturer in rocking_chair.manufacturers.all() %}
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {{ manufacturer.name }}
+                        </div>
+                        <div class="attribute-name">
+                            Manufacturer
+                        </div>
                     </div>
-                    <div class="attribute-name">
-                        Manufacturer
+                    {{ include_links(rocking_chair.manufacturer_links.filter(manufacturer=manufacturer)) }}
+                </li>
+            {% endfor %}
+            {% if rocking_chair.price %}
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
+                        </div>
+                        <div class="attribute-name">
+                            Price
+                        </div>
                     </div>
-                </div>
-                {{ include_links(rocking_chair.manufacturer_links.filter(manufacturer=manufacturer)) }}
-            </li>
-        {% endfor %}
-        {% if rocking_chair.price %}
-            <li>
-                <div class="attribute">
-                    <div class="attribute-value">
-                        {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
-                    </div>
-                    <div class="attribute-name">
-                        Price
-                    </div>
-                </div>
-                {{ include_links(rocking_chair.price_links.all()) }}
-            </li>
-        {% endif %}
-    </ul>
+                    {{ include_links(rocking_chair.price_links.all()) }}
+                </li>
+            {% endif %}
+        </ul>
+    </div>
 </article>

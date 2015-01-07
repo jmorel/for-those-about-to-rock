@@ -2,7 +2,6 @@
 @import 'variables';
 @import 'carousel';
 
-
 * {
     box-sizing: border-box;
     position: relative;
@@ -11,7 +10,12 @@
 // BODY / GENERAL
 
 html {
-    font-size: @body-font-size;
+    @media (max-width: @screen-xsmall-max) {
+        font-size: @body-font-size-xsmall;
+    }
+    @media (min-width: @screen-small-min) {
+        font-size: @body-font-size;
+    }
 }
 
 body {
@@ -48,7 +52,6 @@ a {
 
 header {
     color: #fff;
-    height: 18em;
     background-image: radial-gradient(
             ellipse closest-side,
             @white 0%,
@@ -56,20 +59,34 @@ header {
             transparent 99%,
             transparent);
     background-position: center bottom;
-    background-size: 120% 180%;
     background-repeat: no-repeat;
-    margin-bottom: @paginate-spacing;
+    @media (max-width: @screen-xsmall-max) {
+        background-size: 180% 180%;
+        margin-bottom: @paginate-spacing;
+        padding: @header-padding-xsmall;
+
+    }
+    @media (min-width: @screen-small-min) {
+        background-size: 120% 180%;
+        margin-bottom: @paginate-spacing;
+        height: 18em;
+    }
 
     h1 {
         text-align: center;
         font-style: italic;
         text-transform: uppercase;
         color: @grey;
-        font-size: 4.6rem;
         line-height: 1em;
         padding-top: 0.5em;
         margin: 0 auto 0 auto;
-        width: @main-width;
+        @media (max-width: @screen-xsmall-max) {
+            font-size: 2rem;
+        }
+        @media (min-width: @screen-small-min) {
+            font-size: 4.6rem;
+            width: @main-width;
+        }
     }
 
     p {
@@ -131,46 +148,107 @@ div.paginate {
 article.rocking-chair {
 
     clear: both;
-    margin: @article-spacing 0;
+    @media (max-width: @screen-xsmall-max) {
+        margin: @article-spacing-xsmall 0;
+        padding: @article-padding-xsmall;
+    }
+    @media (min-width: @screen-small-min) {
+        margin: @article-spacing 0;
+    }
 
     .pictures {
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        border: @article-border-width white solid;
-        border-radius: @article-radius;
-        width: 2*@article-radius;
-        height: 2*@article-radius;
-
         background-size: cover;
         background-position: center center;
+
+        @media (max-width: @screen-xsmall-max) {
+            border: @article-border-width-xsmall white solid;
+            border-radius: @article-radius-xsmall;
+            width: 2*@article-radius-xsmall;
+            height: 2*@article-radius-xsmall;
+            z-index: 10;
+        }
+        @media (min-width: @screen-small-min) {
+            border: @article-border-width white solid;
+            border-radius: @article-radius;
+            width: 2*@article-radius;
+            height: 2*@article-radius;
+        }
+    }
+
+    .attributes-container {
+        @media (max-width: @screen-xsmall-max) {
+            margin-top: @article-padding-xsmall;
+            background-color: rgba(255, 255, 0, 0.5);
+//            background:
+//                linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) 15px) center top no-repeat,
+//                linear-gradient(rgba(255, 255, 0, 0.5) 0, transparent 15px) center bottom no-repeat;
+//            background-size: 100% 15px, 100% 15px;
+            z-index: -2;
+
+            &:before {
+                content: '';
+                display: block;
+                height: @article-padding-xsmall;
+                width: 100%;
+                position: absolute;
+                top: -@article-padding-xsmall;
+                left: 0;
+                background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-xsmall) center top no-repeat,
+            }
+            &:after {
+                content: '';
+                display: block;
+                height: @article-padding-xsmall;
+                width: 100%;
+                position: absolute;
+                bottom: -@article-padding-xsmall;
+                left: 0;
+                background: linear-gradient(rgba(255, 255, 0, 0.5) 0, transparent @article-padding-xsmall) center bottom no-repeat;
+            }
+        }
+        @media (min-width: @screen-small-min) {
+            margin-top: 2*@article-attribute-spacing;
+        }
     }
 
     ul.attributes {
         display: block;
         margin: 0;
-        margin-top: 2*@article-attribute-spacing;
-        padding: 0;
         list-style: none;
-        max-width: 50%;
+        padding: 0;
+
+        @media (min-width: @screen-small-min) {
+            max-width: 50%;
+        }
 
         &.attributes-left {
-            float: right;
-            right: 50%;
-            text-align: right;
-            margin-right: @article-attribute-spacing;
+            @media (min-width: @screen-small-min) {
+                float: right;
+                right: 50%;
+                text-align: right;
+                margin-right: @article-attribute-spacing;
+            }
         }
 
         &.attributes-right {
-            float: left;
-            left: 50%;
-            text-align: left;
-            margin-left: @article-attribute-spacing;
+            @media (min-width: @screen-small-min) {
+                float: left;
+                left: 50%;
+                text-align: left;
+                margin-left: @article-attribute-spacing;
+            }
         }
 
         li {
             display: block;
             margin-bottom: @article-attribute-spacing;
+
+            @media (max-width: @screen-xsmall-max) {
+                text-align: center;
+            }
         }
 
         .rocking-chair-name {
@@ -200,7 +278,12 @@ article.rocking-chair {
         }
 
         .attribute-value {
-            font-size: 1.5rem;
+            @media (max-width: @screen-xsmall-max) {
+                font-size: 1.3rem;
+            }
+            @media (min-width: @screen-small-min) {
+                font-size: 1.5rem;
+            }
             line-height: 1em;
         }
 
@@ -225,8 +308,11 @@ article.rocking-chair {
 
 // FOOTER
 
-
 footer {
+    background-repeat: no-repeat;
+    margin-top: @footer-spacing;
+    font-size: 0.5rem;
+
     background-image: radial-gradient(
             ellipse closest-side,
             @white 0%,
@@ -234,10 +320,15 @@ footer {
             transparent 99%,
             transparent);
     background-position: center top;
-    background-size: 120% 180%;
-    background-repeat: no-repeat;
-    margin-top: @footer-spacing;
-    font-size: 0.5rem;
+
+    @media (max-width: @screen-xsmall-max) {
+        background-size: 180% 180%;
+        padding-top: 2*@footer-padding-xsmall;
+    }
+
+    @media (min-width: @screen-small-min) {
+        background-size: 120% 180%;
+    }
 
     a {
         color: inherit;
@@ -250,12 +341,19 @@ footer {
     }
 
     div.footer-content {
-        width: @main-width;
         margin-left: auto;
         margin-right: auto;
-        padding-top: @footer-spacing;
-        padding-bottom: @footer-spacing/2;
         text-align: center;
+
+        @media (max-width: @screen-xsmall-max) {
+            width: 100%;
+            padding: @footer-padding-xsmall;
+        }
+        @media (min-width: @screen-small-min) {
+            width: @main-width;
+            padding-top: @footer-spacing;
+            padding-bottom: @footer-spacing/2;
+        }
     }
 
     a.hexagonal-link {
