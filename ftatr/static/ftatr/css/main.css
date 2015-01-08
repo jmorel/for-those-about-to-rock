@@ -401,7 +401,7 @@ div.paginate .count {
   top: 0;
   line-height: 120px;
   height: 120px;
-  padding-left: 10px;
+  padding: 0 10px;
   font-size: 0.5rem;
 }
 div.paginate.previous .count {
