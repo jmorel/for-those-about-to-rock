@@ -67,15 +67,19 @@ header {
 
     @media (max-width: @screen-small-max) {
         background-size: 180% 180%;
-        padding: @header-padding-small;
+        padding: 2*@header-padding-small @header-padding-small;
     }
     @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
         background-size: 150% 180%;
-        padding-bottom: @header-padding-medium;
+        padding: 2*@header-padding-medium @header-padding-medium;
     }
-    @media (min-width: @screen-large-min) {
+    @media (min-width: @screen-large-min) and (max-width: @screen-large-max) {
+        background-size: 150% 180%;
+        padding: 2*@header-padding-large @header-padding-large;
+    }
+    @media (min-width: @screen-xlarge-min) {
         background-size: 120% 180%;
-        height: 18em;
+        padding: 2*@header-padding-large @header-padding-large;
     }
 
     h1 {
@@ -84,17 +88,20 @@ header {
         text-transform: uppercase;
         color: @grey;
         line-height: 1em;
-        padding-top: 0.5em;
         margin: 0 auto 0 auto;
         @media (max-width: @screen-small-max) {
             font-size: 2rem;
         }
         @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
-            font-size: 3rem;
+            font-size: 2.9rem;
         }
-        @media (min-width: @screen-large-min) {
+        @media (min-width: @screen-large-min) and (max-width: @screen-large-max) {
+            font-size: 4rem;
+            max-width: @content-max-width;
+        }
+        @media (min-width: @screen-xlarge-min) {
             font-size: 4.6rem;
-            width: @content-max-width;
+            max-width: @content-max-width;
         }
     }
 
@@ -102,6 +109,7 @@ header {
         font-size: 1rem;
         text-align: center;
         color: @grey;
+        margin: 1em 0 0 0;
     }
 }
 

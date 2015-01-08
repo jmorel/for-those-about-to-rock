@@ -344,19 +344,25 @@ header {
 @media (max-width: 599px) {
   header {
     background-size: 180% 180%;
-    padding: 15px;
+    padding: 30px 15px;
   }
 }
 @media (min-width: 600px) and (max-width: 899px) {
   header {
     background-size: 150% 180%;
-    padding-bottom: 30px;
+    padding: 60px 30px;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1199px) {
+  header {
+    background-size: 150% 180%;
+    padding: 90px 45px;
+  }
+}
+@media (min-width: 1200px) {
   header {
     background-size: 120% 180%;
-    height: 18em;
+    padding: 90px 45px;
   }
 }
 header h1 {
@@ -365,7 +371,6 @@ header h1 {
   text-transform: uppercase;
   color: #333333;
   line-height: 1em;
-  padding-top: 0.5em;
   margin: 0 auto 0 auto;
 }
 @media (max-width: 599px) {
@@ -375,19 +380,26 @@ header h1 {
 }
 @media (min-width: 600px) and (max-width: 899px) {
   header h1 {
-    font-size: 3rem;
+    font-size: 2.9rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1199px) {
+  header h1 {
+    font-size: 4rem;
+    max-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
   header h1 {
     font-size: 4.6rem;
-    width: 900px;
+    max-width: 900px;
   }
 }
 header p {
   font-size: 1rem;
   text-align: center;
   color: #333333;
+  margin: 1em 0 0 0;
 }
 div.paginate {
   margin: 60px 0;
