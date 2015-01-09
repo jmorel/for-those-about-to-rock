@@ -130,7 +130,8 @@ div.paginate {
         width: 2*@paginate-radius;
         height: 2*@paginate-radius;
         font-size: 0.75rem;
-        line-height: 2*@paginate-radius;
+        // the -7px is here to compensate for the font's cap-height/descend in the centering
+        line-height: 2*@paginate-radius - 7px;
         text-decoration: none;
         text-transform: uppercase;
 
@@ -180,16 +181,14 @@ article.rocking-chair {
     .pictures {
         margin-left: auto;
         margin-right: auto;
-        background-color: white;
         background-size: cover;
-        background-position: center center;
+        background: white center center;
 
         @media (max-width: @screen-small-max) {
             border: @article-border-width-small white solid;
             border-radius: @article-radius-small;
             width: 2*@article-radius-small;
             height: 2*@article-radius-small;
-            z-index: 10; //todo: really needed ?
         }
         @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
             border: @article-border-width-medium white solid;

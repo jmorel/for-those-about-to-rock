@@ -415,7 +415,7 @@ div.paginate a {
   width: 120px;
   height: 120px;
   font-size: 0.75rem;
-  line-height: 120px;
+  line-height: 113px;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -462,9 +462,8 @@ article.rocking-chair {
 article.rocking-chair .pictures {
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
   background-size: cover;
-  background-position: center center;
+  background: white center center;
 }
 @media (max-width: 599px) {
   article.rocking-chair .pictures {
@@ -472,7 +471,6 @@ article.rocking-chair .pictures {
     border-radius: 140px;
     width: 280px;
     height: 280px;
-    z-index: 10;
   }
 }
 @media (min-width: 600px) and (max-width: 899px) {
