@@ -43,6 +43,14 @@
     <meta property="og:description" content="For Those About To Rock is an anthology of modern rocking chair. Every day a new rocking chair is posted, with both gorgeous images and full details about its designer(s), manufacturer(s) etc.">
     <meta property="og:image" content="{% block og_image %}{% endblock %}">
     <meta property="fb:app_id" content="{{ FACEBOOK_APP_ID }}">
+
+    {# Twitter cards #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@RChairAnthology">
+    <meta name="twitter:creator" content="@RChairAnthology">
+    <meta name="twitter:title" content="{% block twitter_title %}Latest rocking chairs{% endblock %}">
+    <meta name="twitter:description" content="For Those About To Rock is an anthology of modern rocking chair. Every day a new rocking chair is posted, with both gorgeous images and full details about its designer(s), manufacturer(s) etc.">
+    <meta name="twitter:image:src" content="{% block twitter_image %}{% endblock %}">
 </head>
 
 <body>
