@@ -208,7 +208,6 @@ article.rocking-chair {
         @media (max-width: @screen-small-max) {
             margin-top: @article-padding-small;
             background-color: rgba(255, 255, 0, 0.5);
-            z-index: -2;
 
             &:before {
                 content: '';
@@ -220,6 +219,7 @@ article.rocking-chair {
                 left: 0;
                 background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-small) center top no-repeat,
             }
+
             &:after {
                 content: '';
                 display: block;
@@ -234,7 +234,6 @@ article.rocking-chair {
         @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
             margin-top: @article-padding-medium;
             background-color: rgba(255, 255, 0, 0.5);
-            z-index: -2;
 
             &:before {
                 content: '';
@@ -246,6 +245,7 @@ article.rocking-chair {
                 left: 0;
                 background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-medium) center top no-repeat,
             }
+
             &:after {
                 content: '';
                 display: block;
@@ -318,11 +318,11 @@ article.rocking-chair {
             color: @yellow;
             padding: 0.2em 0.4em;
             margin-top: -0.2em;
-            z-index: -1;
         }
 
         .attribute-value {
             line-height: 1em;
+            z-index: 1;
 
             @media (max-width: @screen-small-max) {
                 font-size: 1.3rem;
@@ -336,11 +336,17 @@ article.rocking-chair {
         }
 
         .attribute-links {
-            position: relative;
-            top: 0;
-            display: inline-block;
-            vertical-align: top;
             font-size: 0.6rem;
+
+            @media (max-width: @screen-medium-max) {
+                padding-top: 0.5em;
+            }
+            @media (min-width: @screen-large-min) {
+                position: relative;
+                top: 0;
+                display: inline-block;
+                vertical-align: top;
+            }
 
             a {
                 color: @yellow-dark;
@@ -408,8 +414,6 @@ footer {
         @media (min-width: @screen-large-min) {
             width: @content-max-width;
             padding: @footer-padding-large 0;
-//            padding-top: @footer-spacing;
-//            padding-bottom: @footer-spacing/2;
         }
     }
 

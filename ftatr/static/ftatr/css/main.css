@@ -528,7 +528,6 @@ article.rocking-chair .pictures {
   article.rocking-chair .attributes-container {
     margin-top: 15px;
     background-color: rgba(255, 255, 0, 0.5);
-    z-index: -2;
   }
   article.rocking-chair .attributes-container:before {
     content: '';
@@ -555,7 +554,6 @@ article.rocking-chair .pictures {
   article.rocking-chair .attributes-container {
     margin-top: 30px;
     background-color: rgba(255, 255, 0, 0.5);
-    z-index: -2;
   }
   article.rocking-chair .attributes-container:before {
     content: '';
@@ -634,10 +632,10 @@ article.rocking-chair ul.attributes .attribute-name {
   color: #ffff00;
   padding: 0.2em 0.4em;
   margin-top: -0.2em;
-  z-index: -1;
 }
 article.rocking-chair ul.attributes .attribute-value {
   line-height: 1em;
+  z-index: 1;
 }
 @media (max-width: 599px) {
   article.rocking-chair ul.attributes .attribute-value {
@@ -655,11 +653,20 @@ article.rocking-chair ul.attributes .attribute-value {
   }
 }
 article.rocking-chair ul.attributes .attribute-links {
-  position: relative;
-  top: 0;
-  display: inline-block;
-  vertical-align: top;
   font-size: 0.6rem;
+}
+@media (max-width: 899px) {
+  article.rocking-chair ul.attributes .attribute-links {
+    padding-top: 0.5em;
+  }
+}
+@media (min-width: 900px) {
+  article.rocking-chair ul.attributes .attribute-links {
+    position: relative;
+    top: 0;
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 article.rocking-chair ul.attributes .attribute-links a {
   color: #7f8000;
