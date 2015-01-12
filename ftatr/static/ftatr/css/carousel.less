@@ -56,11 +56,23 @@
     color: @yellow-dark;
     text-shadow: none;
     opacity: 1;
-    width: @paginate-radius;
-    font-size: 3rem;
     z-index: 2;
-    height: 2*@article-radius-large;
-    line-height: 2*@article-radius-large;
+
+    @media (max-width: @screen-small-max) {
+        display: none;
+    }
+    @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
+        font-size: 2rem;
+        height: 2*@article-radius-medium;
+        line-height: 2*@article-radius-medium;
+        width: @carousel-control-width-medium;
+    }
+    @media (min-width: @screen-large-min) {
+        font-size: 3rem;
+        height: 2*@article-radius-large;
+        line-height: 2*@article-radius-large;
+        width: @carousel-control-width-large;
+    }
 
     &:hover {
         color: @grey;
@@ -69,14 +81,24 @@
     &.left {
         .background-reset;
         left: 0;
-        margin-left: -@article-border-width-large - @carousel-control-spacing-large;
         text-align: left;
+        @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
+            margin-left: -@article-border-width-medium - @carousel-control-spacing-medium;
+        }
+        @media (min-width: @screen-large-min) {
+            margin-left: -@article-border-width-large - @carousel-control-spacing-large;
+        }
     }
     &.right {
         .background-reset;
         right: 0;
-        margin-right: -@article-border-width-large - @carousel-control-spacing-large;
         text-align: right;
+        @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
+            margin-right: -@article-border-width-medium - @carousel-control-spacing-medium;
+        }
+        @media (min-width: @screen-large-min) {
+            margin-right: -@article-border-width-large - @carousel-control-spacing-large;
+        }
     }
 }
 
