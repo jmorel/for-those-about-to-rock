@@ -46,8 +46,8 @@ class RockingChairAdmin(admin.ModelAdmin):
     inlines = [
         PictureInline,
         PriceInline,
-        PriceLinkInline,
         LinkInline,
+        PriceLinkInline,
         DesignerLinkInline,
         ManufacturerLinkInline,
         YearLinkInline,
@@ -92,10 +92,12 @@ class RockingChairAdmin(admin.ModelAdmin):
 
 class DesignerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('first_name', 'last_name', )}
+    ordering = ('first_name', 'last_name')
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
+    ordering = ('name', )
 
 
 admin.site.register(RockingChair, RockingChairAdmin)
