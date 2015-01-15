@@ -74,6 +74,13 @@
                     </div>
                 </li>
             {% endif %}
+            <li>
+                <div class="attribute">
+                    <div class="attribute-tag">
+                        Published on {{ rocking_chair.published_at | date('M d, Y') }}
+                    </div>
+                </div>
+            </li>
         </ul>
         <ul class="attributes attributes-right">
             {% for designer in rocking_chair.designers.all() %}
