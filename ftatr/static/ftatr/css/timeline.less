@@ -1,0 +1,92 @@
+@import 'variables';
+@import 'elements';
+
+.timeline {
+    .year {
+        .round-link-centered;
+
+        &.active {
+            margin-bottom: 0;
+
+            a {
+                color: @grey;
+                background-color: @white;
+            }
+        }
+    }
+
+    .rocking-chair {
+        display: block;
+        margin: 0;
+        margin-top: @article-attribute-spacing-large;
+        list-style: none;
+        padding: 0;
+        max-width: 50%;
+        background: linear-gradient(
+                0deg,
+                @white 0,
+                @white @body-background-vertical-width) no-repeat;
+        background-size: 2*@article-attribute-spacing-large @body-background-vertical-width;
+    }
+
+    .rocking-chair-picture {
+        background-color: white;
+        border-radius: @timeline-picture-radius;
+        border: @body-background-vertical-width solid @white;
+        width: 2*@timeline-picture-radius;
+        height: 2*@timeline-picture-radius;
+        transition-property: opacity;
+        text-align: center;
+        font-size: 0;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .rocking-chair-name {
+        padding-top: @timeline-entry-name-padding-large;
+    }
+
+    .rocking-chair-left {
+        float: right;
+        right: 50%;
+        text-align: right;
+        margin-right: @body-background-vertical-width/2;
+        background-position: right @timeline-picture-radius;
+        padding-right: @article-attribute-spacing-large;
+
+        .rocking-chair-picture {
+            float: right;
+        }
+        .rocking-chair-name {
+            margin-right: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+        }
+    }
+
+    .rocking-chair-right {
+        float: left;
+        left: 50%;
+        text-align: left;
+        margin-left: @body-background-vertical-width/2;
+        background-position: left @timeline-picture-radius;
+        padding-left: @article-attribute-spacing-large;
+
+        .rocking-chair-picture {
+            float: left;
+        }
+        .rocking-chair-name {
+            margin-left: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+        }
+    }
+}

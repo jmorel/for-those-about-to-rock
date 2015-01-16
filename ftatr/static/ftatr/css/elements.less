@@ -1,0 +1,26 @@
+@import "variables";
+
+.round-link-centered {
+    margin: @paginate-spacing 0;
+
+    a {
+        text-align: center;
+        display: block;
+        background: @yellow;
+        border: @body-background-vertical-width solid white;
+        color: @yellow-dark;
+        margin: 0 auto;
+        border-radius: @paginate-radius;
+        width: 2*@paginate-radius;
+        height: 2*@paginate-radius;
+        font-size: 0.75rem;
+        // the -7px is here to compensate for the font's cap-height/descend in the centering
+        line-height: 2*@paginate-radius - 7px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: @grey;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
@@ -23,6 +24,25 @@ def index(request):
     return render(request, 'rocking_chair/index.html.jinja2', {
         'rocking_chairs': paged_rocking_chairs,
         'paginator': paginator
+    })
+
+
+def index_by_year(request):
+    # prepare general request
+    rocking_chairs = RockingChair.objects \
+        .exclude(published_at__gte=datetime.datetime.now()) \
+        .exclude(published_at=None) \
+        .order_by('year', 'name')
+    # index by years
+    timeline = OrderedDict()
+    current_year = datetime.datetime.now().year
+    for year in reversed(range(rocking_chairs[0].year, current_year)):
+        timeline[year] = []
+    for rocking_chair in rocking_chairs:
+        timeline[rocking_chair.year].append(rocking_chair)
+
+    return render(request, 'rocking_chair/index_by_year.html.jinja2', {
+        'timeline': timeline,
     })
 
 

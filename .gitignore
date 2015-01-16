@@ -6,7 +6,6 @@ assets/css/font-awesome-4.2.0
 .idea/
 */__pycache__/
 media/
-static/
 ftatr/settings_local.py
 Thumbs.db
 /resources/
