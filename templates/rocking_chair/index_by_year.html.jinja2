@@ -20,7 +20,7 @@
                 {% endif %}
                 <div class="rocking-chair rocking-chair-{% if loop.index % 2 %}left{% else %}right{% endif %}">
                     <div class="rocking-chair-picture">
-                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('30x30') }}"
+                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
                              alt="{{ rocking_chair.name }}"/>
                     </div>
                     <div class="rocking-chair-name">

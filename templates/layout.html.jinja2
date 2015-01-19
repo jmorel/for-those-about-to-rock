@@ -62,9 +62,9 @@
         <p>A rocking chair anthology</p>
     </header>
 
-    Rocking chairs :
-    <a href="{{ url('rocking_chair:index') }}">Last entries</a>
-    <a href="{{ url('rocking_chair:index-by-year') }}">By year</a>
+    {% block nav %}
+        {% include 'nav.html.jinja2' %}
+    {% endblock %}
 
     {% block content %}
     {% endblock %}

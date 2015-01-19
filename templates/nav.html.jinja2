@@ -1,0 +1,19 @@
+{% set items = [
+    {'url': url('rocking_chair:index'), 'picture': 1, 'caption': 'Last entries'},
+    {'url': url('rocking_chair:index-by-year'), 'picture': 2, 'caption': 'Rocking chairs by year'},
+    {'url': url('rocking_chair:index'), 'picture': '<i class="fa fa-users"></i>', 'caption': 'Designers'},
+] %}
+
+<div class="nav">
+    {% for item in items %}
+        <a class="nav-item nav-item-{{ loop.index }}-{{ items|length }}"
+           href="{{ item['url'] }}">
+            <div class="nav-item-picture {% if loop.last %}nav-item-picture-active{% endif %} ">
+                {{ item['picture'] | safe }}
+            </div>
+            <div class="nav-item-caption nav-item-caption-{% if loop.last or not loop.index % 2 %}right{% else %}left{% endif %}">
+                {{ item['caption'] }}
+            </div>
+        </a>
+    {% endfor %}
+</div>
