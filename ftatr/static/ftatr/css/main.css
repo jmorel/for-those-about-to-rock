@@ -442,7 +442,12 @@
 .nav {
   font-size: 0.5rem;
   position: relative;
+}
+.nav.nav-3 {
   min-height: 156px;
+}
+.nav.nav-5 {
+  min-height: 149px;
 }
 .nav .nav-item {
   position: absolute;
@@ -458,6 +463,31 @@
   margin-left: 30px;
 }
 .nav .nav-item-3-3 {
+  bottom: 0;
+  left: 50%;
+  margin-left: -30px;
+}
+.nav .nav-item-1-5 {
+  top: 0;
+  right: 50%;
+  margin-right: 49px;
+}
+.nav .nav-item-2-5 {
+  top: 0;
+  left: 50%;
+  margin-left: 49px;
+}
+.nav .nav-item-3-5 {
+  top: 92px;
+  right: 50%;
+  margin-right: 79px;
+}
+.nav .nav-item-4-5 {
+  top: 92px;
+  left: 50%;
+  margin-left: 79px;
+}
+.nav .nav-item-5-5 {
   bottom: 0;
   left: 50%;
   margin-left: -30px;
@@ -588,6 +618,12 @@ header h1 {
     font-size: 4.6rem;
     max-width: 900px;
   }
+}
+header h1 a {
+  color: inherit;
+}
+header h1 a:hover {
+  text-decoration: underline;
 }
 header p {
   font-size: 1rem;

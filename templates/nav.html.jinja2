@@ -1,10 +1,12 @@
 {% set items = [
     {'url': url('rocking_chair:index'), 'picture': 1, 'caption': 'Last entries'},
     {'url': url('rocking_chair:index-by-year'), 'picture': 2, 'caption': 'Rocking chairs by year'},
-    {'url': url('rocking_chair:index'), 'picture': '<i class="fa fa-users"></i>', 'caption': 'Designers'},
+    {'url': url('rocking_chair:index'), 'picture': '<i class="fa fa-users"></i>', 'caption': 'Designers by name'},
+    {'url': url('rocking_chair:index'), 'picture': '<i class="fa fa-users"></i>', 'caption': 'Designers by year'},
+    {'url': url('rocking_chair:index'), 'picture': '<i class="fa fa-users"></i>', 'caption': 'Manufacturer'},
 ] %}
 
-<div class="nav">
+<div class="nav nav-{{ items | length }}">
     {% for item in items %}
         <a class="nav-item nav-item-{{ loop.index }}-{{ items|length }}"
            href="{{ item['url'] }}">
