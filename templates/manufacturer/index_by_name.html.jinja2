@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="timeline">
-        {% for letter, rocking_chairs in timeline.items() %}
+        {% for letter, rocking_chairs in alphabet.items() %}
 
             <div class="year {% if rocking_chairs %}active{% endif %}">
                 <a href="#{{ year }}">
@@ -20,8 +20,8 @@
                 {% endif %}
                 <div class="rocking-chair rocking-chair-{% if loop.index % 2 %}left{% else %}right{% endif %}">
                     <div class="rocking-chair-picture">
-                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
-                             alt="{{ rocking_chair.name }}"/>
+{#                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"#}
+{#                             alt="{{ rocking_chair.name }}"/>#}
                     </div>
                     <div class="rocking-chair-name">
                         <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
