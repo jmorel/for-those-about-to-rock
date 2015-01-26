@@ -100,7 +100,9 @@
                 <li>
                     <div class="attribute">
                         <div class="attribute-value">
-                            {{ manufacturer.name }}
+                            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
+                                {{ manufacturer.name }}
+                            </a>
                         </div>
                         <div class="attribute-name">
                             Manufacturer
