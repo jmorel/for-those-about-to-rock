@@ -5,8 +5,30 @@
 .nav.nav-3 {
   min-height: 156px;
 }
+.nav.nav-3:before {
+  display: block;
+  content: "";
+  width: 136px;
+  height: 136px;
+  border-radius: 68px;
+  border: 5px solid #ffffff;
+  position: absolute;
+  left: 50%;
+  margin-left: -68px;
+}
 .nav.nav-5 {
-  min-height: 149px;
+  min-height: 250px;
+}
+.nav.nav-5:before {
+  display: block;
+  content: "";
+  width: 216px;
+  height: 216px;
+  border-radius: 108px;
+  border: 5px solid #ffffff;
+  position: absolute;
+  left: 50%;
+  margin-left: -108px;
 }
 .nav .nav-item {
   position: absolute;
@@ -57,6 +79,7 @@
   height: 60px;
   border-radius: 30px;
   border: 5px solid #ffffff;
+  background-color: #ffff00;
   line-height: 50px;
   text-align: center;
   font-size: 0.8rem;

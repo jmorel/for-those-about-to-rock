@@ -6,11 +6,35 @@
 
     &.nav-3 {
         min-height: 156px;
+
+        &:before {
+            display: block;
+            content: "";
+            width: 2*@nav-3-radius;
+            height: 2*@nav-3-radius;
+            border-radius: @nav-3-radius;
+            border: @body-background-vertical-width solid @white;
+            position: absolute;
+            left: 50%;
+            margin-left: -@nav-3-radius;
+        }
     }
 
     &.nav-5 {
         // todo: update
-        min-height: 149px;
+        min-height: 250px;
+
+        &:before {
+            display: block;
+            content: "";
+            width: 2*@nav-5-radius;
+            height: 2*@nav-5-radius;
+            border-radius: @nav-5-radius;
+            border: @body-background-vertical-width solid @white;
+            position: absolute;
+            left: 50%;
+            margin-left: -@nav-5-radius;
+        }
     }
 
     .nav-item {
@@ -67,6 +91,7 @@
         height: 60px;
         border-radius: 30px;
         border: @body-background-vertical-width solid @white;
+        background-color: @yellow;
         line-height: 50px;
         text-align: center;
         font-size: 0.8rem;

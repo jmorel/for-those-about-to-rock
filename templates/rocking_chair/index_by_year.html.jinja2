@@ -8,8 +8,8 @@
     <div class="timeline">
         {% for year, rocking_chairs in timeline.items() %}
 
-            <div class="year {% if rocking_chairs %}active{% endif %}">
-                <a href="#{{ year }}">
+            <div class="year {% if rocking_chairs %}active{% endif %}" id="{{ year }}">
+                <a href="{{ url('rocking_chair:index-by-year') }}#{{ year }}">
                     {{ year }}
                 </a>
             </div>
