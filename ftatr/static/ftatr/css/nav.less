@@ -113,4 +113,27 @@
     .nav-item-caption-right {
         padding-left: 10px;
     }
+
+    .nav-item-search {
+
+        .nav-item-caption {
+            padding-top: 10px;
+        }
+
+        .search-box {
+            border: none;
+            font-size: 1rem;
+            color: @grey;
+            font-family: 'Static';
+            background: transparent linear-gradient(
+                    0deg,
+                    @white 0,
+                    @white 3px) repeat-x 0 35px;
+            background-size: 1px 3px;
+        }
+
+        .nav-item-caption-left .search-box {
+            text-align: right;
+        }
+    }
 }

@@ -539,6 +539,20 @@
 .nav .nav-item-caption-right {
   padding-left: 10px;
 }
+.nav .nav-item-search .nav-item-caption {
+  padding-top: 10px;
+}
+.nav .nav-item-search .search-box {
+  border: none;
+  font-size: 1rem;
+  color: #333333;
+  font-family: 'Static';
+  background: transparent linear-gradient(0deg, #ffffff 0, #ffffff 3px) repeat-x 0 35px;
+  background-size: 1px 3px;
+}
+.nav .nav-item-search .nav-item-caption-left .search-box {
+  text-align: right;
+}
 *,
 *:before,
 *:after {
