@@ -1,4 +1,4 @@
-from fabric.api import env, run, require, cd
+from fabric.api import env, run, require, cd, prefix
 import os
 
 env.hosts = ['jeremy@forthoseabouttorock.io']
@@ -12,7 +12,7 @@ def prod():
 
 
 def dev():
-    env.webfaction_app_name = 'ftatr-dev'
+    env.webfaction_app_name = 'ftatr_dev'
     env.deploy_target = 'dev'
 
 
@@ -23,17 +23,18 @@ def deploy(branch):
     print 'Deploying', branch, 'to', env.deploy_target
 
     app_base_dir = os.path.join('~/webapps', env.webfaction_app_name)
-    # activate virtualenv
-    with cd(app_base_dir):
-        run('source .py-env/bin/activate')
+
+    # checkout specified version
     with cd(os.path.join(app_base_dir, 'ftatr')):
-        # checkout specified version
         run("git fetch")
         run("git fetch --tags")
         run("git checkout %s" % branch)
+        run("git submodule update --init --recursive")
+
+    with cd(app_base_dir), prefix('source .py-env/bin/activate'):
         # install new requirements
-        run("pip install -r requirements.txt")
+        run("pip install -r ftatr/requirements.txt")
         # collectstatic
-        run("python manage.py collectstatic")
+        run("python ftatr/manage.py collectstatic --noinput")
         # restart
         run(os.path.join(app_base_dir, 'apache2/bin/restart'))
