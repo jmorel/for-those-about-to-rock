@@ -29,6 +29,7 @@ def deploy(branch):
         run("git fetch")
         run("git fetch --tags")
         run("git checkout %s" % branch)
+        run("git pull origin %s" % branch)
         run("git submodule update --init --recursive")
 
     with cd(app_base_dir), prefix('source .py-env/bin/activate'):
