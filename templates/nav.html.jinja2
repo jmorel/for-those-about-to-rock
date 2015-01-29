@@ -1,26 +1,24 @@
 <div class="nav nav-{{ items | length }}">
     {% for item in items %}
         {% if item['caption'] == 'search' %}
-        <div class="nav-item nav-item-{{ loop.index }}-{{ items|length }} nav-item-search">
-            <div class="nav-item-picture">
-                {{ item['picture'] | safe }}
-            </div>
-            <div class="nav-item-caption">
-                <form action="">
+            <form class="nav-item nav-item-{{ loop.index }}-{{ items|length }} nav-item-search">
+                <button class="nav-item-picture" type="submit">
+                    {{ item['picture'] | safe }}
+                </button>
+                <div class="nav-item-caption">
                     <input type="text" class="search-box" placeholder="Search"/>
-                </form>
-            </div>
-        </div>
+                </div>
+            </form>
         {% else %}
-        <a class="nav-item nav-item-{{ loop.index }}-{{ items|length }}"
-           href="{{ url(item['url']) }}">
-            <div class="nav-item-picture">
-                {{ item['picture'] | safe }}
-            </div>
-            <div class="nav-item-caption">
-                {{ item['caption'] }}
-            </div>
-        </a>
+            <a class="nav-item nav-item-{{ loop.index }}-{{ items|length }}"
+               href="{{ url(item['url']) }}">
+                <div class="nav-item-picture">
+                    {{ item['picture'] | safe }}
+                </div>
+                <div class="nav-item-caption">
+                    {{ item['caption'] }}
+                </div>
+            </a>
         {% endif %}
     {% endfor %}
 </div>

@@ -584,6 +584,17 @@
 .nav .nav-item-search .nav-item-caption {
   padding-top: 10px;
 }
+.nav .nav-item-search .nav-item-picture {
+  color: #7f8000;
+  cursor: pointer;
+}
+.nav .nav-item-search .nav-item-picture:active,
+.nav .nav-item-search .nav-item-picture:focus {
+  background-color: white;
+}
+.nav .nav-item-search:hover .nav-item-picture {
+  color: #333333;
+}
 .nav .nav-item-search .search-box {
   border: none;
   font-size: 1rem;
@@ -591,6 +602,8 @@
   font-family: 'Static';
   background: transparent linear-gradient(0deg, #ffffff 0, #ffffff 3px) repeat-x 0 35px;
   background-size: 1px 3px;
+  outline: none;
+  padding: 0 5px;
 }
 .nav .nav-item-search-right .search-box {
   text-align: right;

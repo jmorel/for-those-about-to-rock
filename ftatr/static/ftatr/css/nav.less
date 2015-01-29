@@ -137,6 +137,21 @@
             padding-top: 10px;
         }
 
+        .nav-item-picture {
+            color: @yellow-dark;
+            cursor: pointer;
+        }
+
+        .nav-item-picture:active,
+        .nav-item-picture:focus {
+            background-color: white;
+        }
+        &:hover {
+            .nav-item-picture {
+                color: @grey;
+            }
+        }
+
         .search-box {
             border: none;
             font-size: 1rem;
@@ -147,6 +162,8 @@
                     @white 0,
                     @white 3px) repeat-x 0 35px;
             background-size: 1px 3px;
+            outline: none;
+            padding: 0 5px;
         }
     }
     .nav-item-search-right {
