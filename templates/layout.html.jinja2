@@ -67,7 +67,7 @@
     </header>
 
     {% block nav %}
-        {% include 'nav.html.jinja2' %}
+        {{ nav(request) | safe }}
     {% endblock %}
 
     {% block content %}

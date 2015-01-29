@@ -4,6 +4,10 @@
 {#{% block og_image %}{{ image }}{% endblock %}#}
 {#{% block twitter_image %}{{ image }}{% endblock %}#}
 
+{% block nav %}
+    {{ nav('rocking_chair:index-by-year') | safe }}
+{% endblock %}
+
 {% block content %}
     <div class="timeline">
         {% for year, rocking_chairs in timeline.items() %}
