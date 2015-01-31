@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_jinja',
     'easy_thumbnails',
     'django_jinja.contrib._easy_thumbnails',
+    'haystack',
     'ftatr',
     'rocking_chair',
 )
@@ -98,6 +99,14 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': 5432
     }
+}
+
+# Haystack
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
 }
 
 
