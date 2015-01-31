@@ -6,15 +6,15 @@
 
 {% block content %}
     <div class="timeline">
-        {% for letter, rocking_chairs in alphabet.items() %}
+        {% for letter, manufacturers in alphabet.items() %}
 
-            <div class="year {% if rocking_chairs %}active{% endif %}">
+            <div class="year {% if manufacturers %}active{% endif %}">
                 <a href="#{{ year }}">
                     {{ letter }}
                 </a>
             </div>
 
-            {% for rocking_chair in rocking_chairs %}
+            {% for manufacturer in manufacturers %}
                 {% if loop.index % 2 %}
                     <div class="clear"></div>
                 {% endif %}
@@ -24,8 +24,10 @@
 {#                             alt="{{ rocking_chair.name }}"/>#}
                     </div>
                     <div class="rocking-chair-name">
-                        <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
-                            {{ rocking_chair.twitter_text }}
+                        <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
+                            {{ manufacturer.name }}
+                            {% set nb_rocking_chairs = manufacturer.published_rocking_chairs|length %}
+                            ({{ nb_rocking_chairs }} chair{% if nb_rocking_chairs > 1 %}s{% endif %})
                         </a>
                     </div>
                 </div>

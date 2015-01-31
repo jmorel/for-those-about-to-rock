@@ -11,6 +11,13 @@
 
     <div class="clear"></div>
 
+    {{ manufacturer.name }}
+    {% for rocking_chair in manufacturer.published_rocking_chairs %}
+        <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+            {{ rocking_chair.name }}
+        </a>
+    {% endfor %}
+
     <div class="paginate">
         <a href="{{ url('manufacturer:index-by-name') }}">
             view all

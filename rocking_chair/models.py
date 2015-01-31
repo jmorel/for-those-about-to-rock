@@ -44,21 +44,28 @@ class RockingChair(models.Model):
         return authors
 
 
-def get_upload_to(self, filename):
-    slug = self.rocking_chair.slug
+def get_picture_upload_to(self, filename):
+    return os.path.join('rocking-chairs', self.rocking_chair.slug, get_upload_filename(filename))
+
+
+def get_manufacturer_upload_to(self, filename):
+    return os.path.join('manufacturers', self.slug, get_upload_filename(filename))
+
+
+def get_upload_filename(filename):
     name, extension = os.path.splitext(filename)
     md5sum = hashlib.md5()
     md5sum.update(filename.encode('utf-8'))
     md5sum.update(str(datetime.datetime.now()).encode('utf-8'))
     md5sum = md5sum.hexdigest()
-    return os.path.join('rocking-chairs', slug, md5sum+extension)
+    return md5sum + extension
 
 
 class Picture(models.Model):
     class Meta:
         db_table = 'picture'
 
-    picture = models.ImageField(upload_to=get_upload_to)
+    picture = models.ImageField(upload_to=get_picture_upload_to)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='pictures')
 
@@ -109,6 +116,7 @@ class Manufacturer(models.Model):
         db_table = 'manufacturer'
 
     name = models.CharField(max_length=255)
+    logo = models.ImageField(upload_to=get_manufacturer_upload_to, blank=True, null=True)
 
     country = models.ForeignKey('Country', blank=True, null=True)
 
@@ -118,6 +126,13 @@ class Manufacturer(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def published_rocking_chairs(self):
+        return self.rocking_chairs.all()\
+            .exclude(published_at__gte=datetime.datetime.now())\
+            .exclude(published_at=None)
+
 
 
 class Link(models.Model):
