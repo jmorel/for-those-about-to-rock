@@ -443,68 +443,8 @@
   color: #333333;
   background-color: #ffffff;
 }
-.timeline .rocking-chair {
-  display: block;
+.timeline .round-item-list {
   margin: 0;
-  margin-top: 15px;
-  list-style: none;
-  padding: 0;
-  max-width: 50%;
-  background: linear-gradient(0deg, #ffffff 0, #ffffff 5px) no-repeat;
-  background-size: 30px 5px;
-}
-.timeline .rocking-chair-picture {
-  background-color: white;
-  border-radius: 30px;
-  border: 5px solid #ffffff;
-  width: 60px;
-  height: 60px;
-  transition-property: opacity;
-  text-align: center;
-  font-size: 0;
-  overflow: hidden;
-}
-.timeline .rocking-chair-picture:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-.timeline .rocking-chair-picture img {
-  vertical-align: middle;
-  max-width: 100%;
-  max-height: 100%;
-}
-.timeline .rocking-chair-name {
-  padding-top: 10px;
-}
-.timeline .rocking-chair-left {
-  float: right;
-  right: 50%;
-  text-align: right;
-  margin-right: 2.5px;
-  background-position: right 30px;
-  padding-right: 15px;
-}
-.timeline .rocking-chair-left .rocking-chair-picture {
-  float: right;
-}
-.timeline .rocking-chair-left .rocking-chair-name {
-  margin-right: 75px;
-}
-.timeline .rocking-chair-right {
-  float: left;
-  left: 50%;
-  text-align: left;
-  margin-left: 2.5px;
-  background-position: left 30px;
-  padding-left: 15px;
-}
-.timeline .rocking-chair-right .rocking-chair-picture {
-  float: left;
-}
-.timeline .rocking-chair-right .rocking-chair-name {
-  margin-left: 75px;
 }
 .nav {
   font-size: 0.5rem;

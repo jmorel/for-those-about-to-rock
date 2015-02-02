@@ -18,22 +18,27 @@
                 </a>
             </div>
 
-            {% for rocking_chair in rocking_chairs %}
-                {% if loop.index % 2 %}
-                    <div class="clear"></div>
-                {% endif %}
-                <div class="rocking-chair rocking-chair-{% if loop.index % 2 %}left{% else %}right{% endif %}">
-                    <div class="rocking-chair-picture">
-                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
-                             alt="{{ rocking_chair.name }}"/>
-                    </div>
-                    <div class="rocking-chair-name">
-                        <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
-                            {{ rocking_chair.twitter_text }}
-                        </a>
-                    </div>
+
+            {% if rocking_chairs %}
+                <div class="round-item-list">
+                    {% for rocking_chair in rocking_chairs %}
+                        {% if loop.index % 2 %}
+                            <div class="clear"></div>
+                        {% endif %}
+                        <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                            <div class="item-picture">
+                                <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
+                                     alt="{{ rocking_chair.name }}"/>
+                            </div>
+                            <div class="item-text">
+                                <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+                                    {{ rocking_chair.twitter_text }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            {% endif %}
 
             <div class="clear"></div>
 
