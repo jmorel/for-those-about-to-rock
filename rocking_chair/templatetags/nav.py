@@ -5,7 +5,7 @@ from haystack.forms import SearchForm
 
 
 @library.global_function
-def nav(active_page='rocking_chair:index'):
+def nav(active_page='rocking_chair:index', query=None):
     pages = [
         {
             'url': 'rocking_chair:index',
@@ -30,6 +30,7 @@ def nav(active_page='rocking_chair:index'):
             ordered_pages = pages[i:] + pages[:i]
     return render_to_string('nav.html.jinja2', {
         'items': ordered_pages or pages,
-        'search_form': SearchForm()
+        'search_form': SearchForm(),
+        'query': query,
 
     })

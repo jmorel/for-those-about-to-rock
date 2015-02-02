@@ -6,7 +6,12 @@
                     {{ item['picture'] | safe }}
                 </button>
                 <div class="nav-item-caption">
-                    <input id="id_q" name="q" type="search" class="search-box" placeholder="Search"/>
+                    <input id="id_q"
+                           name="q"
+                           type="search"
+                           class="search-box"
+                           placeholder="Search"
+                           {% if query %}value="{{ query }}"{% endif %}/>
                 </div>
             </form>
         {% else %}
