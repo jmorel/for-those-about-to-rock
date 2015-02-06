@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'django_jinja',
     'easy_thumbnails',
     'django_jinja.contrib._easy_thumbnails',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'ftatr',
     'rocking_chair',
 )
@@ -58,6 +60,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'ftatr.urls'
 
 TEMPLATE_LOADERS = (
+    'django.template.loaders.app_directories.Loader',
     'django_jinja.loaders.FileSystemLoader',
     'django_jinja.loaders.AppLoader',
 )
@@ -97,6 +100,7 @@ DATABASES = {
     }
 }
 
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
