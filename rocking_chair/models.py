@@ -1,4 +1,5 @@
 import datetime
+from django.core.urlresolvers import reverse
 from django.db import models
 import hashlib
 import os
@@ -25,6 +26,9 @@ class RockingChair(models.Model):
 
     def is_published(self):
         return self.published_at and (self.published_at < datetime.datetime.now())
+
+    def get_absolute_url(self):
+        return reverse('rocking_chair:show', kwargs={'slug': self.slug})
 
     @property
     def twitter_text(self):

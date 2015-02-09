@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['.forthoseabouttorock.io', 'forthoseabouttorock.hexagonal.io']
 # Application definition
 
 INSTALLED_APPS = (
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,8 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'django_jinja.contrib._easy_thumbnails',
     'haystack',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'ftatr',
     'rocking_chair',
 )
@@ -59,6 +62,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'ftatr.urls'
 
 TEMPLATE_LOADERS = (
+    'django.template.loaders.app_directories.Loader',
     'django_jinja.loaders.FileSystemLoader',
     'django_jinja.loaders.AppLoader',
 )
@@ -109,6 +113,8 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
+# Sitemap.xml
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
