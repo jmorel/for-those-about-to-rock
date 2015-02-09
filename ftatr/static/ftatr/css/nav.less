@@ -26,6 +26,9 @@
     & .nav-item-caption {
         float: left;
         padding-right: 5px;
+    }
+    &.nav-item-search {
+        text-align: right;
         .search-box {
             text-align: right;
         }
@@ -92,18 +95,19 @@
         background-color: white;
         color: @grey;
     }
+    .nav-item:hover .search-box {
+        border-bottom: 2px solid @white;
+    }
 
     .nav-item-search {
         .search-box {
             border: none;
             font-family: 'Static';
             font-size: inherit;
-            background: transparent linear-gradient(
-                    0deg,
-                    @white 0,
-                    @white 2px) repeat-x 0 24px;
-            background-size: 1px 3px;
-            outline: none;
+            background: transparent;
+            &:focus {
+                background-color: @white;
+            }
         }
 
         &.nav-item-1-3 .search-box {

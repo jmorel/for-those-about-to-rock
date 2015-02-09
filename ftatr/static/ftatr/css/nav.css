@@ -28,13 +28,17 @@
   background-color: white;
   color: #333333;
 }
+.nav .nav-item:hover .search-box {
+  border-bottom: 2px solid #ffffff;
+}
 .nav .nav-item-search .search-box {
   border: none;
   font-family: 'Static';
   font-size: inherit;
-  background: transparent linear-gradient(0deg, #ffffff 0, #ffffff 2px) repeat-x 0 24px;
-  background-size: 1px 3px;
-  outline: none;
+  background: transparent;
+}
+.nav .nav-item-search .search-box:focus {
+  background-color: #ffffff;
 }
 .nav .nav-item-search.nav-item-1-3 .search-box {
   background-position: 0 35px;
@@ -80,7 +84,10 @@
   float: left;
   padding-right: 5px;
 }
-.nav .nav-item-2-3 .nav-item-caption .search-box {
+.nav .nav-item-2-3.nav-item-search {
+  text-align: right;
+}
+.nav .nav-item-2-3.nav-item-search .search-box {
   text-align: right;
 }
 .nav .nav-item-3-3 {
@@ -132,7 +139,10 @@
   float: left;
   padding-right: 5px;
 }
-.nav .nav-item-2-5 .nav-item-caption .search-box {
+.nav .nav-item-2-5.nav-item-search {
+  text-align: right;
+}
+.nav .nav-item-2-5.nav-item-search .search-box {
   text-align: right;
 }
 .nav .nav-item-3-5 {
@@ -144,7 +154,10 @@
   float: left;
   padding-right: 5px;
 }
-.nav .nav-item-3-5 .nav-item-caption .search-box {
+.nav .nav-item-3-5.nav-item-search {
+  text-align: right;
+}
+.nav .nav-item-3-5.nav-item-search .search-box {
   text-align: right;
 }
 .nav .nav-item-4-5 {
