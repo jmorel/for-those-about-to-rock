@@ -27,3 +27,6 @@ TWITTER_CONSUMER_KEY = ''
 
 # Domain
 DOMAIN_URL = 'http://forthoseabouttorock.io'
+
+# Admins
+ADMINS = (('Jeremy', 'jeremy@forthoseabouttorock.io'), )
