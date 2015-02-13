@@ -8,3 +8,4 @@ gunicorn==19.0.0
 psycopg2==2.5.4
 easy-thumbnails==2.2
 django-suit==0.2.12
+twitter==1.16.0
