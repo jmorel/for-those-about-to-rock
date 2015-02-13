@@ -1,6 +1,7 @@
 import datetime
 from django.core.urlresolvers import reverse
 from django.db import models
+from ftatr import settings
 import hashlib
 import os
 
@@ -30,9 +31,22 @@ class RockingChair(models.Model):
     def get_absolute_url(self):
         return reverse('rocking_chair:show', kwargs={'slug': self.slug})
 
-    @property
-    def twitter_text(self):
-        return self.title
+    def twitter_text(self, tweet_max_length=118):
+        # rocking chair name
+        safe_tweet = self.name
+        if len(safe_tweet) > tweet_max_length:
+           safe_tweet = safe_tweet[:tweet_max_length-3] + '...'
+        # add designer names
+        if self.designer_names:
+            tweet = "{} by {}".format(safe_tweet, self.designer_names)
+            if len(tweet) <= tweet_max_length:
+                safe_tweet = tweet
+        # add manufacturer names
+        if self.manufacturer_names:
+            tweet = "{} ({})".format(safe_tweet, self.manufacturer_names)
+            if len(tweet) <= tweet_max_length:
+                safe_tweet = tweet
+        return "{} {}{}".format(safe_tweet, settings.DOMAIN_URL, self.get_absolute_url())
 
     @property
     def title(self):

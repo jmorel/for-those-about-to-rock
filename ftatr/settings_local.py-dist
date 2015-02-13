@@ -18,3 +18,12 @@ DATABASES = {
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+# Twitter
+TWITTER_TOKEN = ''
+TWITTER_TOKEN_SECRET = ''
+TWITTER_CONSUMER_SECRET = ''
+TWITTER_CONSUMER_KEY = ''
+
+# Domain
+DOMAIN_URL = 'http://forthoseabouttorock.io'
