@@ -30,3 +30,9 @@ DOMAIN_URL = 'http://forthoseabouttorock.io'
 
 # Admins
 ADMINS = (('Jeremy', 'jeremy@forthoseabouttorock.io'), )
+
+# Email
+EMAIL_HOST = ''
+EMAIL_USER = ''
+EMAIL_PORT = ''
+EMAIL_HOST_PASSWORD =''
