@@ -1,7 +1,7 @@
 import datetime
+from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from django.db import models
-from ftatr import settings
 import hashlib
 import os
 
@@ -46,7 +46,7 @@ class RockingChair(models.Model):
             tweet = "{} ({})".format(safe_tweet, self.manufacturer_names)
             if len(tweet) <= tweet_max_length:
                 safe_tweet = tweet
-        return "{} {}{}".format(safe_tweet, settings.DOMAIN_URL, self.get_absolute_url())
+        return "{} {}{}".format(safe_tweet, Site.objects.get_current(), self.get_absolute_url())
 
     @property
     def title(self):

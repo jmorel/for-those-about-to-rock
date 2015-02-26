@@ -1,22 +1,30 @@
+from ftatr.common_settings import *
+
 # keep to false for prod environment
 DEBUG = False
 TEMPLATE_DEBUG = False
 
 SECRET_KEY = 'secret'
-FACEBOOK_APP_ID = '351060788405753'
+
+ALLOWED_HOSTS = ['.forthoseabouttorock.io', 'forthoseabouttorock.hexagonal.io']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ftatr',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': 5432
     }
 }
 
+# Static files
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
+
+# Media files
+MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
 # Twitter
@@ -25,14 +33,20 @@ TWITTER_TOKEN_SECRET = ''
 TWITTER_CONSUMER_SECRET = ''
 TWITTER_CONSUMER_KEY = ''
 
+# Facebook
+FACEBOOK_APP_ID = ''
+
 # Domain
 DOMAIN_URL = 'http://forthoseabouttorock.io'
 
 # Admins
-ADMINS = (('Jeremy', 'jeremy@forthoseabouttorock.io'), )
+ADMINS = (('Jérémy', 'jeremy@forthoseabouttorock.io'), )
+
+# Sites framework definition
+SITE_ID = 1
 
 # Email
 EMAIL_HOST = ''
 EMAIL_USER = ''
 EMAIL_PORT = ''
-EMAIL_HOST_PASSWORD =''
+EMAIL_HOST_PASSWORD = ''

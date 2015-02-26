@@ -7,7 +7,7 @@ assets/css/font-awesome-4.2.0
 */__pycache__/
 media/
 static/
-ftatr/settings_local.py
+ftatr/settings.py
 Thumbs.db
 /resources/
 *.pyc
