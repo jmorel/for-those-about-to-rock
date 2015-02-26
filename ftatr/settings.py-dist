@@ -36,9 +36,6 @@ TWITTER_CONSUMER_KEY = ''
 # Facebook
 FACEBOOK_APP_ID = ''
 
-# Domain
-DOMAIN_URL = 'http://forthoseabouttorock.io'
-
 # Admins
 ADMINS = (('Jérémy', 'jeremy@forthoseabouttorock.io'), )
 
