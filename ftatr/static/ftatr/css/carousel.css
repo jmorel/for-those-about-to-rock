@@ -321,8 +321,8 @@
 }
 .carousel-indicators li {
   background-color: transparent;
-  border: 1px solid #ffff00;
+  border: 1px solid yellow;
 }
 .carousel-indicators li.active {
-  background-color: #ffff00;
+  background-color: yellow;
 }

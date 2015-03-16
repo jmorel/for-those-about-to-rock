@@ -1,4 +1,7 @@
-<div class="nav nav-{{ items | length }}">
+<div class="nav nav-{{ items | length }}" id="nav">
+    <div class="nav-toggle" id="nav-toggle">
+        <i class="fa fa-navicon"></i>
+    </div>
     {% for item in items %}
         {% if item['caption'] == 'search' %}
             <form method="get" action="{{ url('search') }}" class="nav-item nav-item-{{ loop.index }}-{{ items|length }} nav-item-search">
@@ -27,3 +30,11 @@
         {% endif %}
     {% endfor %}
 </div>
+
+<script type="text/javascript">
+    var nav = document.getElementById('nav');
+    var navToggle = document.getElementById('nav-toggle');
+    navToggle.onclick = function() {
+        nav.classList.toggle('nav-open');
+    }
+</script>
