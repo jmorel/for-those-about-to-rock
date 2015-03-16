@@ -410,10 +410,10 @@
 }
 .carousel-indicators li {
   background-color: transparent;
-  border: 1px solid #ffff00;
+  border: 1px solid yellow;
 }
 .carousel-indicators li.active {
-  background-color: #ffff00;
+  background-color: yellow;
 }
 .timeline .year {
   margin: 60px 0;
@@ -638,7 +638,7 @@ body {
   color: #333;
   font-family: 'Static';
   font-size: 1rem;
-  background-color: #ffff00;
+  background-color: yellow;
   background-image: linear-gradient(90deg, #ffffff 0, #ffffff 5px);
   background-size: 5px 5px;
   background-position: center;
@@ -728,14 +728,21 @@ header p {
   color: #333333;
   margin: 1em 0 0 0;
 }
+header a {
+  color: inherit;
+  transition: color 300ms;
+}
+header a:hover {
+  color: yellow;
+}
 div.paginate {
   margin: 60px 0;
 }
 div.paginate a {
   text-align: center;
   display: block;
-  background: #ffff00;
-  border: 5px solid #ffffff;
+  background: yellow;
+  border: 5px solid white;
   color: #7f8000;
   margin: 0 auto;
   border-radius: 60px;
@@ -794,7 +801,7 @@ article.rocking-chair .pictures {
 }
 @media (max-width: 599px) {
   article.rocking-chair .pictures {
-    border: 5px #ffffff solid;
+    border: 5px white solid;
     border-radius: 140px;
     width: 280px;
     height: 280px;
@@ -802,7 +809,7 @@ article.rocking-chair .pictures {
 }
 @media (min-width: 600px) and (max-width: 899px) {
   article.rocking-chair .pictures {
-    border: 20px #ffffff solid;
+    border: 20px white solid;
     border-radius: 220px;
     width: 440px;
     height: 440px;
@@ -810,7 +817,7 @@ article.rocking-chair .pictures {
 }
 @media (min-width: 900px) {
   article.rocking-chair .pictures {
-    border: 30px #ffffff solid;
+    border: 30px white solid;
     border-radius: 300px;
     width: 600px;
     height: 600px;
@@ -921,13 +928,13 @@ article.rocking-chair ul.attributes .attribute {
 article.rocking-chair ul.attributes .attribute-tag {
   font-size: 0.5rem;
   background-color: #7f8000;
-  color: #ffff00;
+  color: yellow;
   padding: 0.2em 0.4em;
 }
 article.rocking-chair ul.attributes .attribute-name {
   font-size: 0.5rem;
   background-color: #7f8000;
-  color: #ffff00;
+  color: yellow;
   padding: 0.2em 0.4em;
   margin-top: -0.2em;
 }
@@ -1002,7 +1009,7 @@ footer a {
   text-decoration: underline;
 }
 footer a:hover {
-  background-color: #ffff00;
+  background-color: yellow;
   text-decoration: underline;
 }
 footer div.footer-content {
