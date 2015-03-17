@@ -1,24 +1,21 @@
+.nav {
+  position: relative;
+  margin: 60px 0;
+}
 @media (max-width: 599px) {
   .nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 9999;
-    background-color: #ffffff;
-    padding: 0 15px;
+    display: block;
+    text-align: center;
   }
 }
 @media (min-width: 600px) {
   .nav {
     font-size: 0.7rem;
-    position: relative;
-    display: inline-block;
   }
 }
 @media (max-width: 599px) {
   .nav .nav-item {
     display: none;
-    text-align: left;
   }
 }
 @media (min-width: 600px) {
@@ -33,25 +30,33 @@
   }
 }
 .nav .nav-item-picture {
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  border: 5px solid #ffffff;
-  background-color: #ffff00;
-  line-height: 50px;
   text-align: center;
   color: #7f8000;
   cursor: pointer;
   font-size: inherit;
+  line-height: 50px;
 }
 @media (max-width: 599px) {
   .nav .nav-item-picture {
+    background: none;
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+  }
+  .nav .nav-item-picture:not(button) {
     display: none;
   }
 }
 @media (min-width: 600px) {
   .nav .nav-item-picture {
     display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 5px solid #ffffff;
+    background-color: #ffff00;
   }
 }
 .nav .nav-item:hover .nav-item-picture,
@@ -72,8 +77,24 @@
 .nav .nav-item-search .search-box:focus {
   background-color: #ffffff;
 }
+@media (max-width: 599px) {
+  .nav .nav-item-search .search-box {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 599px) {
+  .nav .nav-item-search .nav-item-caption {
+    margin-right: 45px;
+  }
+}
 .nav .nav-item-search.nav-item-1-3 .search-box {
   background-position: 0 35px;
+}
+@media (max-width: 599px) {
+  .nav.nav-3 {
+    line-height: 1.67em;
+  }
 }
 @media (min-width: 600px) {
   .nav.nav-3 {
@@ -136,6 +157,11 @@
   }
   .nav .nav-item-3-3 .nav-item-caption {
     padding-left: 5px;
+  }
+}
+@media (max-width: 599px) {
+  .nav.nav-5 {
+    line-height: 1.67em;
   }
 }
 @media (min-width: 600px) {
@@ -230,11 +256,15 @@
 }
 @media (max-width: 599px) {
   .nav .nav-toggle {
-    position: relative;
     display: inline-block;
-    top: 0;
-    right: 0;
-    text-align: right;
+    background-color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
   }
 }
 @media (min-width: 600px) {
@@ -244,8 +274,9 @@
 }
 @media (max-width: 599px) {
   .nav.nav-open {
-    display: block;
-    width: 100%;
+    background-image: radial-gradient(ellipse 70% 30px at center top 60px, #ffffff 0%, #ffffff 99%, transparent 99%, transparent), linear-gradient(to bottom, transparent, transparent 45px, #ffffff 45px, #ffffff 55%, transparent 55%, transparent), linear-gradient(to top, transparent, transparent 30px, #ffffff 30px, #ffffff 55%, transparent 55%, transparent), radial-gradient(ellipse 70% 30px at center bottom 30px, #ffffff 0%, #ffffff 99%, transparent 99%, transparent);
+    background-repeat: no-repeat;
+    padding: 0 15px 30px 15px;
   }
   .nav.nav-open .nav-item {
     display: block;
