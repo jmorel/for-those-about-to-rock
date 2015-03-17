@@ -48,7 +48,7 @@
                 <div class="attribute">
                     <div class="attribute-value">
                         {% set share_url = request.build_absolute_uri(url('rocking_chair:show', slug=rocking_chair.slug))|urlencode %}
-                        <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ rocking_chair.twitter_text }}">
+                        <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ rocking_chair.title }}">
                             <i class="fa fa-twitter"></i>
                         </a>
                         <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ rocking_chair.slug }}&display=popup">
