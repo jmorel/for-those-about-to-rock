@@ -34,43 +34,77 @@
         margin-top: @article-attribute-spacing-large;
         list-style: none;
         padding: 0;
-        max-width: 50%;
-        background: linear-gradient(
-                0deg,
-                @white 0,
-                @white @body-background-vertical-width) no-repeat;
-        background-size: 2*@article-attribute-spacing-large @body-background-vertical-width;
+
+        @media (max-width: @screen-small-max) {
+        }
+
+        @media (min-width: @screen-medium-min) {
+            background: linear-gradient(
+                    0deg,
+                    @white 0,
+                    @white @body-background-vertical-width) no-repeat;
+            background-size: 2*@article-attribute-spacing-large @body-background-vertical-width;
+            max-width: 50%;
+        }
     }
 
     .item-left {
-        float: right;
-        right: 50%;
-        text-align: right;
-        margin-right: @body-background-vertical-width/2;
-        background-position: right @timeline-picture-radius;
-        padding-right: @article-attribute-spacing-large;
+        @media (max-width: @screen-small-max) {
+            text-align: center;
+        }
+
+        @media (min-width: @screen-medium-min) {
+            float: right;
+            right: 50%;
+            text-align: right;
+            margin-right: @body-background-vertical-width/2;
+            background-position: right @timeline-picture-radius;
+            padding-right: @article-attribute-spacing-large;
+        }
 
         .item-picture {
-            float: right;
+            @media (max-width: @screen-small-max) {
+                margin: 0 auto;
+            }
+            @media (min-width: @screen-medium-min) {
+                float: right;
+            }
         }
         .item-text {
-            margin-right: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+            @media (max-width: @screen-small-max) {
+            }
+            @media (min-width: @screen-medium-min) {
+                margin-right: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+            }
         }
     }
 
     .item-right {
-        float: left;
-        left: 50%;
-        text-align: left;
-        margin-left: @body-background-vertical-width/2;
-        background-position: left @timeline-picture-radius;
-        padding-left: @article-attribute-spacing-large;
+        @media (max-width: @screen-small-max) {
+            text-align: center;
+        }
+
+        @media (min-width: @screen-medium-min) {
+            float: left;
+            left: 50%;
+            text-align: left;
+            margin-left: @body-background-vertical-width/2;
+            background-position: left @timeline-picture-radius;
+            padding-left: @article-attribute-spacing-large;
+        }
 
         .item-picture {
-            float: left;
+            @media (max-width: @screen-small-max) {
+                margin: 0 auto;
+            }
+            @media (min-width: @screen-medium-min) {
+                float: left;
+            }
         }
         .item-text {
-            margin-left: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+            @media (min-width: @screen-medium-min) {
+                margin-left: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+            }
         }
     }
 
@@ -97,10 +131,48 @@
             max-width: 100%;
             max-height: 100%;
         }
+
+        i {
+            vertical-align: middle;
+            font-size: 1rem;
+        }
     }
 
     .item-text {
-        padding-top: @timeline-entry-name-padding-large;
+        @media (max-width: @screen-small-max) {
+            margin-top: @timeline-entry-name-padding-small;
+            .semi-transparent-background(@timeline-entry-name-padding-small, @timeline-entry-name-padding-small);
+        }
+
+        @media (min-width: @screen-medium-min) {
+            padding-top: @timeline-entry-name-padding-large;
+        }
     }
 
+}
+
+.semi-transparent-background(@top-length, @bottom-length) {
+    background-color: @yellow-transparent;
+
+    &:before {
+        content: '';
+        display: block;
+        height: @top-length;
+        width: 100%;
+        position: absolute;
+        top: -@top-length;
+        left: 0;
+        background: linear-gradient(transparent 0, @yellow-transparent @top-length) center top no-repeat,
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        height: @bottom-length;
+        width: 100%;
+        position: absolute;
+        bottom: -@bottom-length;
+        left: 0;
+        background: linear-gradient(@yellow-transparent 0, transparent @bottom-length) center bottom no-repeat;
+    }
 }

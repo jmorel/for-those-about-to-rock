@@ -66,7 +66,10 @@ THUMBNAIL_ALIASES = {
         # project wide target
         '540x540': {
             'size': (540, 540),
-        }
+        },
+        '50x50': {
+            'size': (50, 50),
+        },
     }
 }
 

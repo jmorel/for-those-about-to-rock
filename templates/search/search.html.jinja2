@@ -1,7 +1,7 @@
 {% extends 'layout.html.jinja2' %}
 
 {% block nav %}
-    {{ nav('search', query) | safe }}
+    {{ nav('search', query, true) | safe }}
 {% endblock %}
 
 {% block content %}
@@ -50,7 +50,7 @@
 
         <div class="item item-right">
             <div class="item-picture">
-
+                <i class="fa fa-info"></i>
             </div>
             <div class="item-text">
                 Use the search form in the menu above to find a rocking chair in our (ever-growing) database.

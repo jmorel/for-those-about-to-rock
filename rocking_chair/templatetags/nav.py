@@ -5,7 +5,7 @@ from haystack.forms import SearchForm
 
 
 @library.global_function
-def nav(active_page='rocking_chair:index', query=None):
+def nav(active_page='rocking_chair:index', query=None, open=False):
     pages = [
         {
             'url': 'rocking_chair:index',
@@ -32,5 +32,5 @@ def nav(active_page='rocking_chair:index', query=None):
         'items': ordered_pages or pages,
         'search_form': SearchForm(),
         'query': query,
-
+        'open': open,
     })
