@@ -25,6 +25,7 @@ INSTALLED_APPS = (
     'django_jinja.contrib._easy_thumbnails',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'haystack',
     'ftatr',
     'rocking_chair',
 )
@@ -67,6 +68,14 @@ THUMBNAIL_ALIASES = {
             'size': (540, 540),
         }
     }
+}
+
+# Haystack
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
 }
 
 
