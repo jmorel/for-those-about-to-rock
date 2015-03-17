@@ -39,7 +39,12 @@ def index_by_year(request):
     for year in reversed(range(rocking_chairs[0].year, current_year+1)):
         timeline[year] = []
     for rocking_chair in rocking_chairs:
-        timeline[rocking_chair.year].append(rocking_chair)
+        if rocking_chair.year:
+            timeline[rocking_chair.year].append(rocking_chair)
+        else:
+            if not '?' in timeline:
+                timeline['?'] = []
+            timeline['?'].append(rocking_chair)
     return render(request, 'rocking_chair/index_by_year.html.jinja2', {
         'timeline': timeline,
     })
