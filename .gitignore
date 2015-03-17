@@ -11,3 +11,4 @@ ftatr/settings.py
 Thumbs.db
 /resources/
 *.pyc
+/ftatr/whoosh_index/
