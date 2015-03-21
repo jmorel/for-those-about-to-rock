@@ -4,3 +4,6 @@
 [submodule "ftatr/static/ftatr/bootstrap"]
 	path = ftatr/static/ftatr/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "ftatr/static/ftatr/TouchSwipe-Jquery-Plugin"]
+	path = ftatr/static/ftatr/TouchSwipe-Jquery-Plugin
+	url = https://github.com/mattbryson/TouchSwipe-Jquery-Plugin.git
