@@ -12,3 +12,4 @@ Thumbs.db
 /resources/
 *.pyc
 /ftatr/whoosh_index/
+/staticfiles/

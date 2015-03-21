@@ -25,9 +25,8 @@
                     {% endif %}
                     <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
                         <div class="item-picture">
-                            <img src="{{ manufacturer.logo.picture | thumbnail_url('50x50') }}"
+                            <img src="{{ manufacturer.logo | thumbnail_url('50x50') }}"
                              alt="{{ manufacturer.name }}"/>
-    {#                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"#}
                         </div>
                         <div class="item-text">
                             <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">

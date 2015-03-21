@@ -20,12 +20,12 @@ def nav(active_page='rocking_chair:index', query=None, open=False):
         {
             'url': 'rocking_chair:index-by-year',
             'picture': 2,
-            'caption': 'Rocking chairs by year'
+            'caption': 'Timeline'
         },
         {
             'url': 'rocking_chair:index-by-name',
             'picture': 2,
-            'caption': 'Rocking chairs by name'
+            'caption': 'Rocking chairs'
         },
         {
             'url': 'manufacturer:index',

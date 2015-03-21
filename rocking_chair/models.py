@@ -86,10 +86,6 @@ class RockingChair(models.Model):
         return os.path.join('rocking-chairs', self.rocking_chair.slug, get_upload_filename(filename))
 
 
-def get_manufacturer_upload_to(self, filename):
-    return os.path.join('manufacturers', self.slug, get_upload_filename(filename))
-
-
 def get_upload_filename(filename):
     name, extension = os.path.splitext(filename)
     md5sum = hashlib.md5()
@@ -153,8 +149,11 @@ class Manufacturer(models.Model):
     class Meta:
         db_table = 'manufacturer'
 
+    def get_upload_to(self, filename):
+        return os.path.join('manufacturers', self.slug, get_upload_filename(filename))
+
     name = models.CharField(max_length=255)
-    logo = models.ImageField(upload_to=get_manufacturer_upload_to, blank=True, null=True)
+    logo = models.ImageField(upload_to=get_upload_to, blank=True, null=True)
 
     country = models.ForeignKey('Country', blank=True, null=True)
 
