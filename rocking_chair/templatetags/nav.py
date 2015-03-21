@@ -22,6 +22,16 @@ def nav(active_page='rocking_chair:index', query=None, open=False):
             'picture': 2,
             'caption': 'Rocking chairs by year'
         },
+        {
+            'url': 'rocking_chair:index-by-name',
+            'picture': 2,
+            'caption': 'Rocking chairs by name'
+        },
+        {
+            'url': 'manufacturer:index',
+            'picture': 2,
+            'caption': 'Manufacturers'
+        },
     ]
     ordered_pages = []
     for page in pages:

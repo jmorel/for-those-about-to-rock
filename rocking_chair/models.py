@@ -79,9 +79,8 @@ class RockingChair(models.Model):
         names = ', '.join(map(lambda manufacturer: manufacturer.name, manufacturers))
         return names
 
-
-def get_picture_upload_to(self, filename):
-    return os.path.join('rocking-chairs', self.rocking_chair.slug, get_upload_filename(filename))
+    def get_upload_to(self, filename):
+        return os.path.join('rocking-chairs', self.rocking_chair.slug, get_upload_filename(filename))
 
 
 def get_manufacturer_upload_to(self, filename):
@@ -101,7 +100,7 @@ class Picture(models.Model):
     class Meta:
         db_table = 'picture'
 
-    picture = models.ImageField(upload_to=get_picture_upload_to)
+    picture = models.ImageField(upload_to=RockingChair.get_upload_to)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='pictures')
 

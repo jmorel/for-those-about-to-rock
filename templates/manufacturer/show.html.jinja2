@@ -12,11 +12,27 @@
     <div class="clear"></div>
 
     {{ manufacturer.name }}
-    {% for rocking_chair in manufacturer.published_rocking_chairs %}
-        <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
-            {{ rocking_chair.name }}
-        </a>
-    {% endfor %}
+
+    <div class="round-item-list">
+        {% for rocking_chair in manufacturer.published_rocking_chairs %}
+            {% if loop.index % 2 %}
+                <div class="clear"></div>
+            {% endif %}
+            <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                <div class="item-picture">
+                    <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
+                         alt="{{ rocking_chair.name }}"/>
+                </div>
+                <div class="item-text">
+                    <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+                        {{ rocking_chair.title }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="clear"></div>
 
     <div class="paginate">
         <a href="{{ url('manufacturer:index-by-name') }}">
