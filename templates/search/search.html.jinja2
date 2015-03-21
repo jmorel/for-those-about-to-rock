@@ -23,7 +23,7 @@
                         <img src="{{ result.object.pictures.first().picture | thumbnail_url('50x50') }}">
                     </div>
                     <div class="item-text">
-                        <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
+                        <a href="{{ result.object.get_absolute_url() }}">{{ result.object.title }}</a>
                     </div>
                 </div>
             {% else %}
