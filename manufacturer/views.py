@@ -5,7 +5,7 @@ from ftatr.utils import build_index_by_name
 
 def index(request):
     manufacturers = Manufacturer.objects.order_by('name')
-    return render(request, 'manufacturer/index_by_name.html.jinja2', {
+    return render(request, 'manufacturer/index.html.jinja2', {
         'alphabet': build_index_by_name(manufacturers)
     })
 

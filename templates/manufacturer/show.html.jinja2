@@ -7,11 +7,71 @@
 {#{% block twitter_title %}{{ rocking_chair.twitter_text }}{% endblock %}#}
 {#{% block twitter_image %}{{ request.build_absolute_uri(rocking_chair.pictures.first().picture | thumbnail_url('540x540')) }}{% endblock %}#}
 
+{% block nav %}
+    {{ nav('manufacturer:index') | safe }}
+{% endblock %}
+
 {% block content %}
 
     <div class="clear"></div>
 
-    {{ manufacturer.name }}
+    <article class="rocking-chair" id="{{ manufacturer.slug }}">
+        <div class="pictures">
+            <div id="" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{{ manufacturer.logo.picture | thumbnail_url('540x540') }}"
+                             alt="{{ manufacturer.name }}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attributes-container">
+            <ul class="attributes attributes-left">
+                <li>
+                    <div class="rocking-chair-name">
+                        <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}#{{ manufacturer.slug }}">
+                            {{ manufacturer.name }}
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {% set share_url = request.build_absolute_uri(url('manufacturer:show', slug=manufacturer.slug))|urlencode %}
+                            <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ manufacturer.name }}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ manufacturer.slug }}&display=popup">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                        <div class="attribute-name">
+                            Share on
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+            {% if manufacturer.country %}
+            <ul class="attributes attributes-right">
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                                {{ manufacturer.country }}
+                        </div>
+                        <div class="attribute-name">
+                            Country
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </article>
+
+    <div class="clear"></div>
 
     <div class="round-item-list">
         {% for rocking_chair in manufacturer.published_rocking_chairs %}
@@ -25,7 +85,7 @@
                 </div>
                 <div class="item-text">
                     <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
-                        {{ rocking_chair.title }}
+                        {{ rocking_chair.build_title(manufacturers=False) }}
                     </a>
                 </div>
             </div>
@@ -35,7 +95,7 @@
     <div class="clear"></div>
 
     <div class="paginate">
-        <a href="{{ url('manufacturer:index-by-name') }}">
+        <a href="{{ url('manufacturer:index') }}">
             view all
         </a>
     </div>

@@ -50,10 +50,13 @@ class RockingChair(models.Model):
 
     @property
     def title(self):
+        return self.build_title()
+
+    def build_title(self, designers=True, manufacturers=True):
         title = self.name
-        if self.designer_names:
+        if designers and self.designer_names:
             title = "{} by {}".format(title, self.designer_names)
-        if self.manufacturer_names:
+        if manufacturers and self.manufacturer_names:
             title = "{} ({})".format(title, self.manufacturer_names)
         return title
 
