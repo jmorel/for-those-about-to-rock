@@ -5,7 +5,7 @@
 @import 'timeline';
 @import 'nav';
 
-* {
+*, *:before, *:after {
     box-sizing: border-box;
     position: relative;
 }
@@ -38,6 +38,11 @@ body {
     background-size: @body-background-vertical-width @body-background-vertical-width;
     background-position: center;
     background-repeat: repeat-y;
+}
+
+.body-container {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -109,8 +114,9 @@ header {
 
         a {
             color: inherit;
+            transition: color 0.4s;
             &:hover {
-                text-decoration: underline;
+                color: @yellow;
             }
         }
     }
@@ -120,6 +126,15 @@ header {
         text-align: center;
         color: @grey;
         margin: 1em 0 0 0;
+    }
+
+    a {
+        color: inherit;
+        transition: color 300ms;
+
+        &:hover {
+            color: @yellow;
+        }
     }
 }
 
@@ -195,55 +210,11 @@ article.rocking-chair {
     .attributes-container {
         @media (max-width: @screen-small-max) {
             margin-top: @article-padding-small;
-            background-color: rgba(255, 255, 0, 0.5);
-
-            &:before {
-                content: '';
-                display: block;
-                height: @article-padding-small;
-                width: 100%;
-                position: absolute;
-                top: -@article-padding-small;
-                left: 0;
-                background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-small) center top no-repeat,
-            }
-
-            &:after {
-                content: '';
-                display: block;
-                height: @article-padding-small;
-                width: 100%;
-                position: absolute;
-                bottom: -@article-padding-small;
-                left: 0;
-                background: linear-gradient(rgba(255, 255, 0, 0.5) 0, transparent @article-padding-small) center bottom no-repeat;
-            }
+            .semi-transparent-background(@article-padding-small, @article-padding-small);
         }
         @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
             margin-top: @article-padding-medium;
-            background-color: rgba(255, 255, 0, 0.5);
-
-            &:before {
-                content: '';
-                display: block;
-                height: @article-padding-medium;
-                width: 100%;
-                position: absolute;
-                top: -@article-padding-medium;
-                left: 0;
-                background: linear-gradient(transparent 0, rgba(255, 255, 0, 0.5) @article-padding-medium) center top no-repeat,
-            }
-
-            &:after {
-                content: '';
-                display: block;
-                height: @article-padding-medium;
-                width: 100%;
-                position: absolute;
-                bottom: -@article-padding-medium;
-                left: 0;
-                background: linear-gradient(rgba(255, 255, 0, 0.5) 0, transparent @article-padding-medium) center bottom no-repeat;
-            }
+            .semi-transparent-background(@article-padding-medium, @article-padding-medium);
         }
         @media (min-width: @screen-large-min) {
             margin-top: 2*@article-attribute-spacing-large;

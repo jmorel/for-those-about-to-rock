@@ -12,69 +12,72 @@
 {% endblock %}
 
 {% block content %}
-    <div class="module" style="float: left; margin-right: 15px">
-        <h2>
-            Unscheduled rocking-chairs
-        </h2>
-        <ul>
-            {% for rocking_chair in unscheduled %}
-                <li>
-                    <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">
-                        {{ rocking_chair.name }}
-                    </a>
-                    (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
-                </li>
-            {% empty %}
-                <li>None</li>
-            {% endfor %}
-        </ul>
-    </div>
+    <div id="content-main" class="inner-two-columns">
 
-    <div class="module" style="float: left;">
-        <h2>
-            Timeline
-        </h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Rocking chair</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for day, rocking_chairs in timeline.items %}
-                {% if day == today %}
-                    <tr>
-                        <td colspan="2">
-                            <h3>Today</h3>
-                        </td>
-                    </tr>
-                {% endif %}
-                {% for rocking_chair in rocking_chairs %}
-                        {% if forloop.first %}
-                            <td rowspan="{{ rocking_chairs | length }}" style="vertical-align: middle;">
-                                {{ day | date:'Y-m-d' }}
-                            </td>
-                        {% endif %}
-                        <td>
-                            {{ rocking_chair.published_at | date:'H:i' }}
-                        </td>
-                        <td>
-                            <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.twitter_text }}</a>
+        <div class="inner-right-column">
+            <h2>Unscheduled</h2>
+
+            <div class="box">
+                <ul>
+                    {% for rocking_chair in unscheduled %}
+                        <li>
+                            <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">
+                                {{ rocking_chair.name }}
+                            </a>
                             (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
-                        </td>
-                    </tr>
-                {% empty %}
+                        </li>
+                        {% empty %}
+                        <li>None</li>
+                    {% endfor %}
+                </ul>
+                <p>
+                    <a href="{% url 'admin:rocking_chair_rockingchair_add' %}" class="btn btn-success">
+                        <i class="icon-plus-sign icon-white"></i>
+                        New rocking chair
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="inner-center-column">
+            <h2>
+                Timeline
+            </h2>
+            <table class="table table-bordered table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Rocking chair</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for day, rocking_chairs in timeline.items %}
                     <tr>
-                        <td colspan="3">
-                            {{ day | date:'Y-m-d' }}
+                        <td {% if day == today %}style="border: 2px solid green;border-right-width: 0;"{% endif %}>
+                            {% if day == today %}
+                                <strong>Today</strong>
+                            {% else %}
+                                {{ day | date:'Y-m-d' }}
+                            {% endif %}
                         </td>
+                        {% for rocking_chair in rocking_chairs %}
+                            <td {% if day == today %}style="border-top: 2px solid green; border-bottom: 2px solid green"{% endif %}>
+                                {{ rocking_chair.published_at | date:'H:i' }}
+                            </td>
+                            <td {% if day == today %}style="border: 2px solid green; border-left: 0"{% endif %}>
+                                <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.title }}</a>
+                                (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
+                            </td>
+                            {% empty %}
+                            <td {% if day == today %}style="border-top: 2px solid green; border-bottom: 2px solid green"{% endif %}>
+                            <td {% if day == today %}style="border: 2px solid green; border-left: 0"{% endif %}>
+                        {% endfor %}
                     </tr>
                 {% endfor %}
-            {% endfor %}
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

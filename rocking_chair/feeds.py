@@ -29,7 +29,7 @@ class LatestRockingChairsFeed(Feed):
         return rocking_chairs
 
     def item_title(self, item):
-        return item.twitter_text
+        return item.title
 
     def item_description(self, item):
         template = loader.get_template('rocking_chair/feed_item.html.jinja2')

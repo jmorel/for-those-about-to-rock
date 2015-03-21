@@ -4,32 +4,41 @@
 {#{% block og_image %}{{ image }}{% endblock %}#}
 {#{% block twitter_image %}{{ image }}{% endblock %}#}
 
+{% block nav %}
+    {{ nav('rocking_chair:index-by-year') | safe }}
+{% endblock %}
+
 {% block content %}
     <div class="timeline">
         {% for year, rocking_chairs in timeline.items() %}
 
-            <div class="year {% if rocking_chairs %}active{% endif %}">
-                <a href="#{{ year }}">
+            <div class="year {% if rocking_chairs %}active{% endif %}" id="{{ year }}">
+                <a href="{{ url('rocking_chair:index-by-year') }}#{{ year }}">
                     {{ year }}
                 </a>
             </div>
 
-            {% for rocking_chair in rocking_chairs %}
-                {% if loop.index % 2 %}
-                    <div class="clear"></div>
-                {% endif %}
-                <div class="rocking-chair rocking-chair-{% if loop.index % 2 %}left{% else %}right{% endif %}">
-                    <div class="rocking-chair-picture">
-                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
-                             alt="{{ rocking_chair.name }}"/>
-                    </div>
-                    <div class="rocking-chair-name">
-                        <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
-                            {{ rocking_chair.twitter_text }}
-                        </a>
-                    </div>
+
+            {% if rocking_chairs %}
+                <div class="round-item-list">
+                    {% for rocking_chair in rocking_chairs %}
+                        {% if loop.index % 2 %}
+                            <div class="clear"></div>
+                        {% endif %}
+                        <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                            <div class="item-picture">
+                                <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
+                                     alt="{{ rocking_chair.name }}"/>
+                            </div>
+                            <div class="item-text">
+                                <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+                                    {{ rocking_chair.title }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            {% endif %}
 
             <div class="clear"></div>
 

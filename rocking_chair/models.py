@@ -1,4 +1,6 @@
 import datetime
+from django.contrib.sites.models import Site
+from django.core.urlresolvers import reverse
 from django.db import models
 import hashlib
 import os
@@ -26,15 +28,40 @@ class RockingChair(models.Model):
     def is_published(self):
         return self.published_at and (self.published_at < datetime.datetime.now())
 
+    def get_absolute_url(self):
+        return reverse('rocking_chair:show', kwargs={'slug': self.slug})
+
+    def twitter_text(self, tweet_max_length=118):
+        # rocking chair name
+        safe_tweet = self.name
+        if len(safe_tweet) > tweet_max_length:
+           safe_tweet = safe_tweet[:tweet_max_length-3] + '...'
+        # add designer names
+        if self.designer_names:
+            tweet = "{} by {}".format(safe_tweet, self.designer_names)
+            if len(tweet) <= tweet_max_length:
+                safe_tweet = tweet
+        # add manufacturer names
+        if self.manufacturer_names:
+            tweet = "{} ({})".format(safe_tweet, self.manufacturer_names)
+            if len(tweet) <= tweet_max_length:
+                safe_tweet = tweet
+        return "{} {}{}".format(safe_tweet, Site.objects.get_current(), self.get_absolute_url())
+
     @property
-    def twitter_text(self):
-        return "{} by {}".format(self.name, self.designer_names)
+    def title(self):
+        title = self.name
+        if self.designer_names:
+            title = "{} by {}".format(title, self.designer_names)
+        if self.manufacturer_names:
+            title = "{} ({})".format(title, self.manufacturer_names)
+        return title
 
     @property
     def designer_names(self):
         designers = list(self.designers.all())
         if not designers:
-            return self.name
+            return None
 
         authors = ', '.join([designer.full_name for designer in designers[:-1]])
         if authors:
@@ -42,6 +69,15 @@ class RockingChair(models.Model):
         else:
             authors = designers[-1].full_name
         return authors
+
+    @property
+    def manufacturer_names(self):
+        manufacturers = list(self.manufacturers.all())
+        if not manufacturers:
+            return None
+
+        names = ', '.join(map(lambda manufacturer: manufacturer.name, manufacturers))
+        return names
 
 
 def get_picture_upload_to(self, filename):

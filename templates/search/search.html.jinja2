@@ -1,0 +1,61 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block nav %}
+    {{ nav('search', query, true) | safe }}
+{% endblock %}
+
+{% block content %}
+    {% if query %}
+        {% if page.has_previous() %}
+            <div class="paginate previous">
+                <a href="{{ url('search') }}?q={{ query }}&page={{ page.previous_page_number() }}">
+                    previous<br>
+                </a>
+            </div>
+        {% endif %}
+        <div class="round-item-list">
+            {% for result in page.object_list %}
+                {% if loop.index % 2 %}
+                    <div class="clear"></div>
+                {% endif %}
+                <div class="item item-{% if loop.index % 2 %}right{% else %}left{% endif %}">
+                    <div class="item-picture">
+                        <img src="{{ result.object.pictures.first().picture | thumbnail_url('50x50') }}">
+                    </div>
+                    <div class="item-text">
+                        <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="item item-right">
+                    <div class="item-picture">
+                        <i class="fa fa-warning"></i>
+                    </div>
+                    <div class="item-text">
+                        No results found
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+        {% if page.has_next() %}
+            <div class="paginate next">
+                <a href="{{ url('search') }}?q={{ query }}&page={{ page.next_page_number() }}">
+                    next<br>
+                </a>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="round-item-list">
+
+        <div class="item item-right">
+            <div class="item-picture">
+                <i class="fa fa-info"></i>
+            </div>
+            <div class="item-text">
+                Use the search form in the menu above to find a rocking chair in our (ever-growing) database.
+            </div>
+        </div>
+        </div>
+    {% endif %}
+{% endblock %}
