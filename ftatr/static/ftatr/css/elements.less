@@ -3,6 +3,15 @@
 .round-link-centered {
     margin: @paginate-spacing 0;
 
+    &.active {
+        margin-bottom: 0;
+
+        a {
+            color: @grey;
+            background-color: @white;
+        }
+    }
+
     a {
         text-align: center;
         display: block;
@@ -28,6 +37,11 @@
 .round-item-list {
     margin-top: @paginate-spacing;
     margin-bottom: @paginate-spacing;
+
+    &.no-margin {
+        margin: 0;
+    }
+
     .item {
         display: block;
         margin: 0;

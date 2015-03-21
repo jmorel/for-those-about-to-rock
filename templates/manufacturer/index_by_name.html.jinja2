@@ -4,37 +4,44 @@
 {#{% block og_image %}{{ image }}{% endblock %}#}
 {#{% block twitter_image %}{{ image }}{% endblock %}#}
 
+{% block nav %}
+    {{ nav('manufacturer:index') | safe }}
+{% endblock %}
+
 {% block content %}
-    <div class="timeline">
-        {% for letter, manufacturers in alphabet.items() %}
+    {% for letter, manufacturers in alphabet.items() %}
 
-            <div class="year {% if manufacturers %}active{% endif %}">
-                <a href="#{{ year }}">
-                    {{ letter }}
-                </a>
+        <div class="round-link-centered {% if manufacturers %}active{% endif %}" id=""{{ letter }}>
+            <a href="{{ url('manufacturer:index') }}#{{ letter }}">
+                {{ letter }}
+            </a>
+        </div>
+
+        {% if manufacturers %}
+            <div class="round-item-list no-margin">
+                {% for manufacturer in manufacturers %}
+                    {% if loop.index % 2 %}
+                        <div class="clear"></div>
+                    {% endif %}
+                    <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                        <div class="item-picture">
+                            <img src="{{ manufacturer.logo.picture | thumbnail_url('50x50') }}"
+                             alt="{{ manufacturer.name }}"/>
+    {#                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"#}
+                        </div>
+                        <div class="item-text">
+                            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
+                                {{ manufacturer.name }}
+                                {% set nb_rocking_chairs = manufacturer.published_rocking_chairs|length %}
+                                ({{ nb_rocking_chairs }} chair{% if nb_rocking_chairs > 1 %}s{% endif %})
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
+        {% endif %}
 
-            {% for manufacturer in manufacturers %}
-                {% if loop.index % 2 %}
-                    <div class="clear"></div>
-                {% endif %}
-                <div class="rocking-chair rocking-chair-{% if loop.index % 2 %}left{% else %}right{% endif %}">
-                    <div class="rocking-chair-picture">
-{#                        <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"#}
-{#                             alt="{{ rocking_chair.name }}"/>#}
-                    </div>
-                    <div class="rocking-chair-name">
-                        <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
-                            {{ manufacturer.name }}
-                            {% set nb_rocking_chairs = manufacturer.published_rocking_chairs|length %}
-                            ({{ nb_rocking_chairs }} chair{% if nb_rocking_chairs > 1 %}s{% endif %})
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
+        <div class="clear"></div>
 
-            <div class="clear"></div>
-
-        {% endfor %}
-    </div>
+    {% endfor %}
 {% endblock %}

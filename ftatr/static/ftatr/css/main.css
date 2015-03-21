@@ -2,6 +2,13 @@
 .round-link-centered {
   margin: 60px 0;
 }
+.round-link-centered.active {
+  margin-bottom: 0;
+}
+.round-link-centered.active a {
+  color: #333333;
+  background-color: #ffffff;
+}
 .round-link-centered a {
   text-align: center;
   display: block;
@@ -23,6 +30,9 @@
 .round-item-list {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+.round-item-list.no-margin {
+  margin: 0;
 }
 .round-item-list .item {
   display: block;
@@ -483,37 +493,6 @@
 .carousel-indicators li.active {
   background-color: #ffff00;
 }
-.timeline .year {
-  margin: 60px 0;
-}
-.timeline .year a {
-  text-align: center;
-  display: block;
-  background: #ffff00;
-  border: 5px solid #ffffff;
-  color: #7f8000;
-  margin: 0 auto;
-  border-radius: 60px;
-  width: 120px;
-  height: 120px;
-  font-size: 0.75rem;
-  line-height: 113px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-.timeline .year a:hover {
-  color: #333333;
-}
-.timeline .year.active {
-  margin-bottom: 0;
-}
-.timeline .year.active a {
-  color: #333333;
-  background-color: #ffffff;
-}
-.timeline .round-item-list {
-  margin: 0;
-}
 .nav {
   position: relative;
   margin: 60px 0;
@@ -932,6 +911,13 @@ header a:hover {
 }
 div.paginate {
   margin: 60px 0;
+}
+div.paginate.active {
+  margin-bottom: 0;
+}
+div.paginate.active a {
+  color: #333333;
+  background-color: #ffffff;
 }
 div.paginate a {
   text-align: center;

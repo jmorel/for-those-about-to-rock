@@ -1,8 +1,8 @@
-from collections import OrderedDict
 import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from rocking_chair.models import RockingChair
+from ftatr.utils import build_index_by_name, build_index_by_year
 
 
 def index(request):
@@ -28,44 +28,22 @@ def index(request):
 
 
 def index_by_year(request):
-    # prepare general request
     rocking_chairs = RockingChair.objects \
         .exclude(published_at__gte=datetime.datetime.now()) \
         .exclude(published_at=None) \
         .order_by('year', 'name')
-    # index by years
-    timeline = OrderedDict()
-    current_year = datetime.datetime.now().year
-    for year in reversed(range(rocking_chairs[0].year, current_year + 1)):
-        timeline[year] = []
-    for rocking_chair in rocking_chairs:
-        if rocking_chair.year:
-            timeline[rocking_chair.year].append(rocking_chair)
-        else:
-            if not '?' in timeline:
-                timeline['?'] = []
-            timeline['?'].append(rocking_chair)
     return render(request, 'rocking_chair/index_by_year.html.jinja2', {
-        'timeline': timeline,
+        'timeline': build_index_by_year(rocking_chairs),
     })
 
 
 def index_by_name(request):
-    # prepare general request
     rocking_chairs = RockingChair.objects \
         .exclude(published_at__gte=datetime.datetime.now()) \
         .exclude(published_at=None) \
         .order_by('name')
-    # index by name
-    alphabet = OrderedDict()
-    for letter in 'abcdefghijklmnopqrstuvwxyz#':
-        alphabet[letter] = []
-    for rocking_chair in rocking_chairs:
-        letter = rocking_chair.name.lower()[0]
-        letter = letter if letter in 'abcdefghijklmnopqrstuvwxyz' else '#'
-        alphabet[letter].append(rocking_chair)
     return render(request, 'rocking_chair/index_by_name.html.jinja2', {
-        'alphabet': alphabet,
+        'alphabet': build_index_by_name(rocking_chairs),
     })
 
 
