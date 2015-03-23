@@ -1,0 +1,203 @@
+@import "variables";
+
+
+.round-item(@radius, @border-width) {
+    display: block;
+    background: @white;
+    border: @border-width solid white;
+    border-radius: @radius;
+    width: 2*@radius;
+    height: 2*@radius;
+    text-align: center;
+    line-height: 2*@radius;
+    color: @gray;
+}
+
+.round-item-medium {
+    .round-item(@paginate-radius, @body-background-vertical-width);
+}
+
+.round-link-centered {
+    margin: @paginate-spacing 0;
+
+    &.active {
+        margin-bottom: 0;
+
+        a {
+            color: @grey;
+            background-color: @white;
+        }
+    }
+
+    a {
+        text-align: center;
+        display: block;
+        background: @yellow;
+        border: @body-background-vertical-width solid white;
+        color: @yellow-dark;
+        margin: 0 auto;
+        border-radius: @paginate-radius;
+        width: 2*@paginate-radius;
+        height: 2*@paginate-radius;
+        font-size: 0.75rem;
+        // the -7px is here to compensate for the font's cap-height/descend in the centering
+        line-height: 2*@paginate-radius - 7px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: @grey;
+        }
+    }
+}
+
+.round-item-list {
+
+    .item {
+        display: block;
+        margin: 0;
+        margin-top: @article-attribute-spacing-large;
+        list-style: none;
+        padding: 0;
+
+        @media (max-width: @screen-small-max) {
+        }
+
+        @media (min-width: @screen-medium-min) {
+            background: linear-gradient(
+                    0deg,
+                    @white 0,
+                    @white @body-background-vertical-width) no-repeat;
+            background-size: 2*@article-attribute-spacing-large @body-background-vertical-width;
+            max-width: 50%;
+        }
+    }
+
+    .item-left {
+        @media (max-width: @screen-small-max) {
+            text-align: center;
+        }
+
+        @media (min-width: @screen-medium-min) {
+            float: right;
+            right: 50%;
+            text-align: right;
+            margin-right: @body-background-vertical-width/2;
+            background-position: right @timeline-picture-radius;
+            padding-right: @article-attribute-spacing-large;
+        }
+
+        .item-picture {
+            @media (max-width: @screen-small-max) {
+                margin: 0 auto;
+            }
+            @media (min-width: @screen-medium-min) {
+                float: right;
+            }
+        }
+        .item-text {
+            @media (max-width: @screen-small-max) {
+            }
+            @media (min-width: @screen-medium-min) {
+                margin-right: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+            }
+        }
+    }
+
+    .item-right {
+        @media (max-width: @screen-small-max) {
+            text-align: center;
+        }
+
+        @media (min-width: @screen-medium-min) {
+            float: left;
+            left: 50%;
+            text-align: left;
+            margin-left: @body-background-vertical-width/2;
+            background-position: left @timeline-picture-radius;
+            padding-left: @article-attribute-spacing-large;
+        }
+
+        .item-picture {
+            @media (max-width: @screen-small-max) {
+                margin: 0 auto;
+            }
+            @media (min-width: @screen-medium-min) {
+                float: left;
+            }
+        }
+        .item-text {
+            @media (min-width: @screen-medium-min) {
+                margin-left: 2*@timeline-picture-radius + @article-attribute-spacing-large;
+            }
+        }
+    }
+
+    .item-picture {
+        background-color: white;
+        border-radius: @timeline-picture-radius;
+        border: @body-background-vertical-width solid @white;
+        width: 2*@timeline-picture-radius;
+        height: 2*@timeline-picture-radius;
+        transition-property: opacity;
+        text-align: center;
+        font-size: 0;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        i {
+            vertical-align: middle;
+            font-size: 1rem;
+        }
+    }
+
+    .item-text {
+        @media (max-width: @screen-small-max) {
+            margin-top: @timeline-entry-name-padding-small;
+            .semi-transparent-background(@timeline-entry-name-padding-small, @timeline-entry-name-padding-small);
+        }
+
+        @media (min-width: @screen-medium-min) {
+            padding-top: @timeline-entry-name-padding-large;
+        }
+    }
+
+}
+
+.semi-transparent-background(@top-length, @bottom-length) {
+    background-color: @yellow-transparent;
+
+    &:before {
+        content: '';
+        display: block;
+        height: @top-length;
+        width: 100%;
+        position: absolute;
+        top: -@top-length;
+        left: 0;
+        background: linear-gradient(transparent 0, @yellow-transparent @top-length) center top no-repeat,
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        height: @bottom-length;
+        width: 100%;
+        position: absolute;
+        bottom: -@bottom-length;
+        left: 0;
+        background: linear-gradient(@yellow-transparent 0, transparent @bottom-length) center bottom no-repeat;
+    }
+}

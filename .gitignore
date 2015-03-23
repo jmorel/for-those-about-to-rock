@@ -5,8 +5,8 @@ assets/css/font-awesome-4.2.0
 .py-env/
 .idea/
 */__pycache__/
-media/
-static/
+/media/
+/static/
 ftatr/settings.py
 Thumbs.db
 /resources/
