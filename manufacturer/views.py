@@ -4,7 +4,9 @@ from ftatr.utils import build_index_by_name
 
 
 def index(request):
-    manufacturers = Manufacturer.objects.order_by('name')
+    manufacturers = Manufacturer.objects \
+        .exclude(rocking_chairs=None) \
+        .order_by('name')
     return render(request, 'manufacturer/index.html.jinja2', {
         'alphabet': build_index_by_name(manufacturers)
     })

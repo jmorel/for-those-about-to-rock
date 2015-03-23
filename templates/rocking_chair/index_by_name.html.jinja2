@@ -11,15 +11,15 @@
 {% block content %}
     {% for letter, rocking_chairs in alphabet.items() %}
 
-        <div class="round-link-centered {% if rocking_chairs %}active{% endif %}" id="{{ letter }}">
-            <a href="{{ url('rocking_chair:index-by-name') }}#{{ letter }}">
-                {{ letter }}
-            </a>
-        </div>
+        <a href="{{ url('rocking_chair:index-by-name') }}#{{ letter }}"
+                class="index-entry-title {% if not rocking_chairs %}empty{% endif %}"
+                id="{{ letter }}">
+            {{ letter }}
+        </a>
 
 
         {% if rocking_chairs %}
-            <div class="round-item-list no-margin">
+            <div class="index-entry-list">
                 {% for rocking_chair in rocking_chairs %}
                     {% if loop.index % 2 %}
                         <div class="clear"></div>
