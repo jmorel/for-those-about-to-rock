@@ -352,6 +352,7 @@ ul.attributes .attribute-links a:hover {
   color: #555555;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 .single-title .unknown {
   font-size: 5rem;
