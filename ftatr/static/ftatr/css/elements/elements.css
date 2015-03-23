@@ -9,6 +9,17 @@
   line-height: 120px;
   color: #555555;
 }
+.round-item-large {
+  display: block;
+  background: #ffffff;
+  border: 30px solid #ffffff;
+  border-radius: 300px;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+  line-height: 600px;
+  color: #555555;
+}
 .round-link-centered {
   margin: 60px 0;
 }

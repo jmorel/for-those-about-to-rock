@@ -1,0 +1,119 @@
+@import 'variables';
+@import 'backgrounds';
+
+.attributes-container {
+    @media (max-width: @screen-small-max) {
+        margin-top: @article-padding-small;
+        .semi-transparent-background(@article-padding-small, @article-padding-small);
+    }
+    @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
+        margin-top: @article-padding-medium;
+        .semi-transparent-background(@article-padding-medium, @article-padding-medium);
+    }
+    @media (min-width: @screen-large-min) {
+        margin-top: 2*@article-attribute-spacing-large;
+    }
+}
+
+ul.attributes {
+    display: block;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    @media (min-width: @screen-large-min) {
+        max-width: 50%;
+
+        &.attributes-left {
+            float: right;
+            right: 50%;
+            text-align: right;
+            margin-right: @article-attribute-spacing-large;
+        }
+
+        &.attributes-right {
+            float: left;
+            left: 50%;
+            text-align: left;
+            margin-left: @article-attribute-spacing-large;
+        }
+    }
+
+    li {
+        display: block;
+        margin-bottom: @article-attribute-spacing-large;
+
+        @media (max-width: @screen-medium-max) {
+            text-align: center;
+        }
+    }
+
+    .title {
+        font-size: 2.3rem;
+        line-height: 1em;
+
+        a {
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+
+    .attribute {
+        display: inline-block;
+    }
+
+    .attribute-tag {
+        font-size: 0.5rem;
+        background-color: @yellow-dark;
+        color: @yellow;
+        padding: 0.2em 0.4em;
+    }
+    .attribute-name {
+        font-size: 0.5rem;
+        background-color: @yellow-dark;
+        color: @yellow;
+        padding: 0.2em 0.4em;
+        margin-top: -0.2em;
+    }
+
+    .attribute-value {
+        line-height: 1em;
+        z-index: 1;
+
+        @media (max-width: @screen-small-max) {
+            font-size: 1.3rem;
+        }
+        @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
+            font-size: 1.4rem;
+        }
+        @media (min-width: @screen-large-min) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .attribute-links {
+        font-size: 0.6rem;
+
+        @media (max-width: @screen-medium-max) {
+            padding-top: 0.5em;
+        }
+        @media (min-width: @screen-large-min) {
+            position: relative;
+            top: 0;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            color: @yellow-dark;
+            text-decoration: none;
+
+            &:hover {
+                color: @grey;
+            }
+        }
+    }
+}

@@ -15,22 +15,20 @@
 
     <div class="clear"></div>
 
-    <article class="rocking-chair" id="{{ manufacturer.slug }}">
-        <div class="pictures">
-            <div id="" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="{{ manufacturer.logo | thumbnail_url('540x540') }}"
-                             alt="{{ manufacturer.name }}"/>
-                    </div>
-                </div>
-            </div>
+    <div id="{{ manufacturer.slug }}">
+        <div class="single-title">
+            {% if manufacturer.logo %}
+                <img src="{{ manufacturer.logo | thumbnail_url('540x540') }}"
+                     alt="{{ manufacturer.name }}"/>
+            {% else %}
+                <i class="unknown fa fa-question"></i>
+            {% endif %}
         </div>
 
-        <div class="attributes-container">
+        <div class="single-attributes">
             <ul class="attributes attributes-left">
                 <li>
-                    <div class="rocking-chair-name">
+                    <div class="title">
                         <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}#{{ manufacturer.slug }}">
                             {{ manufacturer.name }}
                         </a>
@@ -55,25 +53,25 @@
                 </li>
             </ul>
             {% if manufacturer.country %}
-            <ul class="attributes attributes-right">
-                <li>
-                    <div class="attribute">
-                        <div class="attribute-value">
+                <ul class="attributes attributes-right">
+                    <li>
+                        <div class="attribute">
+                            <div class="attribute-value">
                                 {{ manufacturer.country }}
+                            </div>
+                            <div class="attribute-name">
+                                Country
+                            </div>
                         </div>
-                        <div class="attribute-name">
-                            Country
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
             {% endif %}
         </div>
-    </article>
+    </div>
 
     <div class="clear"></div>
 
-    <div class="round-item-list">
+    <div class="single-related">
         {% for rocking_chair in manufacturer.published_rocking_chairs %}
             {% if loop.index % 2 %}
                 <div class="clear"></div>

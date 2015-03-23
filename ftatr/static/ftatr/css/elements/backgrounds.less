@@ -1,0 +1,27 @@
+@import 'variables';
+
+.semi-transparent-background(@top-length, @bottom-length) {
+    background-color: @yellow-transparent;
+
+    &:before {
+        content: '';
+        display: block;
+        height: @top-length;
+        width: 100%;
+        position: absolute;
+        top: -@top-length;
+        left: 0;
+        background: linear-gradient(transparent 0, @yellow-transparent @top-length) center top no-repeat,
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        height: @bottom-length;
+        width: 100%;
+        position: absolute;
+        bottom: -@bottom-length;
+        left: 0;
+        background: linear-gradient(@yellow-transparent 0, transparent @bottom-length) center bottom no-repeat;
+    }
+}

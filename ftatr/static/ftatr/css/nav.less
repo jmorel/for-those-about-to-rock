@@ -72,6 +72,11 @@
             border-radius: @nav-item-active-radius;
             color: @grey;
             line-height: 2*@nav-item-active-radius - 2*@body-background-vertical-width;
+
+            img {
+                max-width: 2*@nav-item-radius - 2*@body-background-vertical-width;
+                max-height: 2*@nav-item-radius - 2*@body-background-vertical-width;
+            }
         }
     }
 }
@@ -132,6 +137,12 @@
             border-radius: @nav-item-radius;
             border: @body-background-vertical-width solid @white;
             background-color: @yellow;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 2*@nav-item-radius - 6*@body-background-vertical-width;
+            max-height: 2*@nav-item-radius - 6*@body-background-vertical-width;
         }
     }
     .nav-item:hover .nav-item-picture,

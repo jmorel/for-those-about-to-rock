@@ -59,6 +59,11 @@
     background-color: #ffff00;
   }
 }
+.nav .nav-item-picture img {
+  vertical-align: middle;
+  max-width: 30px;
+  max-height: 30px;
+}
 .nav .nav-item:hover .nav-item-picture,
 .nav .nav-item-picture:active,
 .nav .nav-item-picture:focus {
@@ -131,6 +136,10 @@
     color: #333333;
     line-height: 70px;
   }
+  .nav .nav-item-1-3 .nav-item-picture img {
+    max-width: 50px;
+    max-height: 50px;
+  }
 }
 @media (min-width: 600px) {
   .nav .nav-item-2-3 {
@@ -198,6 +207,10 @@
     border-radius: 40px;
     color: #333333;
     line-height: 70px;
+  }
+  .nav .nav-item-1-5 .nav-item-picture img {
+    max-width: 50px;
+    max-height: 50px;
   }
 }
 @media (min-width: 600px) {

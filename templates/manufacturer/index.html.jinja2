@@ -25,8 +25,12 @@
                     {% endif %}
                     <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
                         <div class="item-picture">
+                            {% if manufacturer.logo %}
                             <img src="{{ manufacturer.logo | thumbnail_url('50x50') }}"
                                  alt="{{ manufacturer.name }}"/>
+                            {% else %}
+                                <i class="fa fa-question"></i>
+                            {% endif %}
                         </div>
                         <div class="item-text">
                             <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
