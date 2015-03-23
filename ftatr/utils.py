@@ -26,4 +26,5 @@ def build_index_by_year(items, attribute='year'):
             if not '?' in timeline:
                 timeline['?'] = []
             timeline['?'].append(item)
+    return timeline
 
