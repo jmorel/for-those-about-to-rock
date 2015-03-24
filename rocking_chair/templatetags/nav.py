@@ -36,6 +36,11 @@ def nav(active_page='rocking_chair:index', query=None, open=False):
                 static('ftatr/images/factory-icon-50x50.png')),
             'caption': 'Manufacturers'
         },
+        {
+            'url': 'designer:index',
+            'picture': '<i class="fa fa-users"></i>',
+            'caption': 'Manufacturers'
+        },
     ]
     ordered_pages = []
     for page in pages:

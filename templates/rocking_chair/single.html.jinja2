@@ -89,7 +89,9 @@
                 <li>
                     <div class="attribute">
                         <div class="attribute-value">
-                            {{ designer.first_name }} {{ designer.last_name }}
+                            <a href="{{ url('designer:show', slug=designer.slug) }}">
+                                {{ designer.first_name }} {{ designer.last_name }}
+                            </a>
                         </div>
                         <div class="attribute-name">
                             Designer

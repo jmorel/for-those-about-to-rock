@@ -144,6 +144,12 @@ class Designer(models.Model):
     def full_name(self):
         return "{} {}".format(self.first_name, self.last_name).strip()
 
+    @property
+    def published_rocking_chairs(self):
+        return self.rocking_chairs.all() \
+            .exclude(published_at__gte=datetime.datetime.now()) \
+            .exclude(published_at=None)
+
 
 class Manufacturer(models.Model):
     class Meta:
