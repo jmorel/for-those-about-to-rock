@@ -26,8 +26,8 @@ class DesignerSitemap(Sitemap):
 
     def lastmod(self, obj):
         return obj.updated_at
-    
-    
+
+
 class ManufacturerSitemap(Sitemap):
     changefreq = 'daily'
 

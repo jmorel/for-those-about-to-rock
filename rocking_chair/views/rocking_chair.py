@@ -2,7 +2,7 @@ import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from rocking_chair.models import RockingChair
-from ftatr.utils import build_index_by_name, build_index_by_year
+from rocking_chair.utils import build_index_by_name, build_index_by_year
 
 
 def index(request):
