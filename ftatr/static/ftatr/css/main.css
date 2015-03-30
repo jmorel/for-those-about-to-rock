@@ -508,9 +508,28 @@
 .carousel-indicators li.active {
   background-color: #ffff00;
 }
+/**
+ * Generate a circular menu of n (odd) items using the following rules
+ * 1. Each item has a radius r (nav-item-radius: 30px)
+ * 2. Each item has its center distant from the next one by 4*r (i.e. there is enough room to fit another item between 2
+ *    existing ones)
+ * 3. The currently selected item has a bigger radius r0 (nav-item-active-radius: 40px). It doesn't affect the
+ *    center-to-center distance to its neighbours
+ */
+/**
+ * @n number of menu items
+ * @i index of current item, between 0 and n-1
+ * @r standard item radius
+ */
+/**
+ * @n number of menu items
+ */
+/**
+ * @n number of menu items
+ * @i index of current item, between 0 and n-1
+ */
 .nav {
   position: relative;
-  margin: 60px 0;
 }
 @media (max-width: 599px) {
   .nav {
@@ -606,39 +625,46 @@
 .nav .nav-item-search.nav-item-1-3 .search-box {
   background-position: 0 35px;
 }
+.nav.nav-7 {
+  margin: 77.66158412px 0 100px 0;
+}
 @media (max-width: 599px) {
-  .nav.nav-3 {
+  .nav.nav-7 {
     line-height: 1.67em;
   }
 }
 @media (min-width: 600px) {
-  .nav.nav-3 {
-    min-height: 166px;
+  .nav.nav-7 {
+    min-height: 249.18256759px;
   }
-  .nav.nav-3:before {
+  .nav.nav-7:before {
     display: block;
     content: "";
-    width: 136px;
-    height: 136px;
-    border-radius: 68px;
+    width: 249.18256759px;
+    height: 249.18256759px;
+    border-radius: 124.59128379px;
     border: 5px solid #ffffff;
     position: absolute;
     left: 50%;
-    margin-left: -68px;
+    margin-left: -124.59128379px;
   }
 }
 @media (min-width: 600px) {
-  .nav .nav-item-1-3 {
-    bottom: 0;
+  .nav .nav-item-1-7 {
+    top: 209.18256759px;
     left: 50%;
     margin-left: -40px;
+  }
+  .nav .nav-item-1-7 .nav-item-caption {
+    padding-left: 5px;
+  }
+}
+@media (min-width: 600px) {
+  .nav .nav-item-1-7 {
     font-size: 1rem;
     color: #333333;
   }
-  .nav .nav-item-1-3 .nav-item-caption {
-    padding-left: 5px;
-  }
-  .nav .nav-item-1-3 .nav-item-picture {
+  .nav .nav-item-1-7 .nav-item-picture {
     background-color: #ffffff;
     width: 80px;
     height: 80px;
@@ -646,135 +672,90 @@
     color: #333333;
     line-height: 70px;
   }
-  .nav .nav-item-1-3 .nav-item-picture img {
+  .nav .nav-item-1-7 .nav-item-picture img {
     max-width: 50px;
     max-height: 50px;
   }
 }
 @media (min-width: 600px) {
-  .nav .nav-item-2-3 {
-    top: 0;
-    margin-right: 50%;
-    right: 30px;
+  .nav .nav-item-2-7 {
+    top: 172.27267864px;
+    left: 50%;
+    margin-left: 67.40938811px;
   }
-  .nav .nav-item-2-3 .nav-item-caption {
+  .nav .nav-item-2-7 .nav-item-caption {
+    padding-left: 5px;
+  }
+}
+@media (min-width: 600px) {
+  .nav .nav-item-3-7 {
+    top: 66.86711496px;
+    left: 50%;
+    margin-left: 91.46752019px;
+  }
+  .nav .nav-item-3-7 .nav-item-caption {
+    padding-left: 5px;
+  }
+}
+@media (min-width: 600px) {
+  .nav .nav-item-4-7 {
+    top: -17.66158412px;
+    left: 50%;
+    margin-left: 24.05813207px;
+  }
+  .nav .nav-item-4-7 .nav-item-caption {
+    padding-left: 5px;
+  }
+}
+@media (min-width: 600px) {
+  .nav .nav-item-5-7 {
+    top: -17.66158412px;
+    margin-right: 50%;
+    right: 24.05813207px;
+  }
+  .nav .nav-item-5-7 .nav-item-caption {
     float: left;
     padding-right: 5px;
   }
-  .nav .nav-item-2-3.nav-item-search {
+  .nav .nav-item-5-7.nav-item-search {
     text-align: right;
   }
-  .nav .nav-item-2-3.nav-item-search .search-box {
+  .nav .nav-item-5-7.nav-item-search .search-box {
     text-align: right;
   }
 }
 @media (min-width: 600px) {
-  .nav .nav-item-3-3 {
-    top: 0;
-    left: 50%;
-    margin-left: 30px;
-  }
-  .nav .nav-item-3-3 .nav-item-caption {
-    padding-left: 5px;
-  }
-}
-@media (max-width: 599px) {
-  .nav.nav-5 {
-    line-height: 1.67em;
-  }
-}
-@media (min-width: 600px) {
-  .nav.nav-5 {
-    min-height: 250px;
-  }
-  .nav.nav-5:before {
-    display: block;
-    content: "";
-    width: 216px;
-    height: 216px;
-    border-radius: 108px;
-    border: 5px solid #ffffff;
-    position: absolute;
-    left: 50%;
-    margin-left: -108px;
-  }
-}
-@media (min-width: 600px) {
-  .nav .nav-item-1-5 {
-    bottom: 0;
-    left: 50%;
-    margin-left: -40px;
-    font-size: 1rem;
-    color: #333333;
-  }
-  .nav .nav-item-1-5 .nav-item-caption {
-    padding-left: 5px;
-  }
-  .nav .nav-item-1-5 .nav-item-picture {
-    background-color: #ffffff;
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-    color: #333333;
-    line-height: 70px;
-  }
-  .nav .nav-item-1-5 .nav-item-picture img {
-    max-width: 50px;
-    max-height: 50px;
-  }
-}
-@media (min-width: 600px) {
-  .nav .nav-item-2-5 {
-    top: 92px;
+  .nav .nav-item-6-7 {
+    top: 66.86711496px;
     margin-right: 50%;
-    right: 79px;
+    right: 91.46752019px;
   }
-  .nav .nav-item-2-5 .nav-item-caption {
+  .nav .nav-item-6-7 .nav-item-caption {
     float: left;
     padding-right: 5px;
   }
-  .nav .nav-item-2-5.nav-item-search {
+  .nav .nav-item-6-7.nav-item-search {
     text-align: right;
   }
-  .nav .nav-item-2-5.nav-item-search .search-box {
+  .nav .nav-item-6-7.nav-item-search .search-box {
     text-align: right;
   }
 }
 @media (min-width: 600px) {
-  .nav .nav-item-3-5 {
-    top: 0;
+  .nav .nav-item-7-7 {
+    top: 172.27267864px;
     margin-right: 50%;
-    right: 49px;
+    right: 67.40938811px;
   }
-  .nav .nav-item-3-5 .nav-item-caption {
+  .nav .nav-item-7-7 .nav-item-caption {
     float: left;
     padding-right: 5px;
   }
-  .nav .nav-item-3-5.nav-item-search {
+  .nav .nav-item-7-7.nav-item-search {
     text-align: right;
   }
-  .nav .nav-item-3-5.nav-item-search .search-box {
+  .nav .nav-item-7-7.nav-item-search .search-box {
     text-align: right;
-  }
-}
-@media (min-width: 600px) {
-  .nav .nav-item-4-5 {
-    top: 0;
-    left: 50%;
-    margin-left: 49px;
-  }
-  .nav .nav-item-4-5 .nav-item-caption {
-    padding-left: 5px;
-  }
-}
-@media (min-width: 600px) {
-  .nav .nav-item-5-5 {
-    top: 92px;
-    left: 50%;
-    margin-left: 79px;
-  }
-  .nav .nav-item-5-5 .nav-item-caption {
-    padding-left: 5px;
   }
 }
 @media (max-width: 599px) {

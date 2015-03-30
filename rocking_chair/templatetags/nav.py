@@ -39,7 +39,12 @@ def nav(active_page='rocking_chair:index', query=None, open=False):
         {
             'url': 'designer:index',
             'picture': '<i class="fa fa-users"></i>',
-            'caption': 'Manufacturers'
+            'caption': 'Designers'
+        },
+        {
+            'url': 'analytics:index',
+            'picture': '<i class="fa fa-pie-chart"></i>',
+            'caption': 'Analytics'
         },
     ]
     ordered_pages = []
