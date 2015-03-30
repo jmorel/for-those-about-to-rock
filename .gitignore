@@ -3,12 +3,12 @@ node_modules/
 .py-env/
 .idea/
 */__pycache__/
-media/
+/media/
 /static/
-/staticfiles
-/ftatr/settings.py
+ftatr/settings.py
 Thumbs.db
 /resources/
 *.pyc
 /ftatr/whoosh_index/
 /tmp
+/staticfiles/

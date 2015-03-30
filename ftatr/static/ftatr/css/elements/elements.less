@@ -1,7 +1,38 @@
 @import "variables";
+@import 'backgrounds';
+
+
+.round-item(@radius, @border-width) {
+    display: block;
+    background: @white;
+    border: @border-width solid white;
+    border-radius: @radius;
+    width: 2*@radius;
+    height: 2*@radius;
+    text-align: center;
+    line-height: 2*@radius;
+    color: @gray;
+}
+
+.round-item-medium {
+    .round-item(@paginate-radius, @body-background-vertical-width);
+}
+
+.round-item-large {
+    .round-item(@article-radius-large, @article-border-width-large);
+}
 
 .round-link-centered {
     margin: @paginate-spacing 0;
+
+    &.active {
+        margin-bottom: 0;
+
+        a {
+            color: @grey;
+            background-color: @white;
+        }
+    }
 
     a {
         text-align: center;
@@ -26,8 +57,7 @@
 }
 
 .round-item-list {
-    margin-top: @paginate-spacing;
-    margin-bottom: @paginate-spacing;
+
     .item {
         display: block;
         margin: 0;
@@ -151,28 +181,3 @@
 
 }
 
-.semi-transparent-background(@top-length, @bottom-length) {
-    background-color: @yellow-transparent;
-
-    &:before {
-        content: '';
-        display: block;
-        height: @top-length;
-        width: 100%;
-        position: absolute;
-        top: -@top-length;
-        left: 0;
-        background: linear-gradient(transparent 0, @yellow-transparent @top-length) center top no-repeat,
-    }
-
-    &:after {
-        content: '';
-        display: block;
-        height: @bottom-length;
-        width: 100%;
-        position: absolute;
-        bottom: -@bottom-length;
-        left: 0;
-        background: linear-gradient(@yellow-transparent 0, transparent @bottom-length) center bottom no-repeat;
-    }
-}

@@ -1,8 +1,50 @@
-@import 'variables';
+/**
+ * Generate a circular menu of n (odd) items using the following rules
+ * 1. Each item has a radius r (nav-item-radius: 30px)
+ * 2. Each item has its center distant from the next one by 4*r (i.e. there is enough room to fit another item between 2
+ *    existing ones)
+ * 3. The currently selected item has a bigger radius r0 (nav-item-active-radius: 40px). It doesn't affect the
+ *    center-to-center distance to its neighbours
+ */
+@import 'elements/variables';
 
 // macros
 
-.nav-setup(@height, @radius) {
+/**
+ * @n number of menu items
+ * @i index of current item, between 0 and n-1
+ * @r standard item radius
+ */
+.variables-setup(@n, @i, @r) {
+    // common variables
+    // center-to-center distance between two adjacent items
+    @d: 4*@r;
+    // angle between two adjacent items
+    @alpha: 2*pi() / @n;
+    // menu radius
+    @R: @d / (2 * tan(@alpha/2));
+    // number of items on each side of the menu
+    @k: (@n - 1) / 2;
+
+    // position with respect to the center of the menu
+    @x: @R * cos(@i*@alpha - pi()/2);
+    @y: @R * sin(@i*@alpha - pi()/2);
+
+    // offset with respect to the top of the menu
+    @y_k: @R * sin(@k*@alpha - pi()/2);
+    @offset-y: @R;
+}
+
+/**
+ * @n number of menu items
+ */
+.nav-setup(@n) {
+    .variables-setup(@n, 0, @nav-item-radius);
+    @height: @offset-y - @y;
+
+    margin: @paginate-spacing + max(0, @y_k - @R + @nav-item-radius) 0
+        @paginate-spacing + @nav-item-active-radius 0;
+
     @media (max-width: @screen-small-max) {
         line-height: 1.67em;
     }
@@ -12,58 +54,73 @@
         &:before {
             display: block;
             content: "";
-            width: 2*@radius;
-            height: 2*@radius;
-            border-radius: @radius;
+            width: 2*@R;
+            height: 2*@R;
+            border-radius: @R;
             border: @body-background-vertical-width solid @white;
             position: absolute;
             left: 50%;
-            margin-left: -@radius;
+            margin-left: -@R;
         }
     }
 }
 
-.nav-item-left(@top, @right) {
-    @media (min-width: @screen-medium-min) {
-        top: @top;
-        margin-right: 50%;
-        right: @right;
+/**
+ * @n number of menu items
+ * @i index of current item, between 0 and n-1
+ */
+.nav-item-position(@n, @i) {
+    .variables-setup(@n, @i, @nav-item-radius);
 
-        & .nav-item-caption {
-            float: left;
-            padding-right: 5px;
+    @media (min-width: @screen-medium-min) {
+        & when (@i = 0) {
+            top: @offset-y - @y - @nav-item-active-radius;
         }
 
-        &.nav-item-search {
-            text-align: right;
-            .search-box {
-                text-align: right;
+        & when (@i > 0) {
+            top: @offset-y - @y - @nav-item-radius;
+        }
+
+        // right side
+        & when (@i <= @k) {
+            left: 50%;
+
+            & when (@i = 0) {
+                margin-left: @x - @nav-item-active-radius;
+            }
+            & when (@i > 0) {
+                margin-left: @x - @nav-item-radius;
+            }
+            & .nav-item-caption {
+                padding-left: 5px;
             }
         }
-    }
-}
 
-.nav-item-right(@top, @left) {
-    @media (min-width: @screen-medium-min) {
-        top: @top;
-        left: 50%;
-        margin-left: @left;
-        & .nav-item-caption {
-            padding-left: 5px;
+        // left side
+        & when (@i > @k) {
+            margin-right: 50%;
+            right: abs(@x + @nav-item-radius);
+
+            & .nav-item-caption {
+                float: left;
+                padding-right: 5px;
+            }
+
+            &.nav-item-search {
+                text-align: right;
+                .search-box {
+                    text-align: right;
+                }
+            }
         }
+
     }
 }
 
 .nav-item-active() {
     @media (min-width: @screen-medium-min) {
-        bottom: 0;
-        left: 50%;
-        margin-left: -@nav-item-active-radius;
         font-size: 1rem;
         color: @grey;
-        & .nav-item-caption {
-            padding-left: 5px;
-        }
 
         & .nav-item-picture {
             background-color: @white;
@@ -72,6 +129,11 @@
             border-radius: @nav-item-active-radius;
             color: @grey;
             line-height: 2*@nav-item-active-radius - 2*@body-background-vertical-width;
+
+            img {
+                max-width: 2*@nav-item-radius - 2*@body-background-vertical-width;
+                max-height: 2*@nav-item-radius - 2*@body-background-vertical-width;
+            }
         }
     }
 }
@@ -80,7 +142,6 @@
 
 .nav {
     position: relative;
-    margin: @paginate-spacing 0;
 
     @media (max-width: @screen-small-max) {
         display: block;
@@ -133,6 +194,12 @@
             border: @body-background-vertical-width solid @white;
             background-color: @yellow;
         }
+
+        img {
+            vertical-align: middle;
+            max-width: 2*@nav-item-radius - 6*@body-background-vertical-width;
+            max-height: 2*@nav-item-radius - 6*@body-background-vertical-width;
+        }
     }
     .nav-item:hover .nav-item-picture,
     .nav-item-picture:active,
@@ -172,38 +239,14 @@
     }
 
     // positionning
-
-    &.nav-3 {
-        .nav-setup(@nav-3-height, @nav-3-radius);
-    }
-    .nav-item-1-3 {
-        .nav-item-active();
-    }
-    .nav-item-2-3 {
-        .nav-item-left(0, @nav-item-radius);
-    }
-    .nav-item-3-3 {
-        .nav-item-right(0, @nav-item-radius);
-    }
-
-    &.nav-5 {
-        .nav-setup(@nav-5-height, @nav-5-radius);
-    }
-    .nav-item-1-5 {
-        .nav-item-active();
-    }
-    .nav-item-2-5 {
-        .nav-item-left(92px, 79px);
-    }
-    .nav-item-3-5 {
-        .nav-item-left(0, 49px);
-    }
-    .nav-item-4-5 {
-        .nav-item-right(0, 49px);
-    }
-    .nav-item-5-5 {
-        .nav-item-right(92px, 79px);
-    }
+    &.nav-7 { .nav-setup(7); }
+    .nav-item-1-7 { .nav-item-position(7, 0); .nav-item-active(); }
+    .nav-item-2-7 { .nav-item-position(7, 1); }
+    .nav-item-3-7 { .nav-item-position(7, 2); }
+    .nav-item-4-7 { .nav-item-position(7, 3); }
+    .nav-item-5-7 { .nav-item-position(7, 4); }
+    .nav-item-6-7 { .nav-item-position(7, 5); }
+    .nav-item-7-7 { .nav-item-position(7, 6); }
 
     // Mobile behaviour
     .nav-toggle {

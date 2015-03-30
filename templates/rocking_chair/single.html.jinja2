@@ -38,7 +38,7 @@
     <div class="attributes-container">
         <ul class="attributes attributes-left">
             <li>
-                <div class="rocking-chair-name">
+                <div class="title">
                     <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
                         {{ rocking_chair.name }}
                     </a>
@@ -89,7 +89,9 @@
                 <li>
                     <div class="attribute">
                         <div class="attribute-value">
-                            {{ designer.first_name }} {{ designer.last_name }}
+                            <a href="{{ url('designer:show', slug=designer.slug) }}">
+                                {{ designer.first_name }} {{ designer.last_name }}
+                            </a>
                         </div>
                         <div class="attribute-name">
                             Designer
@@ -102,7 +104,9 @@
                 <li>
                     <div class="attribute">
                         <div class="attribute-value">
-                            {{ manufacturer.name }}
+                            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
+                                {{ manufacturer.name }}
+                            </a>
                         </div>
                         <div class="attribute-name">
                             Manufacturer

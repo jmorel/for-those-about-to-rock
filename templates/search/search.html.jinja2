@@ -4,6 +4,14 @@
     {{ nav('search', query, true) | safe }}
 {% endblock %}
 
+{% set image = request.build_absolute_uri(static('ftatr/images/rocking-chair-icon-540x540.png')) %}
+{% set text = 'Rocking chair search' ~ (': ' ~ query if query else '') %}
+{% block og_title %}{{ text }}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri(url('search') ~ ('?q='~query if query else '')) }}{% endblock %}
+{% block og_image %}{{ image }}{% endblock %}
+{% block twitter_title %}{{ text }}{% endblock %}
+{% block twitter_image %}{{ image }}{% endblock %}
+
 {% block content %}
     {% if query %}
         {% if page.has_previous() %}

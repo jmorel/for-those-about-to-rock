@@ -1,0 +1,101 @@
+{% extends 'layout.html.jinja2' %}
+
+{% set image = request.build_absolute_uri(designer.logo | thumbnail_url('540x540') if designer.logo else static('ftatr/images/factory-icon-500x350.png')) %}
+{% set text = designer.full_name ~ ' (designer)' %}
+{% block og_title %}{{ text }}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri(url('designer:show', slug=designer.slug)) }}{% endblock %}
+{% block og_image %}{{ image }}{% endblock %}
+{% block twitter_title %}{{ text }}{% endblock %}
+{% block twitter_image %}{{ image }}{% endblock %}
+
+{% block nav %}
+    {{ nav('designer:index') | safe }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="clear"></div>
+
+    <div id="{{ designer.slug }}">
+        <div class="single-title">
+            {% if designer.logo %}
+                <img src="{{ designer.logo | thumbnail_url('540x540') }}"
+                     alt="{{ designer.full_name }}"/>
+            {% else %}
+                <i class="unknown fa fa-question"></i>
+            {% endif %}
+        </div>
+
+        <div class="single-attributes">
+            <ul class="attributes attributes-left">
+                <li>
+                    <div class="title">
+                        <a href="{{ url('designer:show', slug=designer.slug) }}#{{ designer.slug }}">
+                            {{ designer.full_name }}
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {% set share_url = request.build_absolute_uri(url('designer:show', slug=designer.slug))|urlencode %}
+                            <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ designer.full_name }}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ designer.slug }}&display=popup">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                        <div class="attribute-name">
+                            Share on
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+            <ul class="attributes attributes-right">
+                {% for country in designer.nationalities.all() %}
+                    <li>
+                        <div class="attribute">
+                            <div class="attribute-value">
+                                {{ country.name }}
+                            </div>
+                            <div class="attribute-name">
+                                Nationality
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="single-related">
+        {% for rocking_chair in designer.published_rocking_chairs %}
+            {% if loop.index % 2 %}
+                <div class="clear"></div>
+            {% endif %}
+            <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                <div class="item-picture">
+                    <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
+                         alt="{{ rocking_chair.name }}"/>
+                </div>
+                <div class="item-text">
+                    <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+                        {{ rocking_chair.build_title(designers=False) }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="paginate">
+        <a href="{{ url('designer:index') }}">
+            view all
+        </a>
+    </div>
+{% endblock %}

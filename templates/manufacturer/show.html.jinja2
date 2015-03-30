@@ -1,0 +1,101 @@
+{% extends 'layout.html.jinja2' %}
+
+{% set image = request.build_absolute_uri(manufacturer.logo | thumbnail_url('540x540') if manufacturer.logo else static('ftatr/images/factory-icon-500x350.png')) %}
+{% set text = manufacturer.name ~ ' (manufacturer)' %}
+{% block og_title %}{{ text }}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri(url('manufacturer:show', slug=manufacturer.slug)) }}{% endblock %}
+{% block og_image %}{{ image }}{% endblock %}
+{% block twitter_title %}{{ text }}{% endblock %}
+{% block twitter_image %}{{ image }}{% endblock %}
+
+{% block nav %}
+    {{ nav('manufacturer:index') | safe }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="clear"></div>
+
+    <div id="{{ manufacturer.slug }}">
+        <div class="single-title">
+            {% if manufacturer.logo %}
+                <img src="{{ manufacturer.logo | thumbnail_url('540x540') }}"
+                     alt="{{ manufacturer.name }}"/>
+            {% else %}
+                <i class="unknown fa fa-question"></i>
+            {% endif %}
+        </div>
+
+        <div class="single-attributes">
+            <ul class="attributes attributes-left">
+                <li>
+                    <div class="title">
+                        <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}#{{ manufacturer.slug }}">
+                            {{ manufacturer.name }}
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {% set share_url = request.build_absolute_uri(url('manufacturer:show', slug=manufacturer.slug))|urlencode %}
+                            <a href="https://twitter.com/intent/tweet?url={{ share_url }}&via=RChairAnthology&text={{ manufacturer.name }}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://www.facebook.com/dialog/share?href={{ share_url }}&app_id={{ FACEBOOK_APP_ID }}&redirect_uri={{ share_url }}#{{ manufacturer.slug }}&display=popup">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                        <div class="attribute-name">
+                            Share on
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+            {% if manufacturer.country %}
+                <ul class="attributes attributes-right">
+                    <li>
+                        <div class="attribute">
+                            <div class="attribute-value">
+                                {{ manufacturer.country }}
+                            </div>
+                            <div class="attribute-name">
+                                Country
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="single-related">
+        {% for rocking_chair in manufacturer.published_rocking_chairs %}
+            {% if loop.index % 2 %}
+                <div class="clear"></div>
+            {% endif %}
+            <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                <div class="item-picture">
+                    <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
+                         alt="{{ rocking_chair.name }}"/>
+                </div>
+                <div class="item-text">
+                    <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+                        {{ rocking_chair.build_title(manufacturers=False) }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="paginate">
+        <a href="{{ url('manufacturer:index') }}">
+            view all
+        </a>
+    </div>
+{% endblock %}

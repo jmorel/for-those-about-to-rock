@@ -1,0 +1,53 @@
+{% extends 'layout.html.jinja2' %}
+
+{% set image = request.build_absolute_uri(static('ftatr/images/factory-icon-500x350.png')) %}
+{% block og_title %}Manufacturers{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri(url('manufacturer:index')) }}{% endblock %}
+{% block og_image %}{{ image }}{% endblock %}
+{% block twitter_title %}Manufacturers{% endblock %}
+{% block twitter_image %}{{ image }}{% endblock %}
+
+{% block nav %}
+    {{ nav('manufacturer:index') | safe }}
+{% endblock %}
+
+{% block content %}
+    {% for letter, manufacturers in alphabet.items() %}
+
+        <a href="{{ url('manufacturer:index') }}#{{ letter }}"
+           id="{{ letter }}"
+           class="index-entry-title {% if not manufacturers %}empty{% endif %}">
+            {{ letter }}
+        </a>
+
+        {% if manufacturers %}
+            <div class="index-entry-list">
+                {% for manufacturer in manufacturers %}
+                    {% if loop.index % 2 %}
+                        <div class="clear"></div>
+                    {% endif %}
+                    <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
+                        <div class="item-picture">
+                            {% if manufacturer.logo %}
+                            <img src="{{ manufacturer.logo | thumbnail_url('50x50') }}"
+                                 alt="{{ manufacturer.name }}"/>
+                            {% else %}
+                                <i class="fa fa-question"></i>
+                            {% endif %}
+                        </div>
+                        <div class="item-text">
+                            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
+                                {{ manufacturer.name }}
+                                {% set nb_rocking_chairs = manufacturer.published_rocking_chairs|length %}
+                                ({{ nb_rocking_chairs }} chair{% if nb_rocking_chairs > 1 %}s{% endif %})
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="clear"></div>
+
+    {% endfor %}
+{% endblock %}

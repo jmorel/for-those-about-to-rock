@@ -4,7 +4,7 @@ from django.conf.urls import patterns, url
 from django.contrib import admin
 from django.shortcuts import render
 from rocking_chair.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, \
-    YearLink, Link, Currency, PriceLink
+    YearLink, Link, Currency, PriceLink, Country
 
 
 class DesignerLinkInline(admin.TabularInline):
@@ -105,3 +105,4 @@ admin.site.register(Designer, DesignerAdmin)
 admin.site.register(Manufacturer, ManufacturerAdmin)
 admin.site.register(Picture)
 admin.site.register(Currency)
+admin.site.register(Country)

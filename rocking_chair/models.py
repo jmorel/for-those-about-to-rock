@@ -50,10 +50,13 @@ class RockingChair(models.Model):
 
     @property
     def title(self):
+        return self.build_title()
+
+    def build_title(self, designers=True, manufacturers=True):
         title = self.name
-        if self.designer_names:
+        if designers and self.designer_names:
             title = "{} by {}".format(title, self.designer_names)
-        if self.manufacturer_names:
+        if manufacturers and self.manufacturer_names:
             title = "{} ({})".format(title, self.manufacturer_names)
         return title
 
@@ -79,22 +82,24 @@ class RockingChair(models.Model):
         names = ', '.join(map(lambda manufacturer: manufacturer.name, manufacturers))
         return names
 
+    def get_upload_to(self, filename):
+        return os.path.join('rocking-chairs', self.rocking_chair.slug, get_upload_filename(filename))
 
-def get_upload_to(self, filename):
-    slug = self.rocking_chair.slug
+
+def get_upload_filename(filename):
     name, extension = os.path.splitext(filename)
     md5sum = hashlib.md5()
     md5sum.update(filename.encode('utf-8'))
     md5sum.update(str(datetime.datetime.now()).encode('utf-8'))
     md5sum = md5sum.hexdigest()
-    return os.path.join('rocking-chairs', slug, md5sum+extension)
+    return md5sum + extension
 
 
 class Picture(models.Model):
     class Meta:
         db_table = 'picture'
 
-    picture = models.ImageField(upload_to=get_upload_to)
+    picture = models.ImageField(upload_to=RockingChair.get_upload_to)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='pictures')
 
@@ -139,12 +144,25 @@ class Designer(models.Model):
     def full_name(self):
         return "{} {}".format(self.first_name, self.last_name).strip()
 
+    @property
+    def published_rocking_chairs(self):
+        return self.rocking_chairs.all() \
+            .exclude(published_at__gte=datetime.datetime.now()) \
+            .exclude(published_at=None)
+
+    def get_absolute_url(self):
+        return reverse('designer:show', kwargs={'slug': self.slug})
+
 
 class Manufacturer(models.Model):
     class Meta:
         db_table = 'manufacturer'
 
+    def get_upload_to(self, filename):
+        return os.path.join('manufacturers', self.slug, get_upload_filename(filename))
+
     name = models.CharField(max_length=255)
+    logo = models.ImageField(upload_to=get_upload_to, blank=True, null=True)
 
     country = models.ForeignKey('Country', blank=True, null=True)
 
@@ -154,6 +172,15 @@ class Manufacturer(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def published_rocking_chairs(self):
+        return self.rocking_chairs.all()\
+            .exclude(published_at__gte=datetime.datetime.now())\
+            .exclude(published_at=None)
+
+    def get_absolute_url(self):
+        return reverse('manufacturer:show', kwargs={'slug': self.slug})
 
 
 class Link(models.Model):
