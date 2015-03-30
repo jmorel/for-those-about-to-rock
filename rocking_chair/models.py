@@ -150,6 +150,9 @@ class Designer(models.Model):
             .exclude(published_at__gte=datetime.datetime.now()) \
             .exclude(published_at=None)
 
+    def get_absolute_url(self):
+        return reverse('designer:show', kwargs={'slug': self.slug})
+
 
 class Manufacturer(models.Model):
     class Meta:
@@ -176,6 +179,8 @@ class Manufacturer(models.Model):
             .exclude(published_at__gte=datetime.datetime.now())\
             .exclude(published_at=None)
 
+    def get_absolute_url(self):
+        return reverse('manufacturer:show', kwargs={'slug': self.slug})
 
 
 class Link(models.Model):

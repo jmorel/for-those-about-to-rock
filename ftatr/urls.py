@@ -5,7 +5,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.views.generic import RedirectView
 from haystack.views import SearchView
 from ftatr import settings
-from ftatr.sitemaps import FTATRSitemap
+from ftatr.sitemaps import RockingChairSitemap, DesignerSitemap, ManufacturerSitemap
 
 urlpatterns = patterns('',
     url(r'^$', RedirectView.as_view(url='/rocking-chair')),
@@ -16,6 +16,8 @@ urlpatterns = patterns('',
     url(r'^designer/', include('designer.urls', namespace='designer')),
     url(r'^search/', SearchView(template='search/search.html.jinja2'), name='search'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'ftatr': FTATRSitemap}},
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'rocking_chair': RockingChairSitemap,
+                                                  'designer': DesignerSitemap,
+                                                  'manufacturer': ManufacturerSitemap}},
          name='django.contrib.sitemaps.views.sitemap')
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
