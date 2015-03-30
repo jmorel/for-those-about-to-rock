@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from rocking_chair.views import manufacturer
+from anthology.views import manufacturer
 
 urlpatterns = patterns(
     '',

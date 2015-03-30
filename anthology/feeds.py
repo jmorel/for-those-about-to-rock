@@ -3,7 +3,7 @@ from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
 from django.template import loader
 from django.utils.feedgenerator import Atom1Feed
-from rocking_chair.models import RockingChair
+from anthology.models import RockingChair
 
 
 class LatestRockingChairsFeed(Feed):
@@ -16,10 +16,10 @@ class LatestRockingChairsFeed(Feed):
     icon = 'test'
 
     def link(self):
-        return reverse('rocking_chair:feed')
+        return reverse('anthology:feed')
 
     def feed_url(self):
-        return reverse('rocking_chair:feed')
+        return reverse('anthology:feed')
 
     def items(self):
         rocking_chairs = RockingChair.objects \
@@ -32,11 +32,11 @@ class LatestRockingChairsFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        template = loader.get_template('rocking_chair/feed_item.html.jinja2')
-        return template.render({'rocking_chair': item})
+        template = loader.get_template('anthology/feed_item.html.jinja2')
+        return template.render({'anthology': item})
 
     def item_link(self, item):
-        return reverse('rocking_chair:show', kwargs={'slug': item.slug})
+        return reverse('anthology:show', kwargs={'slug': item.slug})
 
     def item_pubdate(self, item):
         return item.published_at

@@ -1,7 +1,7 @@
 import datetime
 from django.core.management import BaseCommand
 from ftatr.settings import TWITTER_TOKEN, TWITTER_TOKEN_SECRET, TWITTER_CONSUMER_SECRET, TWITTER_CONSUMER_KEY
-from rocking_chair.models import RockingChair
+from anthology.models import RockingChair
 from twitter import Twitter, OAuth, TwitterHTTPError
 
 

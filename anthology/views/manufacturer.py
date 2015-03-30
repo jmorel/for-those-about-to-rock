@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from rocking_chair.models import Manufacturer
-from rocking_chair.utils import build_index_by_name
+from anthology.models import Manufacturer
+from anthology.utils import build_index_by_name
 
 
 def index(request):

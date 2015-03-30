@@ -1,6 +1,6 @@
 import datetime
 from haystack import indexes
-from rocking_chair.models import RockingChair
+from anthology.models import RockingChair
 
 
 class RockingChairIndex(indexes.SearchIndex, indexes.Indexable):

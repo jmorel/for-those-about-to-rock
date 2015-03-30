@@ -3,7 +3,7 @@ import datetime
 from django.conf.urls import patterns, url
 from django.contrib import admin
 from django.shortcuts import render
-from rocking_chair.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, \
+from anthology.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, \
     YearLink, Link, Currency, PriceLink, Country
 
 
@@ -81,7 +81,7 @@ class RockingChairAdmin(admin.ModelAdmin):
                 day = rocking_chair.published_at.date()
                 timeline[day].append(rocking_chair)
 
-        return render(request, 'admin/rocking_chair/timeline.html', {
+        return render(request, 'admin/anthology/timeline.html', {
             'unscheduled': unscheduled,
             'timeline': timeline,
             'opts': self.opts,

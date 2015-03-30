@@ -1,498 +1,498 @@
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Afghanistan", code: AF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Åland Islands", code: AX }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Albania", code: AL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Algeria", code: DZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "American Samoa", code: AS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Andorra", code: AD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Angola", code: AO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Anguilla", code: AI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Antarctica", code: AQ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Antigua and Barbuda", code: AG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Argentina", code: AR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Armenia", code: AM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Aruba", code: AW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Australia", code: AU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Austria", code: AT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Azerbaijan", code: AZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bahamas", code: BS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bahrain", code: BH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bangladesh", code: BD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Barbados", code: BB }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Belarus", code: BY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Belgium", code: BE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Belize", code: BZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Benin", code: BJ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bermuda", code: BM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bhutan", code: BT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bolivia, Plurinational State of", code: BO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bonaire, Sint Eustatius and Saba", code: BQ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bosnia and Herzegovina", code: BA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Botswana", code: BW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bouvet Island", code: BV }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Brazil", code: BR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "British Indian Ocean Territory", code: IO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Brunei Darussalam", code: BN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Bulgaria", code: BG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Burkina Faso", code: BF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Burundi", code: BI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cambodia", code: KH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cameroon", code: CM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Canada", code: CA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cabo Verde", code: CV }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cayman Islands", code: KY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Central African Republic", code: CF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Chad", code: TD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Chile", code: CL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "China", code: CN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Christmas Island", code: CX }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cocos (Keeling) Islands", code: CC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Colombia", code: CO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Comoros", code: KM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Congo", code: CG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Congo, the Democratic Republic of the", code: CD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cook Islands", code: CK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Costa Rica", code: CR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Côte d'Ivoire", code: CI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Croatia", code: HR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cuba", code: CU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Curaçao", code: CW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Cyprus", code: CY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Czech Republic", code: CZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Denmark", code: DK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Djibouti", code: DJ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Dominica", code: DM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Dominican Republic", code: DO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Ecuador", code: EC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Egypt", code: EG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "El Salvador", code: SV }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Equatorial Guinea", code: GQ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Eritrea", code: ER }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Estonia", code: EE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Ethiopia", code: ET }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Falkland Islands (Malvinas)", code: FK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Faroe Islands", code: FO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Fiji", code: FJ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Finland", code: FI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "France", code: FR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "French Guiana", code: GF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "French Polynesia", code: PF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "French Southern Territories", code: TF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Gabon", code: GA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Gambia", code: GM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Georgia", code: GE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Germany", code: DE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Ghana", code: GH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Gibraltar", code: GI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Greece", code: GR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Greenland", code: GL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Grenada", code: GD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guadeloupe", code: GP }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guam", code: GU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guatemala", code: GT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guernsey", code: GG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guinea", code: GN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guinea-Bissau", code: GW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Guyana", code: GY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Haiti", code: HT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Heard Island and McDonald Islands", code: HM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Holy See (Vatican City State)", code: VA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Honduras", code: HN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Hong Kong", code: HK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Hungary", code: HU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Iceland", code: IS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "India", code: IN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Indonesia", code: ID }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Iran, Islamic Republic of", code: IR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Iraq", code: IQ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Ireland", code: IE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Isle of Man", code: IM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Israel", code: IL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Italy", code: IT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Jamaica", code: JM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Japan", code: JP }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Jersey", code: JE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Jordan", code: JO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Kazakhstan", code: KZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Kenya", code: KE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Kiribati", code: KI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Korea, Democratic People's Republic of", code: KP }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Korea, Republic of", code: KR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Kuwait", code: KW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Kyrgyzstan", code: KG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Lao People's Democratic Republic", code: LA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Latvia", code: LV }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Lebanon", code: LB }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Lesotho", code: LS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Liberia", code: LR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Libya", code: LY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Liechtenstein", code: LI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Lithuania", code: LT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Luxembourg", code: LU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Macao", code: MO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Macedonia, the former Yugoslav Republic of", code: MK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Madagascar", code: MG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Malawi", code: MW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Malaysia", code: MY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Maldives", code: MV }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mali", code: ML }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Malta", code: MT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Marshall Islands", code: MH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Martinique", code: MQ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mauritania", code: MR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mauritius", code: MU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mayotte", code: YT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mexico", code: MX }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Micronesia, Federated States of", code: FM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Moldova, Republic of", code: MD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Monaco", code: MC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mongolia", code: MN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Montenegro", code: ME }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Montserrat", code: MS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Morocco", code: MA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Mozambique", code: MZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Myanmar", code: MM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Namibia", code: NA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Nauru", code: NR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Nepal", code: NP }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Netherlands", code: NL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "New Caledonia", code: NC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "New Zealand", code: NZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Nicaragua", code: NI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Niger", code: NE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Nigeria", code: NG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Niue", code: NU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Norfolk Island", code: NF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Northern Mariana Islands", code: MP }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Norway", code: NO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Oman", code: OM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Pakistan", code: PK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Palau", code: PW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Palestine, State of", code: PS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Panama", code: PA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Papua New Guinea", code: PG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Paraguay", code: PY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Peru", code: PE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Philippines", code: PH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Pitcairn", code: PN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Poland", code: PL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Portugal", code: PT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Puerto Rico", code: PR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Qatar", code: QA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Réunion", code: RE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Romania", code: RO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Russian Federation", code: RU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Rwanda", code: RW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Barthélemy", code: BL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Helena, Ascension and Tristan da Cunha", code: SH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Kitts and Nevis", code: KN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Lucia", code: LC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Martin (French part)", code: MF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Pierre and Miquelon", code: PM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saint Vincent and the Grenadines", code: VC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Samoa", code: WS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "San Marino", code: SM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Sao Tome and Principe", code: ST }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Saudi Arabia", code: SA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Senegal", code: SN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Serbia", code: RS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Seychelles", code: SC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Sierra Leone", code: SL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Singapore", code: SG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Sint Maarten (Dutch part)", code: SX }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Slovakia", code: SK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Slovenia", code: SI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Solomon Islands", code: SB }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Somalia", code: SO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "South Africa", code: ZA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "South Georgia and the South Sandwich Islands", code: GS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "South Sudan", code: SS }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Spain", code: ES }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Sri Lanka", code: LK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Sudan", code: SD }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Suriname", code: SR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Svalbard and Jan Mayen", code: SJ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Swaziland", code: SZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Sweden", code: SE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Switzerland", code: CH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Syrian Arab Republic", code: SY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Taiwan, Province of China", code: TW }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Tajikistan", code: TJ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Tanzania, United Republic of", code: TZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Thailand", code: TH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Timor-Leste", code: TL }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Togo", code: TG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Tokelau", code: TK }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Tonga", code: TO }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Trinidad and Tobago", code: TT }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Tunisia", code: TN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Turkey", code: TR }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Turkmenistan", code: TM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Turks and Caicos Islands", code: TC }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Tuvalu", code: TV }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Uganda", code: UG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Ukraine", code: UA }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "United Arab Emirates", code: AE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "United Kingdom", code: GB }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "United States", code: US }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "United States Minor Outlying Islands", code: UM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Uruguay", code: UY }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Uzbekistan", code: UZ }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Vanuatu", code: VU }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Venezuela, Bolivarian Republic of", code: VE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Viet Nam", code: VN }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Virgin Islands, British", code: VG }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Virgin Islands, U.S.", code: VI }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Wallis and Futuna", code: WF }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Western Sahara", code: EH }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Yemen", code: YE }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Zambia", code: ZM }
-- model: rocking_chair.country
+- model: anthology.country
   fields: {name: "Zimbabwe", code: ZW }

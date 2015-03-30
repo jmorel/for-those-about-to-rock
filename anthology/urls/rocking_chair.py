@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
-from rocking_chair import feeds
-from rocking_chair.views import rocking_chair
+from anthology import feeds
+from anthology.views import rocking_chair
 
 urlpatterns = patterns(
     '',

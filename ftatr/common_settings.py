@@ -27,7 +27,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'haystack',
     'ftatr',
-    'rocking_chair',
+    'anthology',
 )
 
 MIDDLEWARE_CLASSES = (

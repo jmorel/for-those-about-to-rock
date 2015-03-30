@@ -1,6 +1,6 @@
 import datetime
 from django.contrib.sitemaps import Sitemap
-from rocking_chair.models import RockingChair, Designer, Manufacturer
+from anthology.models import RockingChair, Designer, Manufacturer
 
 
 class RockingChairSitemap(Sitemap):

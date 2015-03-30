@@ -1,20 +1,20 @@
-- model: rocking_chair.currency
+- model: anthology.currency
   fields:
     name: Euro
     code: EUR
-- model: rocking_chair.currency
+- model: anthology.currency
   fields:
     name: US dollar
     code: USD
-- model: rocking_chair.currency
+- model: anthology.currency
   fields:
     name: British Pound
     code: GBP
-- model: rocking_chair.currency
+- model: anthology.currency
   fields:
     name: Canadian dollar
     code: CAD
-- model: rocking_chair.currency
+- model: anthology.currency
   fields:
     name: American dollar
     code: AUD
