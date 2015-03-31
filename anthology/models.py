@@ -127,9 +127,14 @@ class Designer(models.Model):
     class Meta:
         db_table = 'designer'
 
+    def get_upload_to(self, filename):
+        return os.path.join('designers', self.slug, get_upload_filename(filename))
+
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     birthday = models.DateField(blank=True, null=True)
+
+    portrait = models.ImageField(upload_to=get_upload_to, blank=True, null=True)
 
     nationalities = models.ManyToManyField('Country', blank=True)
 

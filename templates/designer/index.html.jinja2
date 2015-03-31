@@ -28,8 +28,8 @@
                     {% endif %}
                     <div class="item item-{% if loop.index % 2 %}left{% else %}right{% endif %}">
                         <div class="item-picture">
-                            {% if designer.logo %}
-                            <img src="{{ designer.logo | thumbnail_url('50x50') }}"
+                            {% if designer.portrait %}
+                            <img src="{{ designer.portrait | thumbnail_url('50x50') }}"
                                  alt="{{ designer.full_name }}"/>
                             {% else %}
                                 <i class="fa fa-question"></i>

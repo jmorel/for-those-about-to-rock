@@ -1,6 +1,6 @@
 {% extends 'layout.html.jinja2' %}
 
-{% set image = request.build_absolute_uri(designer.logo | thumbnail_url('540x540') if designer.logo else static('ftatr/images/factory-icon-500x350.png')) %}
+{% set image = request.build_absolute_uri(designer.portrait | thumbnail_url('540x540') if designer.portrait else static('ftatr/images/factory-icon-500x350.png')) %}
 {% set text = designer.full_name ~ ' (designer)' %}
 {% block og_title %}{{ text }}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri(url('designer:show', slug=designer.slug)) }}{% endblock %}
@@ -18,8 +18,8 @@
 
     <div id="{{ designer.slug }}">
         <div class="single-title">
-            {% if designer.logo %}
-                <img src="{{ designer.logo | thumbnail_url('540x540') }}"
+            {% if designer.portrait %}
+                <img src="{{ designer.portrait | thumbnail_url('540x540') }}"
                      alt="{{ designer.full_name }}"/>
             {% else %}
                 <i class="unknown fa fa-question"></i>
