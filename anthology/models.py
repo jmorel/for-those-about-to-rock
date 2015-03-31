@@ -254,6 +254,7 @@ class YearLink(models.Model):
 class Currency(models.Model):
     class Meta:
         db_table = 'currency'
+        verbose_name_plural = 'currencies'
 
     name = models.TextField()
     code = models.TextField()
@@ -265,6 +266,7 @@ class Currency(models.Model):
 class Country(models.Model):
     class Meta:
         db_table = 'country'
+        verbose_name_plural = 'countries'
 
     name = models.TextField()
     code = models.TextField()
