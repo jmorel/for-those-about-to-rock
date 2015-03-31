@@ -16,10 +16,10 @@ class LatestRockingChairsFeed(Feed):
     icon = 'test'
 
     def link(self):
-        return reverse('anthology:feed')
+        return reverse('rocking_chair:feed')
 
     def feed_url(self):
-        return reverse('anthology:feed')
+        return reverse('rocking_chair:feed')
 
     def items(self):
         rocking_chairs = RockingChair.objects \
@@ -32,11 +32,11 @@ class LatestRockingChairsFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        template = loader.get_template('anthology/feed_item.html.jinja2')
-        return template.render({'anthology': item})
+        template = loader.get_template('rocking_chair/feed_item.html.jinja2')
+        return template.render({'rocking_chair': item})
 
     def item_link(self, item):
-        return reverse('anthology:show', kwargs={'slug': item.slug})
+        return reverse('rocking_chair:show', kwargs={'slug': item.slug})
 
     def item_pubdate(self, item):
         return item.published_at
