@@ -60,7 +60,7 @@
   .round-item-list .item {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 5px) no-repeat;
     background-size: 30px 5px;
-    max-width: 50%;
+    max-width: 49%;
   }
 }
 @media (max-width: 599px) {
@@ -827,7 +827,7 @@
   .index-entry-list .item {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 5px) no-repeat;
     background-size: 30px 5px;
-    max-width: 50%;
+    max-width: 49%;
   }
 }
 @media (max-width: 599px) {
@@ -1193,7 +1193,7 @@ ul.attributes .attribute-links a:hover {
   .single-related .item {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 5px) no-repeat;
     background-size: 30px 5px;
-    max-width: 50%;
+    max-width: 49%;
   }
 }
 @media (max-width: 599px) {
