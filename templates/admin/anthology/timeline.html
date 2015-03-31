@@ -21,7 +21,7 @@
                 <ul>
                     {% for rocking_chair in unscheduled %}
                         <li>
-                            <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">
+                            <a href="{% url 'admin:anthology_rockingchair_change' rocking_chair.id %}">
                                 {{ rocking_chair.name }}
                             </a>
                             (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
@@ -31,7 +31,7 @@
                     {% endfor %}
                 </ul>
                 <p>
-                    <a href="{% url 'admin:rocking_chair_rockingchair_add' %}" class="btn btn-success">
+                    <a href="{% url 'admin:anthology_rockingchair_add' %}" class="btn btn-success">
                         <i class="icon-plus-sign icon-white"></i>
                         New rocking chair
                     </a>
@@ -66,7 +66,7 @@
                                 {{ rocking_chair.published_at | date:'H:i' }}
                             </td>
                             <td {% if day == today %}style="border: 2px solid green; border-left: 0"{% endif %}>
-                                <a href="{% url 'admin:rocking_chair_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.title }}</a>
+                                <a href="{% url 'admin:anthology_rockingchair_change' rocking_chair.id %}">{{ rocking_chair.title }}</a>
                                 (<a href="{% url 'rocking_chair:show' rocking_chair.slug %}">view</a>)
                             </td>
                             {% empty %}
