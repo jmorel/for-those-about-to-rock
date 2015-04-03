@@ -14,6 +14,7 @@ class Command(BaseCommand):
                     type="string",
                     help='Run assuming now is the specified datetime (format: 2014-04-21 27:03)'),
         make_option('--dry-run',
+                    dest='dry-run',
                     action='store_true',
                     help='Dry-run: only display tweets, do not post them.'),
     )
