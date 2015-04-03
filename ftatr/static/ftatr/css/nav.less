@@ -200,12 +200,19 @@
             max-width: 2*@nav-item-radius - 6*@body-background-vertical-width;
             max-height: 2*@nav-item-radius - 6*@body-background-vertical-width;
         }
+
+        .normal { display: none; }
+        .dimmed { display: inline; }
     }
     .nav-item:hover .nav-item-picture,
     .nav-item-picture:active,
     .nav-item-picture:focus {
         background-color: white;
         color: @grey;
+
+        // switch for images
+        .normal { display: inline; }
+        .dimmed { display: none; }
     }
     .nav-item:hover .search-box {
         border-bottom: 2px solid @white;

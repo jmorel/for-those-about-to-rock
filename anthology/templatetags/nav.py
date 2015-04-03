@@ -20,20 +20,26 @@ def nav(active_page='rocking_chair:index', query=None, open=False):
         },
         {
             'url': 'rocking_chair:index-by-year',
-            'picture': '<img src="{}" alt="Timeline">'.format(
-                static('ftatr/images/timeline-icon-50x50.png')),
+            'picture': '''<img src="{}" alt="Timeline" class="normal">
+                          <img src="{}" alt="Timeline" class="dimmed">'''.format(
+                static('ftatr/images/timeline-icon-50x50.png'),
+                static('ftatr/images/timeline-icon-50x50-grey.png')),
             'caption': 'Timeline'
         },
         {
             'url': 'rocking_chair:index-by-name',
-            'picture': '<img src="{}" alt="Rocking chairs">'.format(
-                static('ftatr/images/rocking-chair-icon-50x50.png')),
+            'picture': '''<img src="{}" alt="Rocking chairs" class="normal">
+                          <img src="{}" alt="Rocking chairs" class="dimmed">'''.format(
+                static('ftatr/images/rocking-chair-icon-50x50.png'),
+                static('ftatr/images/rocking-chair-icon-50x50-grey.png')),
             'caption': 'Rocking chairs'
         },
         {
             'url': 'manufacturer:index',
-            'picture': '<img src="{}" alt="Manufacturers">'.format(
-                static('ftatr/images/factory-icon-50x50.png')),
+            'picture': '''<img src="{}" alt="Manufacturers" class="normal">
+                          <img src="{}" alt="Manufacturers" class="dimmed">'''.format(
+                static('ftatr/images/factory-icon-50x50.png'),
+                static('ftatr/images/factory-icon-50x50-grey.png')),
             'caption': 'Manufacturers'
         },
         {

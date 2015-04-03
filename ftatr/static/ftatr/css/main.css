@@ -593,11 +593,27 @@
   max-width: 30px;
   max-height: 30px;
 }
+.nav .nav-item-picture .normal {
+  display: none;
+}
+.nav .nav-item-picture .dimmed {
+  display: inline;
+}
 .nav .nav-item:hover .nav-item-picture,
 .nav .nav-item-picture:active,
 .nav .nav-item-picture:focus {
   background-color: white;
   color: #333333;
+}
+.nav .nav-item:hover .nav-item-picture .normal,
+.nav .nav-item-picture:active .normal,
+.nav .nav-item-picture:focus .normal {
+  display: inline;
+}
+.nav .nav-item:hover .nav-item-picture .dimmed,
+.nav .nav-item-picture:active .dimmed,
+.nav .nav-item-picture:focus .dimmed {
+  display: none;
 }
 .nav .nav-item:hover .search-box {
   border-bottom: 2px solid #ffffff;
