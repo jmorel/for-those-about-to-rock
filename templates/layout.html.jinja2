@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% block stylesheets %}
+        {% compress css %}
         <link rel="stylesheet" type="text/css" href="{{ static('ftatr/Font-Awesome/css/font-awesome.min.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ static('ftatr/fonts/static/static.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ static('ftatr/css/main.css') }}">
+        {% endcompress %}
     {% endblock stylesheets %}
 
     {# rss feeds #}

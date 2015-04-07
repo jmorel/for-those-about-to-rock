@@ -23,6 +23,7 @@ INSTALLED_APPS = (
     'django_jinja',
     'easy_thumbnails',
     'django_jinja.contrib._easy_thumbnails',
+    'compressor',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'haystack',
@@ -96,3 +97,14 @@ USE_TZ = False
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'ftatr/static'),
 )
+
+# Asset manager (django-compressor)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+JINJA2_EXTENSIONS = [
+    'compressor.contrib.jinja2ext.CompressorExtension',
+]
