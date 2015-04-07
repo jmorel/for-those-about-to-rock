@@ -1,6 +1,6 @@
 {% extends 'layout.html.jinja2' %}
 
-{% set image = request.build_absolute_uri(static('ftatr/images/factory-icon-500x350.png')) %}
+{% set image = request.build_absolute_uri(static('ftatr/images/logo.png')) %}
 {% block og_title %}Manufacturers{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri(url('manufacturer:index')) }}{% endblock %}
 {% block og_image %}{{ image }}{% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'layout.html.jinja2' %}
 
-{% set image = request.build_absolute_uri(manufacturer.logo | thumbnail_url('540x540') if manufacturer.logo else static('ftatr/images/factory-icon-500x350.png')) %}
+{% set image = request.build_absolute_uri(manufacturer.logo | thumbnail_url('540x540') if manufacturer.logo else static('ftatr/images/logo.png')) %}
 {% set text = manufacturer.name ~ ' (manufacturer)' %}
 {% block og_title %}{{ text }}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri(url('manufacturer:show', slug=manufacturer.slug)) }}{% endblock %}
