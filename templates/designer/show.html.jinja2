@@ -66,6 +66,18 @@
                         </div>
                     </li>
                 {% endfor %}
+                {% if designer.birthday  %}
+                    <li>
+                        <div class="attribute">
+                            <div class="attribute-value">
+                                {{ designer.birthday.year }}
+                            </div>
+                            <div class="attribute-name">
+                                Birth
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
