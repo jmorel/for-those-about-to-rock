@@ -52,6 +52,7 @@ class RockingChairAdmin(admin.ModelAdmin):
         ManufacturerLinkInline,
         YearLinkInline,
     ]
+    search_fields = ('name', 'designers__first_name', 'designers__last_name', 'manufacturers__name')
 
     def get_urls(self):
         urls = super().get_urls()
@@ -93,11 +94,13 @@ class RockingChairAdmin(admin.ModelAdmin):
 class DesignerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('first_name', 'last_name', )}
     ordering = ('first_name', 'last_name')
+    search_fields = ('first_name', 'last_name')
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
     ordering = ('name', )
+    search_fields = ('name', )
 
 
 admin.site.register(RockingChair, RockingChairAdmin)
