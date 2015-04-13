@@ -1328,6 +1328,73 @@ ul.attributes .attribute-links a:hover {
     padding-top: 10px;
   }
 }
+.graph-container {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 0;
+}
+@media (max-width: 599px) {
+  .graph-container {
+    background-image: radial-gradient(ellipse 70% 30px at center top 60px, #ffffff 0%, #ffffff 99%, transparent 99%, transparent), linear-gradient(to bottom, transparent, transparent 45px, #ffffff 45px, #ffffff 55%, transparent 55%, transparent), linear-gradient(to top, transparent, transparent 30px, #ffffff 30px, #ffffff 55%, transparent 55%, transparent), radial-gradient(ellipse 70% 30px at center bottom 30px, #ffffff 0%, #ffffff 99%, transparent 99%, transparent);
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    padding-top: 20px;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .graph-container {
+    display: block;
+    background: #ffffff;
+    border: 30px solid #ffffff;
+    border-radius: 300px;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    line-height: 600px;
+    color: #555555;
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 900px) {
+  .graph-container {
+    display: block;
+    background: #ffffff;
+    border: 30px solid #ffffff;
+    border-radius: 300px;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    line-height: 600px;
+    color: #555555;
+    margin-bottom: 120px;
+  }
+}
+.graph-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.graph-container .graph {
+  display: inline-block;
+}
+@media (max-width: 599px) {
+  .graph-container .graph {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 270px;
+    height: 270px;
+  }
+}
+@media (min-width: 600px) {
+  .graph-container .graph {
+    vertical-align: top;
+    width: 381.83766184px;
+    height: 381.83766184px;
+    margin-top: 79.08116908px;
+  }
+}
 *,
 *:before,
 *:after {

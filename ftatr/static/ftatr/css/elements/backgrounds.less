@@ -25,3 +25,21 @@
         background: linear-gradient(@yellow-transparent 0, transparent @bottom-length) center bottom no-repeat;
     }
 }
+
+.white-ellipsish-background(@radius) {
+    background-image: radial-gradient(
+            ellipse 70% @radius at center top 2*@radius,
+            @white 0%, @white 99%, transparent 99%, transparent),
+    linear-gradient(to bottom,
+            transparent, transparent 1.5*@radius,
+            white 1.5*@radius, white 55%,
+            transparent 55%, transparent),
+    linear-gradient(to top,
+            transparent, transparent @radius,
+            white @radius, white 55%,
+            transparent 55%, transparent),
+    radial-gradient(
+            ellipse 70% @radius at center bottom @radius,
+            @white 0%, @white 99%, transparent 99%, transparent);
+    background-repeat: no-repeat;
+}

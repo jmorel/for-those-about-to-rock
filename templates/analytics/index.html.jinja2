@@ -13,8 +13,130 @@
 
 {% block content %}
 
-    <div style="text-align: center; font-variant: small-caps">
-        Coming soon
+    <div class="graph-container">
+        <div id="countries" class="graph"></div>
     </div>
 
+    <div class="graph-container">
+        <div id="top-designers" class="graph"></div>
+    </div>
+
+    <div class="graph-container">
+        <div id="top-manufacturers" class="graph"></div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ static('ftatr/vendor/highcharts/highcharts-custom.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#countries').highcharts({
+                chart: {
+                    type: 'bubble',
+                    zoomType: 'xy'
+                },
+                title: {
+                    text: 'Countries relative importance in the rocking chair world'
+                },
+                legend: {
+                    enabled: false
+                },
+                xAxis: {
+                    title: {
+                        text: 'Number of designers'
+                    },
+                    min: 0,
+                    allowDecimals: false
+                },
+                yAxis: {
+                    title: {
+                        text: 'Number of manufacturers'
+                    },
+                    min: 0,
+                    allowDecimals: false
+                },
+                plotOptions: {
+                    bubble: {
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () {
+                                return this.point.name;
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '<span style="font-size: 10px">{point.key}</span><br/>',
+                            pointFormatter: function () {
+                                return 'Designers: ' + this.x + ', Manufacturers: ' + this.y + ', rocking chairs: ' + this.z;
+                            }
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Countries',
+                        data: {{ countries | safe }}
+                    }
+                ]
+            });
+
+            $('#top-designers').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Most prolific designers'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    min: 0,
+                    allowDecimals: false,
+                    title: {
+                        text: 'Number of rocking chairs'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                series: [
+                    {
+                        name: 'Number of rocking chairs',
+                        data: {{ top_designers | safe }}
+                    }
+                ]
+            });
+
+            $('#top-manufacturers').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Most involved manufacturers'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    min: 0,
+                    allowDecimals: false,
+                    title: {
+                        text: 'Number of rocking chairs'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                series: [
+                    {
+                        name: 'Number of rocking chairs',
+                        data: {{ top_manufacturers | safe }}
+                    }
+                ]
+            });
+        });
+    </script>
 {% endblock %}

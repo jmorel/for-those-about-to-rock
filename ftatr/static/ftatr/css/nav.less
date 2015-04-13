@@ -7,6 +7,7 @@
  *    center-to-center distance to its neighbours
  */
 @import 'elements/variables';
+@import 'elements/backgrounds';
 
 // macros
 
@@ -275,21 +276,7 @@
 
     @media (max-width: @screen-small-max) {
         &.nav-open {
-            background-image: radial-gradient(
-                    ellipse 70% @nav-item-radius at center top 2*@nav-item-radius,
-                    @white 0%, @white 99%, transparent 99%, transparent),
-            linear-gradient(to bottom,
-                    transparent, transparent 1.5*@nav-item-radius,
-                    white 1.5*@nav-item-radius, white 55%,
-                    transparent 55%, transparent),
-            linear-gradient(to top,
-                    transparent, transparent @nav-item-radius,
-                    white @nav-item-radius, white 55%,
-                    transparent 55%, transparent),
-            radial-gradient(
-                    ellipse 70% @nav-item-radius at center bottom @nav-item-radius,
-                    @white 0%, @white 99%, transparent 99%, transparent);
-            background-repeat: no-repeat;
+            .white-ellipsish-background(@nav-item-radius);
             padding: 0 1/2*@nav-item-radius @nav-item-radius 1/2*@nav-item-radius;
 
             .nav-item {
