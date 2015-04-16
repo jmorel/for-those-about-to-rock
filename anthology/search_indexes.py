@@ -14,4 +14,4 @@ class RockingChairIndex(indexes.SearchIndex, indexes.Indexable):
 
     def index_queryset(self, using=None):
         """Used when the entire index for model is updated."""
-        return self.get_model().objects.filter(published_at__lte=datetime.datetime.now())
+        return self.get_model().objects.published()

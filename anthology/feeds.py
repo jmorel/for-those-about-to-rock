@@ -1,4 +1,3 @@
-import datetime
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
 from django.template import loader
@@ -22,10 +21,7 @@ class LatestRockingChairsFeed(Feed):
         return reverse('rocking_chair:feed')
 
     def items(self):
-        rocking_chairs = RockingChair.objects \
-            .exclude(published_at__gte=datetime.datetime.now()) \
-            .exclude(published_at=None) \
-            .order_by('-published_at')[:10]
+        rocking_chairs = RockingChair.objects.published().order_by('-published_at')[:10]
         return rocking_chairs
 
     def item_title(self, item):
