@@ -4,11 +4,14 @@ from django.core.urlresolvers import reverse
 from django.db import models
 import hashlib
 import os
+from anthology.managers import DesignerManager, ManufacturerManager, RockingChairManager
 
 
 class RockingChair(models.Model):
     class Meta:
         db_table = 'rocking_chair'
+
+    objects = RockingChairManager()
 
     name = models.CharField(max_length=255)
     year = models.IntegerField(max_length=4, null=True, blank=True)
@@ -35,7 +38,7 @@ class RockingChair(models.Model):
         # rocking chair name
         safe_tweet = self.name
         if len(safe_tweet) > tweet_max_length:
-           safe_tweet = safe_tweet[:tweet_max_length-3] + '...'
+            safe_tweet = safe_tweet[:tweet_max_length - 3] + '...'
         # add designer names
         if self.designer_names:
             tweet = "{} by {}".format(safe_tweet, self.designer_names)
@@ -130,6 +133,8 @@ class Designer(models.Model):
     def get_upload_to(self, filename):
         return os.path.join('designers', self.slug, get_upload_filename(filename))
 
+    objects = DesignerManager()
+
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     birthday = models.DateField(blank=True, null=True)
@@ -151,9 +156,7 @@ class Designer(models.Model):
 
     @property
     def published_rocking_chairs(self):
-        return self.rocking_chairs.all() \
-            .exclude(published_at__gte=datetime.datetime.now()) \
-            .exclude(published_at=None)
+        return self.rocking_chairs.filter(published_at__lte=datetime.datetime.now())
 
     def get_absolute_url(self):
         return reverse('designer:show', kwargs={'slug': self.slug})
@@ -165,6 +168,8 @@ class Manufacturer(models.Model):
 
     def get_upload_to(self, filename):
         return os.path.join('manufacturers', self.slug, get_upload_filename(filename))
+
+    objects = ManufacturerManager()
 
     name = models.CharField(max_length=255)
     logo = models.ImageField(upload_to=get_upload_to, blank=True, null=True)
@@ -180,9 +185,7 @@ class Manufacturer(models.Model):
 
     @property
     def published_rocking_chairs(self):
-        return self.rocking_chairs.all()\
-            .exclude(published_at__gte=datetime.datetime.now())\
-            .exclude(published_at=None)
+        return self.rocking_chairs.filter(published_at__lte=datetime.datetime.now())
 
     def get_absolute_url(self):
         return reverse('manufacturer:show', kwargs={'slug': self.slug})

@@ -38,7 +38,7 @@
                         <div class="item-text">
                             <a href="{{ url('manufacturer:show', slug=manufacturer.slug) }}">
                                 {{ manufacturer.name }}
-                                {% set nb_rocking_chairs = manufacturer.published_rocking_chairs|length %}
+                                {% set nb_rocking_chairs = manufacturer.published_rocking_chairs.count() %}
                                 ({{ nb_rocking_chairs }} chair{% if nb_rocking_chairs > 1 %}s{% endif %})
                             </a>
                         </div>

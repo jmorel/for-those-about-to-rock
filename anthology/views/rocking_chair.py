@@ -1,4 +1,3 @@
-import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from anthology.models import RockingChair
@@ -7,10 +6,7 @@ from anthology.utils import build_index_by_name, build_index_by_year
 
 def index(request):
     # prepare general request
-    rocking_chairs = RockingChair.objects \
-        .exclude(published_at__gte=datetime.datetime.now()) \
-        .exclude(published_at=None) \
-        .order_by('-published_at')
+    rocking_chairs = RockingChair.objects.published().order_by('-published_at')
     # set up paginator
     paginator = Paginator(rocking_chairs, 10)
     page = request.GET.get('page')
@@ -28,20 +24,14 @@ def index(request):
 
 
 def index_by_year(request):
-    rocking_chairs = RockingChair.objects \
-        .exclude(published_at__gte=datetime.datetime.now()) \
-        .exclude(published_at=None) \
-        .order_by('year', 'name')
+    rocking_chairs = RockingChair.objects.published().order_by('year', 'name')
     return render(request, 'rocking_chair/index_by_year.html.jinja2', {
         'timeline': build_index_by_year(rocking_chairs),
     })
 
 
 def index_by_name(request):
-    rocking_chairs = RockingChair.objects \
-        .exclude(published_at__gte=datetime.datetime.now()) \
-        .exclude(published_at=None) \
-        .order_by('name')
+    rocking_chairs = RockingChair.objects.published().order_by('name')
     return render(request, 'rocking_chair/index_by_name.html.jinja2', {
         'alphabet': build_index_by_name(rocking_chairs),
     })
