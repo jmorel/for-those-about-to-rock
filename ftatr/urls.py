@@ -5,7 +5,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.views.generic import RedirectView
 from haystack.views import SearchView
 from ftatr import settings
-from anthology.sitemaps import RockingChairSitemap, DesignerSitemap, ManufacturerSitemap
+from anthology.sitemaps import RockingChairSitemap, DesignerSitemap, ManufacturerSitemap, StaticSitemap
 
 urlpatterns = patterns('',
     url(r'^$', RedirectView.as_view(url='/rocking-chair')),
@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'rocking_chair': RockingChairSitemap,
                                                   'designer': DesignerSitemap,
-                                                  'manufacturer': ManufacturerSitemap}},
+                                                  'manufacturer': ManufacturerSitemap,
+                                                  'static': StaticSitemap}},
          name='django.contrib.sitemaps.views.sitemap')
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
