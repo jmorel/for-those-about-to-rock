@@ -19,11 +19,13 @@ def countries_serie():
     designers = Designer.objects.with_published_rocking_chairs()
     for designer in designers.all():
         for country in designer.nationalities.all():
-            increment_serie(serie=countries, key=country.code, field='designers')
+            if country:
+                increment_serie(serie=countries, key=country.code, field='designers')
 
     manufacturers = Manufacturer.objects.with_published_rocking_chairs()
     for manufacturer in manufacturers.all():
-        increment_serie(serie=countries, key=manufacturer.country.code, field='manufacturers')
+        if manufacturer.country:
+            increment_serie(serie=countries, key=manufacturer.country.code, field='manufacturers')
 
     rocking_chairs = RockingChair.objects.published().order_by('-published_at')
     for rocking_chair in rocking_chairs.all():
