@@ -62,14 +62,18 @@ def increment_serie(serie, key, field, fields=('rocking_chairs', 'designers', 'm
 
 
 def designers_serie():
-    designers = Designer.objects.with_published_rocking_chairs()
-    serie = [[designer.full_name, designer.published_rocking_chairs.count()] for designer in designers[:20]]
+    designers = Designer.objects.with_published_rocking_chairs() \
+        .annotate(num_rocking_chairs=Count('rocking_chairs')) \
+        .order_by('-num_rocking_chairs')
+    serie = [[designer.full_name, designer.published_rocking_chairs.count()] for designer in designers[:10]]
     serie.sort(key=lambda designer: designer[1], reverse=True)
     return serie
 
 
 def manufacturers_serie():
-    manufacturers = Manufacturer.objects.with_published_rocking_chairs()
-    serie = [[manufacturer.name, manufacturer.published_rocking_chairs.count()] for manufacturer in manufacturers[:20]]
+    manufacturers = Manufacturer.objects.with_published_rocking_chairs() \
+        .annotate(num_rocking_chairs=Count('rocking_chairs')) \
+        .order_by('-num_rocking_chairs')
+    serie = [[manufacturer.name, manufacturer.published_rocking_chairs.count()] for manufacturer in manufacturers[:10]]
     serie.sort(key=lambda manufacturer: manufacturer[1], reverse=True)
     return serie
