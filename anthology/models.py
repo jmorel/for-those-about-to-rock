@@ -101,8 +101,10 @@ def get_upload_filename(filename):
 class Picture(models.Model):
     class Meta:
         db_table = 'picture'
+        ordering = ['priority', ]
 
     picture = models.ImageField(upload_to=RockingChair.get_upload_to)
+    priority = models.SmallIntegerField(null=True, blank=True)
 
     rocking_chair = models.ForeignKey('RockingChair', related_name='pictures')
 
