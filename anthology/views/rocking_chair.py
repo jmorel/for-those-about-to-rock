@@ -1,5 +1,8 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.template import Context
+from django.template.loader import render_to_string, get_template
 from anthology.models import RockingChair
 from anthology.utils import build_index_by_name, build_index_by_year
 
@@ -17,10 +20,19 @@ def index(request):
     except EmptyPage:
         paged_rocking_chairs = paginator.page(paginator.num_pages)
 
-    return render(request, 'rocking_chair/index.html.jinja2', {
-        'rocking_chairs': paged_rocking_chairs,
-        'paginator': paginator
-    })
+    template = get_template('rocking_chair/index.html.jinja2')
+    html = template.render(Context({'rocking_chairs': paged_rocking_chairs,
+                                    'paginator': paginator,
+                                    'request': request}))
+    if request.is_ajax():
+        return JsonResponse({
+            'rocking_chairs': html,
+            'current_page': page,
+            'next_page': paged_rocking_chairs.next_page_number() if paged_rocking_chairs.has_next() else None,
+            'previous_page': paged_rocking_chairs.previous_page_number() if paged_rocking_chairs.has_previous() else None
+        })
+
+    return HttpResponse(html)
 
 
 def index_by_year(request):

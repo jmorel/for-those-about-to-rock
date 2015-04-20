@@ -1,11 +1,55 @@
-{% extends 'layout.html.jinja2' %}
+{% if not request.is_ajax() %}
+    {% extends 'layout.html.jinja2' %}
 
-{% set image = request.build_absolute_uri(rocking_chairs[0].pictures.first().picture | thumbnail_url('540x540')) %}
-{% block og_image %}{{ image }}{% endblock %}
-{% block twitter_image %}{{ image }}{% endblock %}
+    {% set image = request.build_absolute_uri(rocking_chairs[0].pictures.first().picture | thumbnail_url('540x540')) %}
+    {% block og_image %}{{ image }}{% endblock %}
+    {% block twitter_image %}{{ image }}{% endblock %}
+
+    {% block javascripts %}
+        {{ super() }}
+
+        <script type="text/javascript">
+            var $button_next = $('.paginate.next a'), $button_previous = $('.paginate.previous a'),
+                    base_url = '{{ url('rocking_chair:index') }}?page=';
+
+            $button_next.click(loadRockingChairs('next'));
+            $button_previous.click(loadRockingChairs('previous'));
+
+            function loadRockingChairs(action) {
+                return function (event) {
+                    var $target = $(event.target);
+                    event.preventDefault();
+                    // display loader
+                    $target.html('<i class="fa fa-spin fa-spinner"></i>');
+                    // hide count
+                    $target.parent('.paginate').find('.count').hide();
+                    $.ajax({
+                        url: $target.attr('href'),
+                        success: function (data, textStatus, jqXHR) {
+                            // insert new rocking chairs
+                            if (action == 'next') {
+                                $(data.rocking_chairs).insertAfter($('article.rocking-chair').last());
+                            } else {
+                                $(data.rocking_chairs).insertAfter($('.paginate').first());
+                            }
+                            // update pagination links
+                            var page_number = action == 'next' ? data.next_page : data.previous_page;
+                            if (page_number) {
+                                $target.attr('href', base_url + page_number);
+                                $target.html(action.toUpperCase());
+                            } else {
+                                $target.parent('.paginate').hide();
+                            }
+                        }
+                    })
+                }
+            }
+        </script>
+    {% endblock %}
+{% endif %}
 
 {% block content %}
-    {% if rocking_chairs.has_previous() %}
+    {% if rocking_chairs.has_previous() and not request.is_ajax() %}
         <div class="paginate previous">
             <a href="{{ url('rocking_chair:index') }}?page={{ rocking_chairs.previous_page_number() }}">
                 previous<br>
@@ -21,7 +65,7 @@
         {% include 'rocking_chair/single.html.jinja2' %}
     {% endfor %}
 
-    {% if rocking_chairs.has_next() %}
+    {% if rocking_chairs.has_next() and not request.is_ajax() %}
         <div class="clear"></div>
         <div class="paginate next">
             <a href="{{ url('rocking_chair:index') }}?page={{ rocking_chairs.next_page_number() }}">
