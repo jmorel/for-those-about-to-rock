@@ -9,9 +9,12 @@
         {{ super() }}
 
         <script type="text/javascript">
-            var $button_next = $('.paginate.next a'), $button_previous = $('.paginate.previous a'),
-                    base_url = '{{ url('rocking_chair:index') }}?page=';
+            var $button_next = $('.paginate.next a'),
+                    $button_previous = $('.paginate.previous a'),
+                    base_url = '{{ url('rocking_chair:index') }}?page=',
+                    loading = false;
 
+            // Dynamic load for rocking chairs
             $button_next.click(loadRockingChairs('next'));
             $button_previous.click(loadRockingChairs('previous'));
 
@@ -42,10 +45,20 @@
                             } else {
                                 $target.parent('.paginate').hide();
                             }
+                            // notify end of dynamic load
+                            loading = false;
                         }
                     })
                 }
             }
+
+        // Auto detect scroll to top/bottom and launch new load
+        $(window).scroll(function() {
+            if (!loading && $button_next.is(':visible') && $button_next.offset().top < $(window).scrollTop() + $(window).height()) {
+                loading = true;
+                $button_next.click();
+            }
+        });
         </script>
     {% endblock %}
 {% endif %}
