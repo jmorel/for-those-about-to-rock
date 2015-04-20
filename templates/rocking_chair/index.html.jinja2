@@ -26,6 +26,8 @@
                     $.ajax({
                         url: $target.attr('href'),
                         success: function (data, textStatus, jqXHR) {
+                            // update location
+                            window.history.pushState({}, '', $target.attr('href'));
                             // insert new rocking chairs
                             if (action == 'next') {
                                 $(data.rocking_chairs).insertAfter($('article.rocking-chair').last());
