@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     'haystack',
     'ftatr',
     'anthology',
+    'contribution'
 )
 
 MIDDLEWARE_CLASSES = (

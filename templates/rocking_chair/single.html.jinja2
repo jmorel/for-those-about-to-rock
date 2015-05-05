@@ -64,21 +64,26 @@
 
                 </div>
             </li>
-            {% if rocking_chair.year %}
-                <li>
-                    {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
-                    <div class="attribute">
-                        <div class="attribute-value">
+            <li>
+                {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {% if rocking_chair.year %}
                             <a href="{{ url('rocking_chair:index-by-year') }}#{{ rocking_chair.year }}">
                                 {{ rocking_chair.year }}
                             </a>
-                        </div>
-                        <div class="attribute-name">
-                            Year
-                        </div>
+                        {% else %}
+                            <a href="{{ url('contribution:new') }}?target_type=rocking_chair&target_slug={{ rocking_chair.slug }}&attribute=year">
+                            ????
+                            </a>
+                        {% endif %}
                     </div>
-                </li>
-            {% endif %}
+                    <div class="attribute-name">
+                        Year
+                    </div>
+                </div>
+            </li>
+
             <li>
                 <div class="attribute">
                     <div class="attribute-tag">

@@ -1,0 +1,30 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block nav %}{% endblock %}
+
+{% block content %}
+    <h2>Help us fill the blanks in the rocking chair anthology</h2>
+    <p>
+        Do you know the {{ contribution_form.attribute.value() }}
+        for the {{ contribution_form.target_type.value() }}
+        {{ contribution_form.target_slug.value() }} ?
+    </p>
+    <p>
+        Use the form below to provide us with the data and please include a source link (or many if you can), otherwise
+        we won't consider your contribution.
+    </p>
+    <form action="" method="post">
+{#        <p>{{ request.target_type }} {{ request.target_url }}</p>#}
+        {{ contribution_form.as_p() }}
+{#        <p>Please provide us with (at least) a source url for your contribution otherwise it won't be included.</p>#}
+{#        {% for form in source_formset %}#}
+{#            {{ form | safe }}#}
+{#        {% endfor %}#}
+{#        <a href="#">#}
+{#            <i class="fa fa-add"></i>#}
+{#            Add source#}
+{#        </a>#}
+        {% csrf_token %}
+        <input type="submit" value="submit"/>
+    </form>
+{% endblock %}
