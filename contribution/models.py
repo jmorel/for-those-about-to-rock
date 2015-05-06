@@ -40,4 +40,4 @@ class Contribution(models.Model):
 
 class Source(models.Model):
     url = models.CharField(max_length=255)
-    proposal = models.ForeignKey(Contribution, related_name='sources')
+    contribution = models.ForeignKey(Contribution, related_name='sources')

@@ -1,12 +1,10 @@
-from django.forms import ModelForm, inlineformset_factory, HiddenInput, CharField
+from django.forms import ModelForm, inlineformset_factory, HiddenInput
 from contribution.models import Contribution, Source
 
 
 class ContributionForm(ModelForm):
-
     class Meta:
         model = Contribution
-        # fields = ['content', 'contact', 'target_type', 'target_slug', 'attribute']
         fields = '__all__'
         help_texts = {
             'content': "The data you want to contribute",
@@ -22,6 +20,8 @@ class ContributionForm(ModelForm):
     def get_model(self):
         pass
 
+
 SourceFormset = inlineformset_factory(Contribution, Source,
-                                      extra=1,
-                                      )
+                                      extra=0,
+                                      validate_min=True,
+                                      min_num=1)

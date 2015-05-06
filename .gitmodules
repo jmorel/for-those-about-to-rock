@@ -7,3 +7,6 @@
 [submodule "ftatr/static/ftatr/TouchSwipe-Jquery-Plugin"]
 	path = ftatr/static/ftatr/vendor/TouchSwipe-Jquery-Plugin
 	url = https://github.com/mattbryson/TouchSwipe-Jquery-Plugin.git
+[submodule "ftatr/static/ftatr/vendor/django-dynamic-formset"]
+	path = ftatr/static/ftatr/vendor/django-dynamic-formset
+	url = https://github.com/elo80ka/django-dynamic-formset.git

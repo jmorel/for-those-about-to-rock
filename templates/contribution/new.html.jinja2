@@ -14,17 +14,29 @@
         we won't consider your contribution.
     </p>
     <form action="" method="post">
-{#        <p>{{ request.target_type }} {{ request.target_url }}</p>#}
         {{ contribution_form.as_p() }}
-{#        <p>Please provide us with (at least) a source url for your contribution otherwise it won't be included.</p>#}
-{#        {% for form in source_formset %}#}
-{#            {{ form | safe }}#}
-{#        {% endfor %}#}
-{#        <a href="#">#}
-{#            <i class="fa fa-add"></i>#}
-{#            Add source#}
-{#        </a>#}
+
+        <p>Please provide us with (at least) a source url for your contribution otherwise it won't be included.</p>
+        {{ source_formset.non_form_errors() }}
+        {{ source_formset.management_form.as_p() }}
+        <div id="contribution-sources">
+            {% for form in source_formset %}
+                {{ form.as_p() }}
+            {% endfor %}
+        </div>
         {% csrf_token %}
         <input type="submit" value="submit"/>
     </form>
+{% endblock %}
+
+{% block javascripts %}
+    {{ super() }}
+
+    <script type="text/javascript">
+        $(function() {
+            $('#contribution-sources').formset({
+                prefix: 'sources'
+            })
+        })();
+    </script>
 {% endblock %}
