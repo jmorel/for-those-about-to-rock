@@ -73,15 +73,17 @@
 
     {% block body %}
 
-        <header>
-            <h1>
-                <a href="{{ url('rocking_chair:index') }}">
-                    For those about to rock
-                </a>
-            </h1>
+        {% block header %}
+            <header>
+                <h1>
+                    <a href="{{ url('rocking_chair:index') }}">
+                        For those about to rock
+                    </a>
+                </h1>
 
-            <p>A rocking chair anthology</p>
-        </header>
+                <p>A rocking chair anthology</p>
+            </header>
+        {% endblock %}
 
         {% block nav %}
             {{ nav(request) | safe }}
@@ -90,29 +92,55 @@
         {% block content %}
         {% endblock %}
 
-        <div class="clear"></div>
+        {% block footer %}
+            <div class="clear"></div>
 
-        <footer>
-            <div class="footer-content">
-                <p>
-                    For Those About To Rock is made and maintained by me, <a href="http://hexagonal.io">Jeremy</a>.<br>
-                    I tweet at <a href="https://twitter.com/RChairAnthology">@RChairAnthology</a> but prefer <a
-                        href="mailto:jeremy@forthoseabouttorock.io">email</a> for actual conversation.<br>
-                    The source code is open and available at <a
-                        href="https://github.com/jmorel/for-those-about-to-rock">GitHub</a>.
-                </p>
+            <footer>
+                <div class="footer-content">
+                    <p>
+                        For Those About To Rock is made and maintained by me, <a
+                            href="http://hexagonal.io">Jeremy</a>.<br>
+                        I tweet at <a href="https://twitter.com/RChairAnthology">@RChairAnthology</a> but prefer <a
+                            href="mailto:jeremy@forthoseabouttorock.io">email</a> for actual conversation.<br>
+                        The source code is open and available at <a
+                            href="https://github.com/jmorel/for-those-about-to-rock">GitHub</a>.
+                    </p>
 
-                <p>
-                    Special thanks to The Noun Project for menu icons. <br/>
-                    Rocking chair icon by Christophe Clapier. <br/>
-                    Manufacturer icon by Lil Squid. <br/>
-                    Timeline icon by Steve Stomp.
-                </p>
-                <a href="http://hexagonal.io" class="hexagonal-link">
-                    <img src="{{ static('ftatr/images/hexagonal-logo.png') }}">
-                </a>
-            </div>
-        </footer>
+                    <p>
+                        Special thanks to The Noun Project for menu icons. <br/>
+                        Rocking chair icon by Christophe Clapier. <br/>
+                        Manufacturer icon by Lil Squid. <br/>
+                        Timeline icon by Steve Stomp.
+                    </p>
+                    <a href="http://hexagonal.io" class="hexagonal-link">
+                        <img src="{{ static('ftatr/images/hexagonal-logo.png') }}">
+                    </a>
+                </div>
+            </footer>
+        {% endblock %}
+
+        {% block modals %}
+            <div class="modal fade" id="contribution-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        {% endblock %}
     {% endblock %}
 </div>
 
@@ -127,7 +155,8 @@
         <script type="text/javascript" src="{{ static('ftatr/vendor/jquery/jquery-2.1.1.min.js') }}"></script>
 
         {# Dynamic forms #}
-        <script type="text/javascript" src="{{ static('ftatr/vendor/django-dynamic-formset/src/jquery.formset.js') }}"></script>
+        <script type="text/javascript"
+                src="{{ static('ftatr/vendor/django-dynamic-formset/src/jquery.formset.js') }}"></script>
 
         {# Bootstrap #}
         <script type="text/javascript" src="{{ static('ftatr/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -190,6 +219,50 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
+
+        {# Contribution #}
+        <script type="text/javascript">
+            (function () {
+                var $contribution_modal = $('#contribution-modal');
+                var $contribution_modal_body = $contribution_modal.find('.modal-body');
+
+                $('.contribution-link').on('click', function (event) {
+                    var contribution_url = $(event.target).attr('href');
+                    event.preventDefault();
+                    $contribution_modal.modal();
+                    $.ajax({
+                        url: contribution_url,
+                        success: function (data, textStatus, jqXhr) {
+                            $contribution_modal_body.html(data);
+                        },
+                        error: function (jqXhr, textStatus, errorThrown) {
+                        }
+                    });
+
+                });
+
+                $(document).on('submit', '.contribution-form', function (event) {
+                    var $form = $(this);
+                    // todo add spiner on top of body
+
+                    $.ajax({
+                        type: $form.attr('method'),
+                        url: $form.attr('action'),
+                        data: $form.serialize(),
+                        success: function (data, status) {
+                            $contribution_modal_body.html(data);
+                        },
+                        error: function (jqXhr, textStatus, errorThrown) {
+                        }
+                    });
+
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                })
+            })();
+        </script>
+
     {% endblock %}
 {% endcompress %}
 </body>

@@ -1,6 +1,9 @@
-{% extends 'layout.html.jinja2' %}
+{% if not request.is_ajax() %}
+    {% extends 'layout.html.jinja2' %}
+{% endif %}
 
 {% block nav %}{% endblock %}
+
 
 {% block content %}
     <h2>Help us fill the blanks in the rocking chair anthology</h2>
@@ -13,7 +16,9 @@
         Use the form below to provide us with the data and please include a source link (or many if you can), otherwise
         we won't consider your contribution.
     </p>
-    <form action="" method="post">
+    <form action="{{ request.path }}?{{ request.GET.urlencode() }}"
+          method="post"
+          class="contribution-form">
         {{ contribution_form.as_p() }}
 
         <p>Please provide us with (at least) a source url for your contribution otherwise it won't be included.</p>
@@ -30,10 +35,12 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ super() }}
+    {% if not request.is_ajax() %}
+        {{ super() }}
+    {% endif %}
 
     <script type="text/javascript">
-        $(function() {
+        (function () {
             $('#contribution-sources').formset({
                 prefix: 'sources'
             })

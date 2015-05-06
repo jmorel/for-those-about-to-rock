@@ -73,7 +73,8 @@
                                 {{ rocking_chair.year }}
                             </a>
                         {% else %}
-                            <a href="{{ url('contribution:new') }}?target_type=rocking_chair&target_slug={{ rocking_chair.slug }}&attribute=year">
+                            <a href="{{ url('contribution:new') }}?target_type=rocking_chair&target_slug={{ rocking_chair.slug }}&attribute=year"
+                               class="contribution-link">
                             ????
                             </a>
                         {% endif %}
