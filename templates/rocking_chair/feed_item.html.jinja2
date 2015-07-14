@@ -12,7 +12,7 @@
     {% for manufacturer in rocking_chair.manufacturers.all() %}
         <li>
             Manufacturer:
-            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) | absolute }}">{{ manufacturer.full_name }}</a>
+            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) | absolute }}">{{ manufacturer }}</a>
         </li>
     {% endfor %}
     {% if rocking_chair.year %}
