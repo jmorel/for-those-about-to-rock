@@ -114,6 +114,13 @@
             </div>
         </footer>
     {% endblock %}
+
+    <div class="konami">
+        <button class="close">
+            <i class="fa fa-close"></i>
+        </button>
+        <iframe class="player"></iframe>
+    </div>
 </div>
 
 {% block remote_javascripts %}
@@ -129,9 +136,26 @@
         {# Bootstrap #}
         <script type="text/javascript" src="{{ static('ftatr/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
+        {# Konami code #}
+        <script type="text/javascript" src="{{ static('ftatr/js/jquery.konami.js') }}"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(window).konami();
+                $(window).on('konami', function () {
+                    $('.konami .player').replaceWith('<iframe class="player" src="https://www.youtube.com/embed/RtMGoU9NcMo?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                    $('.konami').show();
+                });
+
+                $('.konami .close').on('click', function () {
+                    $('.konami .player').replaceWith('<iframe class="player"></iframe>');
+                    $('.konami').hide();
+                });
+            });
+        </script>
+
+
         {# Enable touch carousel #}
-        <script type="text/javascript"
-                src="{{ static('ftatr/js/jquery.touchSwipe.js') }}"></script>
+        <script type="text/javascript" src="{{ static('ftatr/js/jquery.touchSwipe.js') }}"></script>
         <script type="text/javascript">
             $(function () {
                 $(".carousel-inner").swipe({
