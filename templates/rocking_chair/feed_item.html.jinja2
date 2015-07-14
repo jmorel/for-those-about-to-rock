@@ -3,12 +3,28 @@
 </p>
 
 <ul>
-    <li> Designer(s): {{ rocking_chair.designer_names }}</li>
+    {% for designer in rocking_chair.designers.all() %}
+        <li>
+            Designer:
+            <a href="{{ url('designer:show', slug=designer.slug) | absolute }}">{{ designer.full_name }}</a>
+        </li>
+    {% endfor %}
     {% for manufacturer in rocking_chair.manufacturers.all() %}
-        <li>Manufacturer: {{ manufacturer.name }}</li>
+        <li>
+            Manufacturer:
+            <a href="{{ url('manufacturer:show', slug=manufacturer.slug) | absolute }}">{{ manufacturer.full_name }}</a>
+        </li>
     {% endfor %}
     {% if rocking_chair.year %}
-        <li>Year: {{ rocking_chair.year }}</li>
+        <li>
+        Year:
+        <a href="{{ url('rocking_chair:index-by-year') | absolute }}#{{ rocking_chair.year }}">{{ rocking_chair.year }}</a>
+        </li>
+    {% endif %}
+    {% if rocking_chair.price %}
+        <li>
+            Price: {{ rocking_chair.price }}
+        </li>
     {% endif %}
 </ul>
 
