@@ -74,6 +74,10 @@
         width: @carousel-control-width-large;
     }
 
+    // beware: the focus needs to be before the hover to get the desired behaviour
+    &:focus {
+        color: @yellow-dark;
+    }
     &:hover {
         color: @grey;
     }

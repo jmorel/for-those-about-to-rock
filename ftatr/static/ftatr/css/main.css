@@ -459,6 +459,9 @@
     width: 60px;
   }
 }
+.carousel-control:focus {
+  color: #7f8000;
+}
 .carousel-control:hover {
   color: #333333;
 }
