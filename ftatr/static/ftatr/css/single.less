@@ -3,13 +3,55 @@
 @import 'elements/attributes';
 
 .single-title {
-    .round-item-large;
+    background-size: cover;
+    background: white center center;
+
+    @media (max-width: @screen-small-max) {
+        border: @article-border-width-small white solid;
+        border-radius: @article-radius-small;
+        width: 2*@article-radius-small;
+        height: 2*@article-radius-small;
+    }
+    @media (min-width: @screen-medium-min) and (max-width: @screen-medium-max) {
+        border: @article-border-width-medium white solid;
+        border-radius: @article-radius-medium;
+        width: 2*@article-radius-medium;
+        height: 2*@article-radius-medium;
+    }
+    @media (min-width: @screen-large-min) {
+        border: @article-border-width-large white solid;
+        border-radius: @article-radius-large;
+        width: 2*@article-radius-large;
+        height: 2*@article-radius-large;
+    }
     .centered;
 
     overflow: hidden;
 
     .unknown {
         font-size: 5rem;
+        vertical-align: middle;
+    }
+}
+
+.single-picture {
+    text-align: center;
+    font-size: 0;
+    border-radius: @article-inner-radius-large;
+    overflow: hidden;
+    height: 100%;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    img {
+        vertical-align: middle;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 

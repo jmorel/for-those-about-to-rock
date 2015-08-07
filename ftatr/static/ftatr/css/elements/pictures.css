@@ -1,0 +1,46 @@
+.pictures {
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background: white center center;
+  overflow: hidden;
+}
+@media (max-width: 599px) {
+  .pictures {
+    border: 5px #ffffff solid;
+    border-radius: 140px;
+    width: 280px;
+    height: 280px;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .pictures {
+    border: 20px #ffffff solid;
+    border-radius: 220px;
+    width: 440px;
+    height: 440px;
+  }
+}
+@media (min-width: 900px) {
+  .pictures {
+    border: 30px #ffffff solid;
+    border-radius: 300px;
+    width: 600px;
+    height: 600px;
+  }
+}
+.picture:before,
+.picture-unknown:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.picture img {
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+}
+.picture-unknown i {
+  font-size: 5rem;
+}

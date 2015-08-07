@@ -18,12 +18,14 @@
 
     <div id="{{ manufacturer.slug }}">
         <div class="single-title">
-            {% if manufacturer.logo %}
-                <img src="{{ manufacturer.logo | thumbnail_url('540x540') }}"
-                     alt="{{ manufacturer.name }}"/>
-            {% else %}
-                <i class="unknown fa fa-question"></i>
-            {% endif %}
+            <div class="single-picture">
+                {% if manufacturer.logo %}
+                    <img src="{{ manufacturer.logo | thumbnail_url('540x540') }}"
+                         alt="{{ manufacturer.name }}"/>
+                {% else %}
+                    <i class="unknown fa fa-question"></i>
+                {% endif %}
+            </div>
         </div>
 
         <div class="single-attributes">

@@ -18,12 +18,14 @@
 
     <div id="{{ designer.slug }}">
         <div class="single-title">
-            {% if designer.portrait %}
-                <img src="{{ designer.portrait | thumbnail_url('540x540') }}"
-                     alt="{{ designer.full_name }}"/>
-            {% else %}
-                <i class="unknown fa fa-question"></i>
-            {% endif %}
+            <div class="single-picture">
+                {% if designer.portrait %}
+                    <img src="{{ designer.portrait | thumbnail_url('540x540') }}"
+                         alt="{{ designer.full_name }}"/>
+                {% else %}
+                    <i class="unknown fa fa-question"></i>
+                {% endif %}
+            </div>
         </div>
 
         <div class="single-attributes">
