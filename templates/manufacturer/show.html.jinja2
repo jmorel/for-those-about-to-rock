@@ -1,7 +1,13 @@
 {% extends 'layout.html.jinja2' %}
 
 {% set image = request.build_absolute_uri(manufacturer.logo | thumbnail_url('540x540') if manufacturer.logo else static('ftatr/images/logo.png')) %}
-{% set text = manufacturer.name ~ ' (manufacturer)' %}
+{% set text = manufacturer.name ~ ' (manufacturer) | For Those About To Rock: a rocking chair anthology' %}
+
+{% block title %}{{ text }}{% endblock %}
+{% block description %}
+    The company {{ manufacturer.name }} on For Those About To Rock. On top of its basic information (logo, country)
+    you'll find the complete list of the rocking chairs it manufactures.
+{% endblock %}
 {% block og_title %}{{ text }}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri(url('manufacturer:show', slug=manufacturer.slug)) }}{% endblock %}
 {% block og_image %}{{ image }}{% endblock %}
