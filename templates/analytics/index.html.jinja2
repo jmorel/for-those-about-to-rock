@@ -1,12 +1,5 @@
 {% extends 'layout.html.jinja2' %}
 
-{% set image = request.build_absolute_uri(static('ftatr/images/logo.png')) %}
-{% block og_title %}Analytics{% endblock %}
-{% block og_url %}{{ request.build_absolute_uri(url('analytics:index')) }}{% endblock %}
-{% block og_image %}{{ image }}{% endblock %}
-{% block twitter_title %}Analytics{% endblock %}
-{% block twitter_image %}{{ image }}{% endblock %}
-
 {% block nav %}
     {{ nav('analytics:index') | safe }}
 {% endblock %}

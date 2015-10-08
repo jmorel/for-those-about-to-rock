@@ -1,13 +1,5 @@
 {% extends 'layout.html.jinja2' %}
 
-{% set image = request.build_absolute_uri(designer.portrait | thumbnail_url('540x540') if designer.portrait else static('ftatr/images/logo.png')) %}
-{% set text = designer.full_name ~ ' (designer)' %}
-{% block og_title %}{{ text }}{% endblock %}
-{% block og_url %}{{ request.build_absolute_uri(url('designer:show', slug=designer.slug)) }}{% endblock %}
-{% block og_image %}{{ image }}{% endblock %}
-{% block twitter_title %}{{ text }}{% endblock %}
-{% block twitter_image %}{{ image }}{% endblock %}
-
 {% block nav %}
     {{ nav('designer:index') | safe }}
 {% endblock %}

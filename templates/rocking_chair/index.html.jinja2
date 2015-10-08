@@ -1,10 +1,6 @@
 {% if not request.is_ajax() %}
     {% extends 'layout.html.jinja2' %}
 
-    {% set image = request.build_absolute_uri(rocking_chairs[0].pictures.first().picture | thumbnail_url('540x540')) %}
-    {% block og_image %}{{ image }}{% endblock %}
-    {% block twitter_image %}{{ image }}{% endblock %}
-
     {% block javascripts %}
         {{ super() }}
 

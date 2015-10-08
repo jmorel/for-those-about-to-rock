@@ -1,12 +1,16 @@
-import datetime
 from django.db.models import Count
 from django.shortcuts import render
 import simplejson
-from anthology.models import RockingChair, Country, Designer, Manufacturer
+from anthology.models import RockingChair, Designer, Manufacturer
 
 
 def index(request):
     return render(request, 'analytics/index.html.jinja2', {
+        # SEM metas
+        'title': 'Rocking chair analytics',
+        'description': """Graphs highlighting a few facts about the Rocking Chair world. Not only the most prolific
+        designers and the most involved manufacturers, but also which countries gave us the most rocking chairs.""",
+        # page content
         'countries': simplejson.dumps(countries_serie()),
         'top_designers': simplejson.dumps(designers_serie()),
         'top_manufacturers': simplejson.dumps(manufacturers_serie()),
