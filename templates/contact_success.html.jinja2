@@ -1,0 +1,19 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block nav %}
+    {{ nav('contact', query, true) | safe }}
+{% endblock %}
+
+{% block content %}
+    <div class="contact">
+        <h2 class="contact__title">Contact</h2>
+
+        <div class="contact__intro">
+            <h3 class="contact__intro-title">Got it!</h3>
+
+            <p class="contact__intro-paragraph">
+                Thanks a lot for your message, I'll reply as soon as possible.
+            </p>
+        </div>
+    </div>
+{% endblock %}

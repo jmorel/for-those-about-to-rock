@@ -1,0 +1,90 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block nav %}
+    {{ nav('contact', query, true) | safe }}
+{% endblock %}
+
+{% block content %}
+    <div class="contact">
+        <h2 class="contact__title">Contact</h2>
+
+        <div class="contact__intro">
+            <p class="contact__intro-paragraph">
+                Found an error somewhere? <br>
+                Designed/manufactured a rocking chair that is not featured yet?<br>
+                Want to chat about the wonderful world of rocking chairs?
+            </p>
+
+            <p class="contact__intro-paragraph">
+                Write me!
+            </p>
+
+            <p class="contact__intro-paragraph">
+                You can contact me through <a href="mailto:jeremy@forthoseabouttorock.io">email</a>,
+                <a href="https://twitter.com/RChairAnthology">twitter</a> or with the form below.
+            </p>
+
+        </div>
+
+        <div class="clear"></div>
+
+        <form method="post" action="{{ url('contact') }}">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+            <div class="form-control-group">
+                <div class="form-control-label">
+                    <label for="id_sender">You</label>
+                </div>
+                <div class="form-control {% if form.sender.errors %}form-control--errors{% endif %}">
+                    <input id="id_sender"
+                           maxlength="100"
+                           name="sender"
+                           type="text"
+                           data-cip-id="id_sender"
+                           placeholder="Your email, twitter handle...">
+                    {{ form.sender.errors }}
+                    <p class="form-control-help">
+                        Please provide a way for me to contact you back, email, twitter,
+                        anything!
+                    </p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="form-control-group">
+                <label for="id_subject" class="form-control-label">Subject</label>
+
+                <div class="form-control {% if form.subject.errors %}form-control--errors{% endif %}">
+                    <input id="id_subject"
+                           maxlength="100"
+                           name="subject"
+                           type="text"
+                           placeholder="Subject..."
+                           data-cip-id="id_subject">
+                    {{ form.subject.errors }}
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="form-control-group">
+                <label for="id_message" class="form-control-label">Message</label>
+
+                <div class="form-control {% if form.message.errors %}form-control--errors{% endif %}">
+                <textarea cols="40"
+                          id="id_message"
+                          name="message"
+                          rows="10"
+                          placeholder="Message..."></textarea>
+                    {{ form.message.errors }}
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="form-control-group">
+                <div class="form-control">
+                    <button type="submit">
+                        <i class="fa fa-send"></i>
+                        Send
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

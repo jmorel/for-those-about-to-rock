@@ -52,6 +52,16 @@ def nav(active_page='rocking_chair:index', query=None, open=False):
             'picture': '<i class="fa fa-pie-chart"></i>',
             'caption': 'Analytics'
         },
+        {
+            'url': 'about',
+            'picture': '<i class="fa fa-info"></i>',
+            'caption': 'About'
+        },
+        {
+            'url': 'contact',
+            'picture': '<i class="fa fa-pencil"></i>',
+            'caption': 'Contact'
+        },
     ]
     ordered_pages = []
     for page in pages:

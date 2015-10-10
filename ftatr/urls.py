@@ -4,11 +4,14 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import RedirectView
 from haystack.views import SearchView
-from ftatr import settings
+from ftatr import settings, views
 from anthology.sitemaps import RockingChairSitemap, DesignerSitemap, ManufacturerSitemap, StaticSitemap
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^$', RedirectView.as_view(url='/rocking-chair')),
+    url(r'^about/?', views.about, name='about'),
+    url(r'^contact/?', views.contact, name='contact'),
     url(r'^rocking-chair/', include('anthology.urls.rocking_chair', namespace='rocking_chair')),
     url(r'^manufacturer/', include('anthology.urls.manufacturer', namespace='manufacturer')),
     url(r'^designer/', include('anthology.urls.designer', namespace='designer')),

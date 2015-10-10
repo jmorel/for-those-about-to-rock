@@ -1,0 +1,5 @@
+{% extends 'layout.html.jinja2' %}
+
+{% block nav %}
+    {{ nav('about', query, true) | safe }}
+{% endblock %}
