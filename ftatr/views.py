@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.templatetags.static import static
+from anthology.models import RockingChair
 
 from ftatr.forms import ContactMessageForm
 
@@ -11,6 +12,14 @@ def about(request):
         'description': """Everything there is to know about this anthology.""",
         'image': static('ftatr/images/rocking-chair-icon-540x540.png'),
         # Page content
+        'mt3': RockingChair.objects.get(slug='mt3'),
+        'spun': RockingChair.objects.get(slug='spun'),
+        'sol': RockingChair.objects.get(slug='sol'),
+        'cradle': RockingChair.objects.get(slug='cradle'),
+        'sway': RockingChair.objects.get(slug='sway'),
+        'hummingbird': RockingChair.objects.get(slug='humingbird'),
+        'gravity_balans': RockingChair.objects.get(slug='gravity-balans'),
+        'thatsit': RockingChair.objects.get(slug='thatsit'),
     })
 
 

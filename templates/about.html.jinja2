@@ -3,3 +3,163 @@
 {% block nav %}
     {{ nav('about', query, true) | safe }}
 {% endblock %}
+
+{% macro rocking_chair_item(rocking_chair) %}
+    <div class="clear"></div>
+    <div class="round-item-list">
+        <div class="item item-right">
+            <div class="item-picture">
+                <img src="{{ rocking_chair.pictures.first().picture | thumbnail_url('50x50') }}"
+                     alt="{{ rocking_chair.name }}"/>
+            </div>
+            <div class="item-text">
+                <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}">
+                    {{ rocking_chair.title }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% block content %}
+    <div class="about">
+        <section class="about__section">
+            <h2 class="about__section-title">About</h2>
+        </section>
+
+        <div class="clear"></div>
+
+        <section class="about__section">
+            <h3 class="about__section-title">
+                Why rocking chairs ?
+            </h3>
+            <p class="about__section-content">
+                Because I love them, that's why.
+            </p>
+
+{#            <div class="about__section-content">#}
+{#                They are playful, a toy for grown ups#}
+{##}
+{#            </div>#}
+{#            <div class="about__section-content">#}
+{#                Spun chair in Milan#}
+{#                Massive rocking chairs#}
+{#            </div>#}
+
+            <p class="about__section-content">
+                Because they are an antithesis of our lean modern lives. Too big for our ever-shrinking living spaces,
+                they encourage reading, relaxing and slacking off. They are an invitation to daydreaming, to just
+                enjoying the rocking movement. So much so that
+                <a href=http://www.theverge.com/2014/12/22/7434209/how-rocking-chairs-ended-up-in-airports">
+                    many airports now feature a number of them for their stressed-out passengers
+                </a>.
+            </p>
+            <p class="about__section-content">
+                They are playful! A rocking chair is basically a toy for grown up, a reminiscence of the rocking
+                horse of your childhood. And as such they've been featured in many mass events, from the
+                <a href="http://www.tomassiniarredamenti.it/blog/en/magis-spun-armchair-seduces-expo-2015/">
+                    2015 Universal Exhibition in Milan
+                </a>
+                to the
+                <a href="http://blog.sculpture.org/2014/12/17/provocations/">
+                    Nasher Sculpture Center in Dallas
+                </a>.
+            </p>
+            <p class="about__section-content">
+                They are also good for your health, they encourage a dynamic position whenever you're working and
+                provide excellent support when relaxing. <a href="http://www.varierfurniture.com/">Entire companies</a>
+                are built around this idea of dynamic seating. I can only encourage you to listen to
+                <a href="http://99percentinvisible.org/episode/edge-of-your-seat/">this great (as
+                usual) episode of 99% invisible podcast</a> (99% invisible is a "tiny radio show about design") to
+                learn more about seating, what it does to your body and what it has to do with the design of the chairs
+                themselves.
+            </p>
+        </section>
+
+        <div class="clear"></div>
+
+        <section class="about__section">
+            <h3 class="about__section-title">
+                Why an anthology?
+            </h3>
+
+            <p class="about__section-content">
+                For Those About To Rock aims at being an anthology, not a selection.
+            </p>
+
+            <p class="about__section-content">
+                Selecting rocking chairs would mean having a clear definition of what should be included and what
+                should not. It couldn't be based on my personal taste, otherwise it would have no more meaning than
+                a Pinterest board. It would therefore have to do with the inner qualities of each rocking chair, a
+                work way too serious for the enthusiast I am.
+            </p>
+
+            <p class="about__section-content">
+                It doesn't mean I don't have my preferences though! I like big, playful rocking chairs, I even own
+                <a href="{{ url('designer:show', slug='ron-arad') }}">Ron Arad</a>'s
+                <a href="{{ url('rocking_chair:show', slug='mt3') }}">MT3</a> and
+                <a href="{{ url('designer:show', slug='thomas-heatherwick') }}">Thomas Heatherwick</a>'s
+                <a href="{{ url('rocking_chair:show', slug='spun') }}">Spun chair</a>!
+            </p>
+
+            {{ rocking_chair_item(mt3) }}
+            {{ rocking_chair_item(spun) }}
+
+
+            <p class="about__section-content">
+                And to be absolutely franck, I must confess that I lust for the pure beauty that is the
+            </p>
+
+            {{ rocking_chair_item(sol) }}
+
+            <p class="about__section-content">
+                I'd take all my afternoons off to nap in the
+            </p>
+
+            {{ rocking_chair_item(cradle) }}
+
+            <p class="about__section-content">
+                I'd love to cuddle in the
+            </p>
+
+            {{ rocking_chair_item(sway) }}
+
+            <p class="about__section-content">
+                And I'd ditch my office chair in an instant for any of those!
+            </p>
+
+            {{ rocking_chair_item(hummingbird) }}
+            {{ rocking_chair_item(gravity_balans) }}
+            {{ rocking_chair_item(thatsit) }}
+        </section>
+
+        <div class="clear"></div>
+
+        <section class="about__section">
+            <h3 class="about__section-title">
+                Want to contribute?
+            </h3>
+
+            <p class="about__section-content">
+                You can contribute to this project in two ways.
+            </p>
+
+            <p class="about__section-content">
+                You can of course submit new rocking chairs through the <a href="{{ url('contact') }}">contact form</a>.
+                I already have a pretty extensive backlog of rocking chairs I need to integrate to the anthology but
+                anything you submit will jump to the top of the list so that you don't have to wait after your
+                submission
+                for your rocking chair to appear.
+            </p>
+
+            <p class="about__section-content">
+                If you found a bug on the website, you can either <a href="{{ url('contact') }}">tell me directly</a> or
+                <a href="https://github.com/jmorel/for-those-about-to-rock/issues">report it on Github</a>.
+            </p>
+
+            <p class="about__section-content">
+                But most of all, please share your favorite rocking chairs on social media sites!
+            </p>
+        </section>
+    </div>
+{% endblock %}
