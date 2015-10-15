@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.templatetags.static import static
 from anthology.models import Manufacturer
 from anthology.utils import build_index_by_name
 
@@ -8,6 +9,7 @@ def index(request):
         # SEM metas
         'title': 'Rocking chairs\' manufacturers',
         'description': """A collection of all manufacturers who ever built rocking chairs, alphabetically ordered.""",
+        'image': static('ftatr/images/designer-yellow-bg.png'),
         # Page content
         'alphabet': build_index_by_name(Manufacturer.objects.with_published_rocking_chairs())
     })
@@ -19,7 +21,7 @@ def show(request, slug):
         # SEM metas
         'title': "{manufacturer} (rocking chair manufacturer)".format(manufacturer=manufacturer.name),
         'description': """More details about the manufacturer {manufacturer} and rocking chairs it builds and sells""".format(manufacturer=manufacturer.name),
-        'image': manufacturer.logo.url if manufacturer.logo else None,
+        'image': manufacturer.logo.url if manufacturer.logo else static('ftatr/images/designer-yellow-bg.png'),
         # Page content
         'manufacturer': manufacturer
     })

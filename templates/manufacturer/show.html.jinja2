@@ -15,7 +15,8 @@
                     <img src="{{ manufacturer.logo | thumbnail_url('540x540') }}"
                          alt="{{ manufacturer.name }}"/>
                 {% else %}
-                    <i class="unknown fa fa-question"></i>
+                    <img src="{{ static('ftatr/images/manufacturer-no-bg.png') }}"
+                         alt="{{ manufacturer.name }}"/>
                 {% endif %}
             </div>
         </div>

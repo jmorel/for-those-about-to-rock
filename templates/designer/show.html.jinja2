@@ -15,7 +15,8 @@
                     <img src="{{ designer.portrait | thumbnail_url('540x540') }}"
                          alt="{{ designer.full_name }}"/>
                 {% else %}
-                    <i class="unknown fa fa-question"></i>
+                    <img src="{{ static('ftatr/images/designer-no-bg.png') }}"
+                         alt="{{ designer.full_name }}"/>
                 {% endif %}
             </div>
         </div>
