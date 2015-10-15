@@ -13,3 +13,4 @@ django-suit==0.2.12
 twitter==1.16.0
 django-compressor==1.4
 simplejson==3.6.5
+requests==2.8.0

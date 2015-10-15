@@ -33,10 +33,11 @@ Message created on {created_at}
 
 Sender: {sender}
 Subject: {subject}
-Message: {message}""".format(created_at=str(self.created_at),
-                             subject=self.subject,
-                             sender=self.sender,
-                             message=self.message)
+Message:
+{message}""".format(created_at=str(self.created_at),
+                    subject=self.subject,
+                    sender=self.sender,
+                    message=self.message)
 
     def send(self):
         send_mail(subject=self.email_subject,

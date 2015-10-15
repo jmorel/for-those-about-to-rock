@@ -1,8 +1,14 @@
+# django
 from django.shortcuts import render
 from django.templatetags.static import static
-from anthology.models import RockingChair
 
+# third part libs
+import requests
+
+# ftatr
+from anthology.models import RockingChair
 from ftatr.forms import ContactMessageForm
+from ftatr.settings import RECAPTCHA_SECRET_KEY
 
 
 def about(request):
@@ -24,9 +30,11 @@ def about(request):
 
 
 def contact(request):
+    is_recaptcha_valid = None
     if request.method == 'POST':
         form = ContactMessageForm(request.POST)
-        if form.is_valid():
+        is_recaptcha_valid = _check_recaptcha(request)
+        if form.is_valid() and is_recaptcha_valid:
             contact_message = form.save()
             contact_message.send()
             return render(request, 'contact_success.html.jinja2', {
@@ -46,4 +54,24 @@ def contact(request):
         'image': static('ftatr/images/rocking-chair-icon-540x540.png'),
         # Page content
         'form': form,
+        'is_recaptcha_valid': is_recaptcha_valid
     })
+
+
+def _check_recaptcha(request):
+    response = requests.post('https://www.google.com/recaptcha/api/siteverify', {
+        'secret': RECAPTCHA_SECRET_KEY,
+        'response': request.POST.get('g-recaptcha-response', ''),
+        'remoteip': _get_remote_ip(request),
+    })
+
+    return response.json().get('success')
+
+
+def _get_remote_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip

@@ -78,7 +78,13 @@
             </div>
             <div class="clear"></div>
             <div class="form-control-group">
-                <div class="form-control">
+                <div class="form-control {% if is_recaptcha_valid == false %}form-control--errors{% endif %}">
+                    <div class="g-recaptcha" data-sitekey="{{ settings_value('RECAPTCHA_SITE_KEY') }}"></div>
+                    <ul class="errorlist">
+                        <li>
+                            {% if is_recaptcha_valid == false %}This field is required{% endif %}
+                        </li>
+                    </ul>
                     <button type="submit">
                         <i class="fa fa-send"></i>
                         Send
