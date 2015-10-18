@@ -1,7 +1,6 @@
 import datetime
-from django.core.mail import send_mail
+from django.core.mail import mail_admins
 from django.db import models
-from ftatr import settings
 
 
 class ContactMessage(models.Model):
@@ -40,7 +39,5 @@ Message:
                     message=self.message)
 
     def send(self):
-        send_mail(subject=self.email_subject,
-                  message=self.email_message,
-                  from_email='no-reply@forthoseabouttorock.io',
-                  recipient_list=[admin[1] for admin in settings.ADMINS])
+        mail_admins(subject=self.email_subject,
+                    message=self.email_message)

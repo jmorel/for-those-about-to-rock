@@ -1,0 +1,57 @@
+{% macro contribution(target) %}
+    {% set form = contribution_form(target) %}
+
+    <div class="contribution">
+        <div class="contribution__backdrop"></div>
+        <div class="contribution__modal">
+            <div class="contribution__close">
+                <i class="fa fa-close"></i>
+            </div>
+            <div class="contribution__content">
+                <h2 class="contribution__title">Contribute!</h2>
+
+                <p class="contribution__intro">
+                    For Those About To Rock is still missing a lot of information. You can use the form below to submit
+                    new
+                    details for the {{ target }}.
+                </p>
+
+                <form method="post" class="contribution__form">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+                    <input id="id_sender"
+                           class="contribution__sender"
+                           maxlength="100"
+                           name="sender"
+                           type="text"
+                           data-cip-id="id_sender"
+                           placeholder="Tell me who you are and how I can write you back.">
+                    {{ form.sender.errors }}
+
+                <textarea cols="40"
+                          id="id_message"
+                          name="message"
+                          class="contribution__message"
+                          rows="5"
+                          placeholder="{{ "Your contribution.\n\nPlease provide source links to back your contribution." }}"></textarea>
+                    {{ form.message.errors }}
+                    <div class="g-recaptcha contribution__recaptcha"
+                         data-sitekey="{{ settings_value('RECAPTCHA_SITE_KEY') }}"></div>
+                    {#            <ul class="errorlist">#}
+                    {#                <li>#}
+                    {#                    {% if is_recaptcha_valid == false %}This field is required{% endif %}#}
+                    {#                </li>#}
+                    {#            </ul>#}
+                    <button type="submit" class="contribution__submit">
+                        <i class="fa fa-send"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    </script>
+{% endmacro %}
+

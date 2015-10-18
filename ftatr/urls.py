@@ -16,6 +16,7 @@ urlpatterns = patterns(
     url(r'^manufacturer/', include('anthology.urls.manufacturer', namespace='manufacturer')),
     url(r'^designer/', include('anthology.urls.designer', namespace='designer')),
     url(r'^analytics/', include('anthology.urls.analytics', namespace='analytics')),
+    url(r'^contribution/', include('anthology.urls.contribution', namespace='analytics')),
     url(r'^search/', SearchView(template='search/search.html.jinja2'), name='search'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'rocking_chair': RockingChairSitemap,

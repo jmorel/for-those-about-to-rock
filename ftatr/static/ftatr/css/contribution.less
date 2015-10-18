@@ -1,0 +1,94 @@
+.contribution {
+    text-align: center;
+}
+
+.contribution__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+.contribution__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -300px;
+    z-index: 21;
+}
+
+.contribution__close {
+    background-color: @white;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    position: absolute;
+    line-height: 60px;
+    top: 55px;
+    right: 55px;
+    color: @yellow-darker;
+    cursor: pointer;
+    z-index: 22;
+}
+
+.contribution__close:hover {
+    color: @grey;
+}
+
+.contribution__content {
+    width: 600px;
+    height: 600px;
+    background-color: @yellow;
+    border-radius: 300px;
+    margin: auto;
+    font-size: 0.6rem;
+    border: 30px solid @white;
+}
+
+.contribution__title {
+    margin-top: 1.33rem;
+}
+
+.contribution__intro {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.contribution__form {
+    width: 450px;
+    margin: 0.67rem auto 0 auto;
+}
+
+.contribution input[type=text],
+.contribution textarea {
+    width: 100%;
+    border: none;
+    font-family: @font-family-sans-serif;
+    padding: 0.1rem 0.33rem;
+    font-size: 0.6rem;
+    margin-bottom: 0.33rem;
+    display: block;
+}
+
+.contribution__recaptcha div {
+    margin: 0 auto;
+}
+
+.contribution__submit {
+    background-color: @yellow-dark;
+    color: @white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.33em 0.67em;
+    font-size: 0.6rem;
+    cursor: pointer;
+    margin-top: 0.33rem;
+}
+
+.contribution__submit:hover,
+.contribution__submit:active, {
+    background-color: @yellow-darker;
+}

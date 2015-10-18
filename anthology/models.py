@@ -1,5 +1,6 @@
 import datetime
 from django.contrib.sites.models import Site
+from django.core.mail import mail_admins
 from django.core.urlresolvers import reverse
 from django.db import models
 import hashlib
@@ -87,6 +88,10 @@ class RockingChair(models.Model):
 
     def get_upload_to(self, filename):
         return os.path.join('rocking-chairs', self.rocking_chair.slug, get_upload_filename(filename))
+
+    @property
+    def contribution_type(self):
+        return Contribution.TYPE_ROCKING_CHAIR
 
 
 def get_upload_filename(filename):
@@ -278,3 +283,73 @@ class Country(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Contribution(models.Model):
+    TYPE_ROCKING_CHAIR = 'rocking_chair'
+    TYPE_DESIGNER = 'designer'
+    TYPE_MANUFACTURER = 'manufacturer'
+
+    TARGET_TYPES = (
+        (TYPE_ROCKING_CHAIR, 'Rocking chair'),
+        (TYPE_DESIGNER, 'Designer'),
+        (TYPE_MANUFACTURER, 'Manufacturer')
+    )
+
+    STATUS_NEW = 'new'
+    STATUS_CLOSED = 'closed'
+    STATUSES = (
+        (STATUS_NEW, 'New'),
+        (STATUS_CLOSED, 'Closed'),
+    )
+    sender = models.CharField(max_length=100, blank=False, null=False)
+    message = models.TextField(blank=False, null=False)
+
+    target_type = models.CharField(max_length=15, blank=False, null=False, choices=TARGET_TYPES, editable=False)
+    target_slug = models.CharField(max_length=100, blank=False, null=False, editable=False)
+
+    status = models.CharField(max_length=10, blank=False, null=False, default=STATUS_NEW, choices=STATUSES)
+
+    created_at = models.DateTimeField(blank=False, null=False)
+
+    def __str__(self):
+        return "From {sender} on {created_at}".format(sender=self.sender,
+                                                      created_at=self.created_at.isoformat())
+
+    def save(self, *args, **kwargs):
+        if not self.created_at:
+            self.created_at = datetime.datetime.now()
+        super().save(*args, **kwargs)
+
+    @property
+    def email_subject(self):
+        return "New contribution for {type} \"{name}\"".format(type=self.target_type,
+                                                               name=str(self.related_model))
+
+    @property
+    def related_model(self):
+        if self.target_type == Contribution.TYPE_ROCKING_CHAIR:
+            return RockingChair.objects.get(slug=self.target_slug)
+        if self.target_type == Contribution.TYPE_DESIGNER:
+            return Designer.objects.get(slug=self.target_slug)
+        if self.target_type == Contribution.TYPE_MANUFACTURER:
+            return Manufacturer.objects.get(slug=self.target_slug)
+
+    @property
+    def email_message(self):
+        return """
+New contribution for {type} "{name}"
+Contribution created on {created_at}
+
+
+Sender: {sender}
+Message:
+{message}""".format(type=self.target_type,
+                    name=str(self.related_model),
+                    created_at=str(self.created_at),
+                    sender=self.sender,
+                    message=self.message)
+
+    def send_notification(self):
+        mail_admins(subject=self.email_subject,
+                    message=self.email_message)
