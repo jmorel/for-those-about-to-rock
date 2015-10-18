@@ -64,10 +64,95 @@
 </head>
 
 <body>
+{% compress js %}
+    {% block javascripts %}
+        {# jQuery #}
+        <script type="text/javascript" src="{{ static('ftatr/vendor/jquery/jquery-2.1.1.min.js') }}"></script>
+
+        {# Bootstrap #}
+        <script type="text/javascript" src="{{ static('ftatr/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+        {# Konami code #}
+        <script type="text/javascript" src="{{ static('ftatr/js/jquery.konami.js') }}"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(window).konami();
+                $(window).on('konami', function () {
+                    $('.konami .player').replaceWith('<iframe class="player" src="https://www.youtube.com/embed/RtMGoU9NcMo?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                    $('.konami').show();
+                });
+
+                $('.konami .close').on('click', function () {
+                    $('.konami .player').replaceWith('<iframe class="player"></iframe>');
+                    $('.konami').hide();
+                });
+            });
+        </script>
+
+
+        {# Enable touch carousel #}
+        <script type="text/javascript" src="{{ static('ftatr/js/jquery.touchSwipe.js') }}"></script>
+        <script type="text/javascript">
+            $(function () {
+                $(".carousel-inner").swipe({
+                    //Generic swipe handler for all directions
+                    swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                        $(this).parent().carousel('prev');
+                    },
+                    swipeRight: function () {
+                        $(this).parent().carousel('next');
+                    },
+                    //Default is 75px, set to 0 for demo so any distance triggers swipe
+                    threshold: 0
+                });
+            });
+        </script>
+
+        {# Google Analytics #}
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-55571533-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+        {# Facebook #}
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '{{ FACEBOOK_APP_ID }}',
+                    xfbml: true,
+                    version: 'v2.2'
+                });
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+    {% endblock %}
+{% endcompress %}
+
 <div class="body-container">
 
     {% block body %}
-
         <header>
             <h1>
                 <a href="{{ url('rocking_chair:index') }}">
@@ -127,92 +212,6 @@
     {# Recaptcha #}
     <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
-
-{% compress js %}
-    {% block javascripts %}
-        {# jQuery #}
-        <script type="text/javascript" src="{{ static('ftatr/vendor/jquery/jquery-2.1.1.min.js') }}"></script>
-
-        {# Bootstrap #}
-        <script type="text/javascript" src="{{ static('ftatr/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-
-        {# Konami code #}
-        <script type="text/javascript" src="{{ static('ftatr/js/jquery.konami.js') }}"></script>
-        <script type="text/javascript">
-            $(function () {
-                $(window).konami();
-                $(window).on('konami', function () {
-                    $('.konami .player').replaceWith('<iframe class="player" src="https://www.youtube.com/embed/RtMGoU9NcMo?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
-                    $('.konami').show();
-                });
-
-                $('.konami .close').on('click', function () {
-                    $('.konami .player').replaceWith('<iframe class="player"></iframe>');
-                    $('.konami').hide();
-                });
-            });
-        </script>
-
-
-        {# Enable touch carousel #}
-        <script type="text/javascript" src="{{ static('ftatr/js/jquery.touchSwipe.js') }}"></script>
-        <script type="text/javascript">
-            $(function () {
-                $(".carousel-inner").swipe({
-                    //Generic swipe handler for all directions
-                    swipeLeft: function (event, direction, distance, duration, fingerCount) {
-                        $(this).parent().carousel('prev');
-                    },
-                    swipeRight: function () {
-                        $(this).parent().carousel('next');
-                    },
-                    //Default is 75px, set to 0 for demo so any distance triggers swipe
-                    threshold: 0
-                });
-            });
-        </script>
-
-        {# Google Analytics #}
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-55571533-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-
-        {# Facebook #}
-        <script>
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: '{{ FACEBOOK_APP_ID }}',
-                    xfbml: true,
-                    version: 'v2.2'
-                });
-            };
-
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {
-                    return;
-                }
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
-    {% endblock %}
-{% endcompress %}
 </body>
 
 </html>

@@ -1,7 +1,13 @@
+{% macro contribution_id(target) %}{{ target.contribution_type }}-{{ target.slug }}{% endmacro %}
+
+{% macro contribution_button(target) %}
+    <span class="contribution__button" data-contribution="{{ contribution_id(target) }}">????</span>
+{% endmacro %}
+
 {% macro contribution(target) %}
     {% set form = contribution_form(target) %}
 
-    <div class="contribution">
+    <div class="contribution" id="contribution-{{ contribution_id(target) }}">
         <div class="contribution__backdrop"></div>
         <div class="contribution__modal">
             <div class="contribution__close">
@@ -12,8 +18,7 @@
 
                 <p class="contribution__intro">
                     For Those About To Rock is still missing a lot of information. You can use the form below to submit
-                    new
-                    details for the {{ target }}.
+                    new details for {{ target }}.
                 </p>
 
                 <form method="post" class="contribution__form">
@@ -51,7 +56,18 @@
         </div>
     </div>
     <script type="text/javascript">
+        (function () {
+            var contributionId = '{{ contribution_id(target) }}';
+            var $contribution = $('#contribution-' + contributionId);
 
+            $contribution.find('.contribution__close').on('click', function () {
+                $contribution.hide();
+            });
+
+            $("[data-contribution='"+contributionId+"']").on('click', function () {
+                $contribution.show();
+            })
+        })();
     </script>
 {% endmacro %}
 

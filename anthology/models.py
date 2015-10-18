@@ -168,6 +168,10 @@ class Designer(models.Model):
     def get_absolute_url(self):
         return reverse('designer:show', kwargs={'slug': self.slug})
 
+    @property
+    def contribution_type(self):
+        return Contribution.TYPE_DESIGNER
+
 
 class Manufacturer(models.Model):
     class Meta:
@@ -196,6 +200,10 @@ class Manufacturer(models.Model):
 
     def get_absolute_url(self):
         return reverse('manufacturer:show', kwargs={'slug': self.slug})
+
+    @property
+    def contribution_type(self):
+        return Contribution.TYPE_MANUFACTURER
 
 
 class Link(models.Model):
