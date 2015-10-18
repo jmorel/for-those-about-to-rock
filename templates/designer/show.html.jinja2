@@ -1,4 +1,5 @@
 {% extends 'layout.html.jinja2' %}
+{% from 'contribution_macros.html.jinja2' import contribution, contribution_button %}
 
 {% block nav %}
     {{ nav('designer:index') | safe }}
@@ -63,19 +64,32 @@
                             </div>
                         </div>
                     </li>
-                {% endfor %}
-                {% if designer.birthday  %}
+                {% else %}
                     <li>
                         <div class="attribute">
                             <div class="attribute-value">
-                                {{ designer.birthday.year }}
+                                {{ contribution_button(designer) }}
                             </div>
                             <div class="attribute-name">
-                                Birth
+                                Nationality
                             </div>
                         </div>
                     </li>
-                {% endif %}
+                {% endfor %}
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {% if designer.birthday %}
+                                {{ designer.birthday.year }}
+                            {% else %}
+                                {{ contribution_button(designer) }}
+                            {% endif %}
+                        </div>
+                        <div class="attribute-name">
+                            Birth
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -108,4 +122,6 @@
             view all
         </a>
     </div>
+
+    {{ contribution(designer) }}
 {% endblock %}

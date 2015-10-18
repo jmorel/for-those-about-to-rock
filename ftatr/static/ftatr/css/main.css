@@ -1579,6 +1579,7 @@ ul.attributes .attribute-links a:hover {
 }
 .contribution {
   text-align: center;
+  display: none;
 }
 .contribution__backdrop {
   position: fixed;
@@ -1659,6 +1660,13 @@ ul.attributes .attribute-links a:hover {
 .contribution__submit:hover,
 .contribution__submit:active {
   background-color: #666600;
+}
+.contribution__button {
+  cursor: pointer;
+  color: #7f8000;
+}
+.contribution__button:hover {
+  color: #333333;
 }
 @media (max-width: 599px) {
   .contact {

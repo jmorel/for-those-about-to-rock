@@ -1,5 +1,5 @@
 {% from 'rocking_chair/single_macros.html.jinja2' import include_links %}
-{% from 'contribution_macros.html.jinja2' import contribution %}
+{% from 'contribution_macros.html.jinja2' import contribution, contribution_button %}
 
 <div class="clear"></div>
 <article class="rocking-chair" id="{{ rocking_chair.slug }}">
@@ -65,21 +65,23 @@
 
                 </div>
             </li>
-            {% if rocking_chair.year %}
-                <li>
-                    {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
-                    <div class="attribute">
-                        <div class="attribute-value">
-                            <a href="{{ url('rocking_chair:index-by-year') }}#{{ rocking_chair.year }}">
-                                {{ rocking_chair.year }}
-                            </a>
-                        </div>
-                        <div class="attribute-name">
-                            Year
-                        </div>
+            <li>
+                {{ include_links(rocking_chair.year_links.all(), reverse=True) }}
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {% if rocking_chair.year %}
+                        <a href="{{ url('rocking_chair:index-by-year') }}#{{ rocking_chair.year }}">
+                            {{ rocking_chair.year }}
+                        </a>
+                        {% else %}
+                            {{ contribution_button(designer) }}
+                        {% endif %}
                     </div>
-                </li>
-            {% endif %}
+                    <div class="attribute-name">
+                        Year
+                    </div>
+                </div>
+            </li>
             <li>
                 <div class="attribute">
                     <div class="attribute-tag">
@@ -103,6 +105,17 @@
                     </div>
                     {{ include_links(rocking_chair.designer_links.filter(designer=designer)) }}
                 </li>
+            {% else %}
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {{ contribution_button(designer) }}
+                        </div>
+                        <div class="attribute-name">
+                            Designer
+                        </div>
+                    </div>
+                </li>
             {% endfor %}
             {% for manufacturer in rocking_chair.manufacturers.all() %}
                 <li>
@@ -118,20 +131,33 @@
                     </div>
                     {{ include_links(rocking_chair.manufacturer_links.filter(manufacturer=manufacturer)) }}
                 </li>
-            {% endfor %}
-            {% if rocking_chair.price %}
+            {% else %}
                 <li>
                     <div class="attribute">
                         <div class="attribute-value">
-                            {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
+                            {{ contribution_button(designer) }}
                         </div>
                         <div class="attribute-name">
-                            Price
+                            Manufacturer
                         </div>
                     </div>
-                    {{ include_links(rocking_chair.price_links.all()) }}
                 </li>
-            {% endif %}
+            {% endfor %}
+            <li>
+                <div class="attribute">
+                    <div class="attribute-value">
+                        {% if rocking_chair.price %}
+                        {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
+                        {% else %}
+                            {{ contribution_button(designer) }}
+                        {% endif %}
+                    </div>
+                    <div class="attribute-name">
+                        Price
+                    </div>
+                </div>
+                {{ include_links(rocking_chair.price_links.all()) }}
+            </li>
         </ul>
     </div>
 </article>
