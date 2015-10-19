@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.decorators.http import require_POST
 from anthology.forms import ContributionForm
 
@@ -5,4 +6,4 @@ from anthology.forms import ContributionForm
 @require_POST
 def index(request):
     contribution_form = ContributionForm(request.POST)
-    return contribution_form
+    return 'nope'

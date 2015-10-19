@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 import os
+from django_jinja.builtins import DEFAULT_EXTENSIONS
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -105,6 +106,6 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-JINJA2_EXTENSIONS = [
+JINJA2_EXTENSIONS = DEFAULT_EXTENSIONS + [
     'compressor.contrib.jinja2ext.CompressorExtension',
 ]

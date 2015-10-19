@@ -66,7 +66,17 @@
 
             $("[data-contribution='"+contributionId+"']").on('click', function () {
                 $contribution.show();
-            })
+            });
+
+            $contribution.find('form').on('submit', function(event) {
+                event.preventDefault();
+                var $form = $(event.currentTarget);
+                console.log($form.serialize());
+                $.post('/contribution/', $form.serialize()).done(function (data) {
+                    console.log(data);
+                });
+                return false;
+            });
         })();
     </script>
 {% endmacro %}

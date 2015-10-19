@@ -73,5 +73,11 @@ def index_by_name(request):
 def show(request, slug):
     rocking_chair = get_object_or_404(RockingChair, slug=slug)
     return render(request, 'rocking_chair/show.html.jinja2', {
+        # SEM metas
+        'title': '{rocking_chair} (rocking chair)'.format(rocking_chair=str(rocking_chair)),
+        'description': """A list of all rocking chairs ever built each with pictures, designers' name and
+        manufacturer's name, alphabetically ordered""",
+        'image': static('ftatr/images/rocking-chair-icon-540x540.png'),
+        # Page content
         'rocking_chair': rocking_chair,
     })

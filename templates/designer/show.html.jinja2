@@ -1,5 +1,5 @@
 {% extends 'layout.html.jinja2' %}
-{% from 'contribution_macros.html.jinja2' import contribution, contribution_button %}
+{% from 'contribution_macros.html.jinja2' import contribution, contribution_button with context %}
 
 {% block nav %}
     {{ nav('designer:index') | safe }}
