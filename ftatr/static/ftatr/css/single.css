@@ -1,7 +1,7 @@
 .round-item-medium {
   display: block;
   background: #ffffff;
-  border: 5px solid #ffffff;
+  border: 5px solid white;
   border-radius: 60px;
   width: 120px;
   height: 120px;
@@ -12,7 +12,7 @@
 .round-item-large {
   display: block;
   background: #ffffff;
-  border: 30px solid #ffffff;
+  border: 30px solid white;
   border-radius: 300px;
   width: 600px;
   height: 600px;
@@ -33,8 +33,8 @@
 .round-link-centered a {
   text-align: center;
   display: block;
-  background: #ffff00;
-  border: 5px solid #ffffff;
+  background: yellow;
+  border: 5px solid white;
   color: #7f8000;
   margin: 0 auto;
   border-radius: 60px;
@@ -288,13 +288,13 @@ ul.attributes .attribute {
 ul.attributes .attribute-tag {
   font-size: 0.5rem;
   background-color: #7f8000;
-  color: #ffff00;
+  color: yellow;
   padding: 0.2em 0.4em;
 }
 ul.attributes .attribute-name {
   font-size: 0.5rem;
   background-color: #7f8000;
-  color: #ffff00;
+  color: yellow;
   padding: 0.2em 0.4em;
   margin-top: -0.2em;
 }
@@ -349,7 +349,7 @@ ul.attributes .attribute-links a:hover {
 }
 @media (max-width: 599px) {
   .single-title {
-    border: 5px #ffffff solid;
+    border: 5px white solid;
     border-radius: 140px;
     width: 280px;
     height: 280px;
@@ -357,7 +357,7 @@ ul.attributes .attribute-links a:hover {
 }
 @media (min-width: 600px) and (max-width: 899px) {
   .single-title {
-    border: 20px #ffffff solid;
+    border: 20px white solid;
     border-radius: 220px;
     width: 440px;
     height: 440px;
@@ -365,7 +365,7 @@ ul.attributes .attribute-links a:hover {
 }
 @media (min-width: 900px) {
   .single-title {
-    border: 30px #ffffff solid;
+    border: 30px white solid;
     border-radius: 300px;
     width: 600px;
     height: 600px;

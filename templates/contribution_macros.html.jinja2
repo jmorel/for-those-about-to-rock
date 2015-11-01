@@ -23,7 +23,10 @@
 
                 <form method="post" class="contribution__form">
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    {{ form.target_type|safe }}
+                    {{ form.target_slug|safe }}
 
+                    <div class="contribution__sender-error">Required</div>
                     <input id="id_sender"
                            class="contribution__sender"
                            maxlength="100"
@@ -33,51 +36,107 @@
                            placeholder="Tell me who you are and how I can write you back.">
                     {{ form.sender.errors }}
 
-                <textarea cols="40"
-                          id="id_message"
-                          name="message"
-                          class="contribution__message"
-                          rows="5"
-                          placeholder="{{ "Your contribution.\n\nPlease provide source links to back your contribution." }}"></textarea>
+                    <div class="contribution__message-error">Required</div>
+                    <textarea cols="40"
+                              id="id_message"
+                              name="message"
+                              class="contribution__message"
+                              rows="5"
+                              placeholder="{{ "Your contribution.\n\nPlease provide source links to back your contribution." }}"></textarea>
                     {{ form.message.errors }}
+
                     <div class="g-recaptcha contribution__recaptcha"
                          data-sitekey="{{ settings_value('RECAPTCHA_SITE_KEY') }}"></div>
-                    {#            <ul class="errorlist">#}
-                    {#                <li>#}
-                    {#                    {% if is_recaptcha_valid == false %}This field is required{% endif %}#}
-                    {#                </li>#}
-                    {#            </ul>#}
+
                     <button type="submit" class="contribution__submit">
                         <i class="fa fa-send"></i>
                         Send
                     </button>
                 </form>
+
+                <div class="contribution__success">
+                    <h3>
+                        <i class="fa fa-thumbs-o-up"></i> Thank you!
+                    </h3>
+
+                    <p>
+                        You contribution has been taken into account, I'll get down to it soon (and give you a shout-out
+                        when it's done).
+                    </p>
+                </div>
             </div>
         </div>
     </div>
     <script type="text/javascript">
         (function () {
+            // contribution
             var contributionId = '{{ contribution_id(target) }}';
             var $contribution = $('#contribution-' + contributionId);
+            // contribution elements
+            var $contributionForm = $contribution.find('form');
+            var $contributionSender = $contribution.find('input.contribution__sender');
+            var $contributionSenderError = $contribution.find('.contribution__sender-error');
+            var $contributionMessage = $contribution.find('textarea.contribution__message');
+            var $contributionMessageError = $contribution.find('.contribution__message-error');
+            var $contributionRecaptcha = $contribution.find('.contribution__recaptcha iframe');
+            var $contributionIntro = $contribution.find('.contribution__intro');
+            var $contributionSuccess = $contribution.find('.contribution__success');
+
+            // helpers
+            var resetContribution = function () {
+                $contributionIntro.show();
+                $contributionForm.show();
+                $contributionSuccess.hide();
+                $contributionSender.removeClass('contribution__sender--error');
+                $contributionMessage.removeClass('contribution__message--error');
+                $contributionSenderError.hide();
+                $contributionMessageError.hide();
+            };
+            var resetContributionData = function () {
+                $contributionForm.trigger('reset');
+                grecaptcha.reset();
+            };
+            var contributionSuccess = function () {
+                $contributionForm.hide();
+                $contributionIntro.hide();
+                $contributionSuccess.show();
+            };
+            var contributionErrors = function (data) {
+                if (data.form_errors.sender) {
+                    $contributionSender.addClass('contribution__sender--error');
+                    $contributionSenderError.show();
+                }
+                if (data.form_errors.message) {
+                    $contributionMessage.addClass('contribution__message--error');
+                    $contributionMessageError.show();
+                }
+                if (!data.is_recaptcha_valid) {
+                    $contributionRecaptcha.addClass('contribution__recaptcha--error');
+                }
+            };
 
             $contribution.find('.contribution__close').on('click', function () {
                 $contribution.hide();
             });
 
-            $("[data-contribution='"+contributionId+"']").on('click', function () {
+            $("[data-contribution='" + contributionId + "']").on('click', function () {
+                resetContribution();
+                resetContributionData();
                 $contribution.show();
             });
 
-            $contribution.find('form').on('submit', function(event) {
+            $contribution.find('form').on('submit', function (event) {
                 event.preventDefault();
-                var $form = $(event.currentTarget);
-                console.log($form.serialize());
-                $.post('/contribution/', $form.serialize()).done(function (data) {
-                    console.log(data);
+                resetContribution();
+                $.post('/contribution/', $contributionForm.serialize()).done(function (data) {
+                    if (data.status == 'success') {
+                        contributionSuccess();
+                    } else {
+                        contributionErrors(data);
+                    }
                 });
                 return false;
             });
         })();
     </script>
 {% endmacro %}
-

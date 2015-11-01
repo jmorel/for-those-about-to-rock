@@ -313,8 +313,8 @@ class Contribution(models.Model):
     sender = models.CharField(max_length=100, blank=False, null=False)
     message = models.TextField(blank=False, null=False)
 
-    target_type = models.CharField(max_length=15, blank=False, null=False, choices=TARGET_TYPES, editable=False)
-    target_slug = models.CharField(max_length=100, blank=False, null=False, editable=False)
+    target_type = models.CharField(max_length=15, blank=False, null=False, choices=TARGET_TYPES)
+    target_slug = models.CharField(max_length=100, blank=False, null=False)
 
     status = models.CharField(max_length=10, blank=False, null=False, default=STATUS_NEW, choices=STATUSES)
 

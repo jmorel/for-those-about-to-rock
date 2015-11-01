@@ -101,3 +101,21 @@
 .contribution__button:hover {
     color: @grey;
 }
+input[type=text].contribution__sender--error,
+textarea.contribution__message--error,
+.contribution__recaptcha--error {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+.contribution__sender-error,
+.contribution__message-error {
+    text-align: left;
+    color: red;
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+    display: none;
+}
+.contribution__success {
+    max-width: 400px;
+    margin: 8em auto;
+}

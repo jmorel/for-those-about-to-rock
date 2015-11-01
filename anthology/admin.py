@@ -4,7 +4,7 @@ from django.conf.urls import patterns, url
 from django.contrib import admin
 from django.shortcuts import render
 from anthology.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, \
-    YearLink, Link, Currency, PriceLink, Country
+    YearLink, Link, Currency, PriceLink, Country, Contribution
 
 
 class DesignerLinkInline(admin.TabularInline):
@@ -103,9 +103,15 @@ class ManufacturerAdmin(admin.ModelAdmin):
     search_fields = ('name', )
 
 
+class ContributionAdmin(admin.ModelAdmin):
+    readonly_fields = ('target_type', 'target_slug')
+    list_display = ('target_slug', 'target_type', 'sender', 'status', 'created_at')
+
+
 admin.site.register(RockingChair, RockingChairAdmin)
 admin.site.register(Designer, DesignerAdmin)
 admin.site.register(Manufacturer, ManufacturerAdmin)
 admin.site.register(Picture)
 admin.site.register(Currency)
 admin.site.register(Country)
+admin.site.register(Contribution, ContributionAdmin)

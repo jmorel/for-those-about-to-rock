@@ -103,13 +103,13 @@ ul.attributes .attribute {
 ul.attributes .attribute-tag {
   font-size: 0.5rem;
   background-color: #7f8000;
-  color: #ffff00;
+  color: yellow;
   padding: 0.2em 0.4em;
 }
 ul.attributes .attribute-name {
   font-size: 0.5rem;
   background-color: #7f8000;
-  color: #ffff00;
+  color: yellow;
   padding: 0.2em 0.4em;
   margin-top: -0.2em;
 }
