@@ -22,7 +22,7 @@
                 </p>
 
                 <form method="post" class="contribution__form">
-                    {%  csrf_token %}
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                     {{ form.target_type|safe }}
                     {{ form.target_slug|safe }}
 
