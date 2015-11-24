@@ -2,8 +2,8 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.template import Context
-from django.template.loader import render_to_string, get_template
+from django.template import RequestContext
+from django.template.loader import render_to_string
 from anthology.models import RockingChair
 from anthology.utils import build_index_by_name, build_index_by_year
 
@@ -21,8 +21,7 @@ def index(request):
     except EmptyPage:
         paged_rocking_chairs = paginator.page(paginator.num_pages)
 
-    template = get_template('rocking_chair/index.html.jinja2')
-    html = template.render(Context({
+    html = render_to_string('rocking_chair/index.html.jinja2', {
         # SEM metas
         'description': """For Those About To Rock is an anthology of modern rocking chair. Every day a new rocking chair
         is posted, with both gorgeous images and full details about its designer(s), manufacturer(s) etc.""",
@@ -31,8 +30,7 @@ def index(request):
         # Page content
         'rocking_chairs': paged_rocking_chairs,
         'paginator': paginator,
-        'request': request
-    }))
+    }, RequestContext(request))
     if request.is_ajax():
         return JsonResponse({
             'rocking_chairs': html,
