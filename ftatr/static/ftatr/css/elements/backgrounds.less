@@ -43,3 +43,25 @@
             @white 0%, @white 99%, transparent 99%, transparent);
     background-repeat: no-repeat;
 }
+
+.white-ellipsish-border(@radius) {
+    background-image: radial-gradient(
+            ellipse 70% @radius at center top 2*@radius,
+            @yellow 0%, @yellow 99%, transparent 99%, transparent),
+    radial-gradient(
+            ellipse 70% @radius at center top @radius,
+            @white 0%, @white 99%, transparent 99%, transparent),
+    linear-gradient(to bottom,
+            transparent, transparent 1.5*@radius,
+            @yellow 1.5*@radius, @yellow 55%,
+            transparent 55%, transparent),
+    linear-gradient(to top,
+            transparent, transparent @radius,
+            @yellow @radius, @yellow 55%,
+            transparent 55%, transparent),
+    radial-gradient(
+            ellipse 70% @radius at center bottom @radius,
+            @white 0%, @white 99%, transparent 99%, transparent);
+    background-repeat: no-repeat;
+
+}

@@ -1,3 +1,6 @@
+@import 'elements/variables';
+@import 'elements/backgrounds';
+
 .contribution {
     text-align: center;
     display: none;
@@ -14,10 +17,19 @@
 }
 .contribution__modal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -300px;
-    margin-top: -300px;
+    @media (max-width: @screen-small-max) {
+        top: 15px;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        .white-ellipsish-border(15px);
+    }
+    @media (min-width: @screen-medium-min) {
+        top: 50%;
+        left: 50%;
+        margin-left: -300px;
+        margin-top: -300px;
+    }
     z-index: 21;
 }
 
@@ -27,12 +39,20 @@
     height: 60px;
     border-radius: 30px;
     position: absolute;
-    line-height: 60px;
-    top: 55px;
-    right: 55px;
     color: @yellow-darker;
     cursor: pointer;
     z-index: 22;
+    @media (max-width: @screen-small-max) {
+        top: -10px;
+        right: 5px;
+        border: 5px solid @yellow;
+        line-height: 50px;
+    }
+    @media (min-width: @screen-medium-min) {
+        top: 55px;
+        right: 55px;
+        line-height: 60px;
+    }
 }
 
 .contribution__close:hover {
@@ -40,27 +60,47 @@
 }
 
 .contribution__content {
-    width: 600px;
-    height: 600px;
-    background-color: @yellow;
-    border-radius: 300px;
     margin: auto;
     font-size: 0.6rem;
-    border: 30px solid @white;
+
+    @media (max-width: @screen-small-max) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        margin: 30px 15px;
+    }
+    @media (min-width: @screen-medium-min) {
+        border: 30px solid @white;
+        background-color: @yellow;
+        width: 600px;
+        height: 600px;
+        border-radius: 300px;
+    }
 }
 
 .contribution__title {
-    margin-top: 1.33rem;
+    @media (max-width: @screen-small-max) {
+        margin-top: 0;
+    }
+    @media (min-width: @screen-medium-min) {
+        margin-top: 1.33rem;
+    }
 }
 
 .contribution__intro {
-    width: 400px;
     margin: 0 auto;
+
+    @media (min-width: @screen-medium-min) {
+        width: 400px;
+    }
 }
 
 .contribution__form {
-    width: 450px;
     margin: 0.67rem auto 0 auto;
+    @media (min-width: @screen-medium-min) {
+        width: 450px;
+    }
 }
 
 .contribution input[type=text],
@@ -90,7 +130,7 @@
 }
 
 .contribution__submit:hover,
-.contribution__submit:active, {
+.contribution__submit:active {
     background-color: @yellow-darker;
 }
 
