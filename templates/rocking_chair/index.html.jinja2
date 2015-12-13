@@ -5,56 +5,58 @@
         {{ super() }}
 
         <script type="text/javascript">
-            var $button_next = $('.paginate.next a'),
-                    $button_previous = $('.paginate.previous a'),
-                    base_url = '{{ url('rocking_chair:index') }}?page=',
-                    loading = false;
+            $(document).ready(function () {
+                var $button_next = $('.paginate.next a'),
+                        $button_previous = $('.paginate.previous a'),
+                        base_url = '{{ url('rocking_chair:index') }}?page=',
+                        loading = false;
 
-            // Dynamic load for rocking chairs
-            $button_next.click(loadRockingChairs('next'));
-            $button_previous.click(loadRockingChairs('previous'));
+                // Dynamic load for rocking chairs
+                $button_next.click(loadRockingChairs('next'));
+                $button_previous.click(loadRockingChairs('previous'));
 
-            function loadRockingChairs(action) {
-                return function (event) {
-                    var $target = $(event.target);
-                    event.preventDefault();
-                    // display loader
-                    $target.html('<i class="fa fa-spin fa-spinner"></i>');
-                    // hide count
-                    $target.parent('.paginate').find('.count').hide();
-                    $.ajax({
-                        url: $target.attr('href'),
-                        success: function (data, textStatus, jqXHR) {
-                            // update location
-                            window.history.pushState({}, '', $target.attr('href'));
-                            // insert new rocking chairs
-                            if (action == 'next') {
-                                $(data.rocking_chairs).insertAfter($('article.rocking-chair').last());
-                            } else {
-                                $(data.rocking_chairs).insertAfter($('.paginate').first());
+                function loadRockingChairs(action) {
+                    return function (event) {
+                        var $target = $(event.target);
+                        event.preventDefault();
+                        // display loader
+                        $target.html('<i class="fa fa-spin fa-spinner"></i>');
+                        // hide count
+                        $target.parent('.paginate').find('.count').hide();
+                        $.ajax({
+                            url: $target.attr('href'),
+                            success: function (data, textStatus, jqXHR) {
+                                // update location
+                                window.history.pushState({}, '', $target.attr('href'));
+                                // insert new rocking chairs
+                                if (action == 'next') {
+                                    $(data.rocking_chairs).insertAfter($('article.rocking-chair').last());
+                                } else {
+                                    $(data.rocking_chairs).insertAfter($('.paginate').first());
+                                }
+                                // update pagination links
+                                var page_number = action == 'next' ? data.next_page : data.previous_page;
+                                if (page_number) {
+                                    $target.attr('href', base_url + page_number);
+                                    $target.html(action.toUpperCase());
+                                } else {
+                                    $target.parent('.paginate').hide();
+                                }
+                                // notify end of dynamic load
+                                loading = false;
                             }
-                            // update pagination links
-                            var page_number = action == 'next' ? data.next_page : data.previous_page;
-                            if (page_number) {
-                                $target.attr('href', base_url + page_number);
-                                $target.html(action.toUpperCase());
-                            } else {
-                                $target.parent('.paginate').hide();
-                            }
-                            // notify end of dynamic load
-                            loading = false;
-                        }
-                    })
+                        })
+                    }
                 }
-            }
 
-        // Auto detect scroll to top/bottom and launch new load
-        $(window).scroll(function() {
-            if (!loading && $button_next.is(':visible') && $button_next.offset().top < $(window).scrollTop() + $(window).height()) {
-                loading = true;
-                $button_next.click();
-            }
-        });
+                // Auto detect scroll to top/bottom and launch new load
+                $(window).scroll(function () {
+                    if (!loading && $button_next.is(':visible') && $button_next.offset().top < $(window).scrollTop() + $(window).height()) {
+                        loading = true;
+                        $button_next.click();
+                    }
+                });
+            });
         </script>
     {% endblock %}
 {% endif %}
