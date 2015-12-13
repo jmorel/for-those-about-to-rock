@@ -45,8 +45,7 @@
                               placeholder="{{ "Your contribution.\n\nPlease provide source links to back your contribution." }}"></textarea>
                     {{ form.message.errors }}
 
-                    <div class="g-recaptcha contribution__recaptcha"
-                         data-sitekey="{{ settings_value('RECAPTCHA_SITE_KEY') }}"></div>
+                    <div class="contribution__recaptcha"></div>
 
                     <button type="submit" class="contribution__submit">
                         <i class="fa fa-send"></i>
@@ -78,9 +77,11 @@
             var $contributionSenderError = $contribution.find('.contribution__sender-error');
             var $contributionMessage = $contribution.find('textarea.contribution__message');
             var $contributionMessageError = $contribution.find('.contribution__message-error');
-            var $contributionRecaptcha = $contribution.find('.contribution__recaptcha iframe');
+            var $contributionRecaptchaContainer = $contribution.find('.contribution__recaptcha');
             var $contributionIntro = $contribution.find('.contribution__intro');
             var $contributionSuccess = $contribution.find('.contribution__success');
+            // recaptcha
+            var recaptchaWidgetId;
 
             // helpers
             var resetContribution = function () {
@@ -94,7 +95,11 @@
             };
             var resetContributionData = function () {
                 $contributionForm.trigger('reset');
-                grecaptcha.reset();
+                if (typeof recaptchaWidgetId === 'undefined' || recaptchaWidgetId === null) {
+                    recaptchaWidgetId = grecaptcha.render($contributionRecaptchaContainer.get(0), {'sitekey': '{{ settings_value('RECAPTCHA_SITE_KEY') }}'});
+                } else {
+                    grecaptcha.reset(recaptchaWidgetId);
+                }
             };
             var contributionSuccess = function () {
                 $contributionForm.hide();
@@ -111,7 +116,7 @@
                     $contributionMessageError.show();
                 }
                 if (!data.is_recaptcha_valid) {
-                    $contributionRecaptcha.addClass('contribution__recaptcha--error');
+                    $contributionRecaptchaContainer.find('iframe').addClass('contribution__recaptcha--error');
                 }
             };
 

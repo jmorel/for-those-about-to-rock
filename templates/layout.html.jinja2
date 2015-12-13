@@ -147,6 +147,11 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
+
+        {# reCAPTCHA #}
+        <script type="text/javascript">
+            var onloadCallback = function () {};
+        </script>
     {% endblock %}
 {% endcompress %}
 
@@ -210,7 +215,7 @@
     <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
 
     {# Recaptcha #}
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
 {% endblock %}
 </body>
 
