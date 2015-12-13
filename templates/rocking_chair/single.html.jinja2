@@ -39,6 +39,7 @@
     <div class="attributes-container">
         <ul class="attributes attributes-left">
             <li>
+                {{ include_links(rocking_chair.links.all(), reverse=True) }}
                 <div class="title">
                     <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
                         {{ rocking_chair.name }}
