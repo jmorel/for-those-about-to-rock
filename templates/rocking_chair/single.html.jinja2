@@ -39,6 +39,7 @@
     <div class="attributes-container">
         <ul class="attributes attributes-left">
             <li>
+                {{ include_links(rocking_chair.links.all(), reverse=True) }}
                 <div class="title">
                     <a href="{{ url('rocking_chair:show', slug=rocking_chair.slug) }}#{{ rocking_chair.slug }}">
                         {{ rocking_chair.name }}
@@ -143,21 +144,23 @@
                     </div>
                 </li>
             {% endfor %}
-            <li>
-                <div class="attribute">
-                    <div class="attribute-value">
-                        {% if rocking_chair.price %}
-                        {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
-                        {% else %}
-                            {{ contribution_button(rocking_chair) }}
-                        {% endif %}
+            {% if rocking_chair.price or rocking_chair.manufacturers.count == 0 or 'not-produced' not in rocking_chair.manufacturers.first().slug %}
+                <li>
+                    <div class="attribute">
+                        <div class="attribute-value">
+                            {% if rocking_chair.price %}
+                                {{ '%0.2f' % rocking_chair.price.amount }} {{ rocking_chair.price.currency.code }}
+                            {% else %}
+                                {{ contribution_button(rocking_chair) }}
+                            {% endif %}
+                        </div>
+                        <div class="attribute-name">
+                            Price
+                        </div>
                     </div>
-                    <div class="attribute-name">
-                        Price
-                    </div>
-                </div>
-                {{ include_links(rocking_chair.price_links.all()) }}
-            </li>
+                    {{ include_links(rocking_chair.price_links.all()) }}
+                </li>
+            {% endif %}
         </ul>
     </div>
 </article>

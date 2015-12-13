@@ -117,11 +117,13 @@
 
             $contribution.find('.contribution__close').on('click', function () {
                 $contribution.hide();
+                $('body').css({'overflow': 'initial'});
             });
 
             $("[data-contribution='" + contributionId + "']").on('click', function () {
                 resetContribution();
                 resetContributionData();
+                $('body').css({'overflow': 'hidden'});
                 $contribution.show();
             });
 
