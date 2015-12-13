@@ -15,6 +15,7 @@ def about(request):
         'description': """Everything there is to know about this anthology.""",
         'image': static('ftatr/images/rocking-chair-icon-540x540.png'),
         # Page content
+        'tipton': RockingChair.objects.get(slug='tip-ton'),
         'mt3': RockingChair.objects.get(slug='mt3'),
         'spun': RockingChair.objects.get(slug='spun'),
         'sol': RockingChair.objects.get(slug='sol'),

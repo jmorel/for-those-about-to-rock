@@ -87,12 +87,16 @@
 
             <p class="about__section-content">
                 It doesn't mean I don't have my preferences though! I like big, playful rocking chairs, I even own
+                <a href="{{ url('designer:show', slug='edward-barber') }}">Edward Barber</a>'s and
+                <a href="{{ url('designer:show', slug='jay-osgerby') }}">Jay Osgerby</a>'s
+                <a href="{{ url('rocking_chair:show', slug='tip-ton') }}">Tip Ton</a>,
                 <a href="{{ url('designer:show', slug='ron-arad') }}">Ron Arad</a>'s
                 <a href="{{ url('rocking_chair:show', slug='mt3') }}">MT3</a> and
                 <a href="{{ url('designer:show', slug='thomas-heatherwick') }}">Thomas Heatherwick</a>'s
                 <a href="{{ url('rocking_chair:show', slug='spun') }}">Spun chair</a>!
             </p>
 
+            {{ rocking_chair_item(tipton) }}
             {{ rocking_chair_item(mt3) }}
             {{ rocking_chair_item(spun) }}
 
