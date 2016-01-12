@@ -106,6 +106,18 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+COMPRESS_PRECOMPILERS = (
+    ('text/less', '%(less)s --include-path="%(project_path)s:%(less_include_paths)s" {infile} {outfile} && %(autoprefixer)s --use autoprefixer {outfile}' % {
+        'less': os.path.join(BASE_DIR, 'node_modules/less/bin/lessc'),
+        'project_path': BASE_DIR,
+        'less_include_paths': os.path.join(BASE_DIR, 'ftatr'),
+        'autoprefixer': os.path.join(BASE_DIR, 'node_modules/postcss-cli/bin/postcss'),
+    }),
+)
+COMPRESS_OUTPUT_DIR = 'compressed'
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = False
+
 JINJA2_EXTENSIONS = DEFAULT_EXTENSIONS + [
     'compressor.contrib.jinja2ext.CompressorExtension',
 ]

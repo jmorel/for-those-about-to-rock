@@ -7,8 +7,9 @@
     {% block stylesheets %}
         {% compress css %}
             <link rel="stylesheet" type="text/css" href="{{ static('ftatr/vendor/Font-Awesome/css/font-awesome.min.css') }}"/>
-            <link rel="stylesheet" type="text/css" href="{{ static('ftatr/fonts/static/static.css') }}"/>
-            <link rel="stylesheet" type="text/css" href="{{ static('ftatr/css/main.css') }}">
+            <style type="text/less">
+                @import 'ftatr/static/ftatr/css/main.less';
+            </style>
         {% endcompress %}
     {% endblock stylesheets %}
 
