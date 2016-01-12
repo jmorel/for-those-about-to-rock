@@ -107,7 +107,10 @@ STATICFILES_FINDERS = (
 )
 
 COMPRESS_PRECOMPILERS = (
-    ('text/less', 'node_modules/less/bin/lessc {infile} {outfile} && node_modules/postcss-cli/bin/postcss --use autoprefixer {outfile}'),
+    ('text/less', '%(less)s {infile} {outfile} && %(autoprefixer)s --use autoprefixer {outfile}' % {
+        'less': os.path.join(BASE_DIR, 'node_modules/less/bin/lessc'),
+        'autoprefixer': os.path.join(BASE_DIR, 'node_modules/postcss-cli/bin/postcss'),
+    }),
 )
 COMPRESS_OUTPUT_DIR = 'compressed'
 COMPRESS_ENABLED = True
