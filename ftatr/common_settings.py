@@ -106,6 +106,13 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'node_modules/less/bin/lessc {infile} {outfile} && node_modules/postcss-cli/bin/postcss --use autoprefixer {outfile}'),
+)
+COMPRESS_OUTPUT_DIR = 'compressed'
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = False
+
 JINJA2_EXTENSIONS = DEFAULT_EXTENSIONS + [
     'compressor.contrib.jinja2ext.CompressorExtension',
 ]
