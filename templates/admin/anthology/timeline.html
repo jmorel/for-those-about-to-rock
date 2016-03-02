@@ -54,7 +54,7 @@
                 <tbody>
                 {% for day, rocking_chairs in timeline.items %}
                     <tr>
-                        <td {% if day == today %}style="border: 2px solid green;border-right-width: 0;"{% endif %}>
+                        <td style="{% if day == today %}border: 2px solid green;border-right-width: 0;{% else %}width: 75px;{% endif %}">
                             {% if day == today %}
                                 <strong>Today</strong>
                             {% else %}
