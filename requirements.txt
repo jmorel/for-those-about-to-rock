@@ -1,4 +1,4 @@
-Django==1.7.1
+Django==1.10.4
 Jinja2==2.7.3
 Pillow==2.6.1
 django-jinja==1.4.1
@@ -7,9 +7,9 @@ dj-static==0.0.6
 gunicorn==19.0.0
 psycopg2==2.5.4
 easy-thumbnails==2.2
-django-haystack==2.3.1
+django-haystack==2.5.1
 Whoosh==2.6.0
-django-suit==0.2.12
+django-suit==0.2.23
 twitter==1.16.0
 django-compressor==1.4
 simplejson==3.6.5

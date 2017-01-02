@@ -1,7 +1,6 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from anthology.views import analytics
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', analytics.index, name='index'),
-)
+]
