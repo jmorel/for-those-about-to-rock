@@ -1,10 +1,8 @@
 from django.template.loader import render_to_string
 from django.templatetags.static import static
-from django_jinja import library
 from haystack.forms import SearchForm
 
 
-@library.global_function
 def nav(active_page='rocking_chair:index', query=None, open=False):
     pages = [
         {

@@ -1,5 +1,4 @@
 import datetime
-from optparse import make_option
 from django.core.management import BaseCommand
 from ftatr.settings import TWITTER_TOKEN, TWITTER_TOKEN_SECRET, TWITTER_CONSUMER_SECRET, TWITTER_CONSUMER_KEY
 from anthology.models import RockingChair

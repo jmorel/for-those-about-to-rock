@@ -30,7 +30,8 @@ def index(request):
         # Page content
         'rocking_chairs': paged_rocking_chairs,
         'paginator': paginator,
-    }, RequestContext(request))
+        'request': request
+    })
     if request.is_ajax():
         return JsonResponse({
             'rocking_chairs': html,
