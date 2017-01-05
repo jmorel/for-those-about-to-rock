@@ -1,8 +1,7 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from anthology.views import designer
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', designer.index, name='index'),
     url(r'^(?P<slug>[-\w]+)$', designer.show, name='show'),
-)
+]

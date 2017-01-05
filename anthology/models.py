@@ -15,7 +15,7 @@ class RockingChair(models.Model):
     objects = RockingChairManager()
 
     name = models.CharField(max_length=255)
-    year = models.IntegerField(max_length=4, null=True, blank=True)
+    year = models.IntegerField(null=True, blank=True)
 
     # price = models.OneToOneField('Price', blank=True, null=True)
     designers = models.ManyToManyField('Designer', related_name='rocking_chairs', blank=True)

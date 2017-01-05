@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
@@ -7,8 +7,7 @@ from haystack.views import SearchView
 from ftatr import settings, views
 from anthology.sitemaps import RockingChairSitemap, DesignerSitemap, ManufacturerSitemap, StaticSitemap
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/rocking-chair')),
     url(r'^about/?', views.about, name='about'),
     url(r'^contact/?', views.contact, name='contact'),
@@ -24,4 +23,4 @@ urlpatterns = patterns(
                                                   'manufacturer': ManufacturerSitemap,
                                                   'static': StaticSitemap}},
          name='django.contrib.sitemaps.views.sitemap')
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

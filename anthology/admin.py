@@ -1,6 +1,6 @@
 from collections import OrderedDict
 import datetime
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.contrib import admin
 from django.shortcuts import render
 from anthology.models import RockingChair, Designer, Manufacturer, Picture, Price, DesignerLink, ManufacturerLink, \
@@ -56,10 +56,9 @@ class RockingChairAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        custom_urls = patterns(
-            '',
+        custom_urls = [
             url(r'^timeline/$', self.admin_site.admin_view(self.timeline_view), name='rocking_chair_timeline')
-        )
+        ]
         return custom_urls + urls
 
     def timeline_view(self, request):

@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 import os
-from django_jinja.builtins import DEFAULT_EXTENSIONS
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -21,15 +20,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_jinja',
     'easy_thumbnails',
-    'django_jinja.contrib._easy_thumbnails',
-    'compressor',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'haystack',
     'ftatr',
     'anthology',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -44,23 +41,42 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'ftatr.urls'
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.app_directories.Loader',
-    'django_jinja.loaders.FileSystemLoader',
-    'django_jinja.loaders.AppLoader',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
-    'ftatr.context_processors.facebook'
-)
-
-DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja2'
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'jinja2'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': 'ftatr.jinja2.environment'
+        }
+    },
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
+        'OPTIONS': {
+            'context_processors': [
+                # default context processors
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                # custom context processors
+                'django.template.context_processors.request', # for django-suit
+            ],
+        }
+    },
+]
 
 WSGI_APPLICATION = 'ftatr.wsgi.application'
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Thumbnails
 THUMBNAIL_ALIASES = {
@@ -117,7 +133,3 @@ COMPRESS_PRECOMPILERS = (
 COMPRESS_OUTPUT_DIR = 'compressed'
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = False
-
-JINJA2_EXTENSIONS = DEFAULT_EXTENSIONS + [
-    'compressor.contrib.jinja2ext.CompressorExtension',
-]

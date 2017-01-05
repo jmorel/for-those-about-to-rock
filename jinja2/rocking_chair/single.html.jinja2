@@ -86,7 +86,7 @@
             <li>
                 <div class="attribute">
                     <div class="attribute-tag">
-                        Published on {{ rocking_chair.published_at | date('M d, Y') }}
+                        Published on {{ rocking_chair.published_at.strftime('%b %d, %Y') }}
                     </div>
                 </div>
             </li>

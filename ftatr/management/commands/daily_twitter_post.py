@@ -1,5 +1,4 @@
 import datetime
-from optparse import make_option
 from django.core.management import BaseCommand
 from ftatr.settings import TWITTER_TOKEN, TWITTER_TOKEN_SECRET, TWITTER_CONSUMER_SECRET, TWITTER_CONSUMER_KEY
 from anthology.models import RockingChair
@@ -8,16 +7,17 @@ from twitter import Twitter, OAuth, TwitterHTTPError
 
 class Command(BaseCommand):
     help = 'Post today\'s rocking chair to twitter.'
-    option_list = BaseCommand.option_list + (
-        make_option('-n', '--now',
-                    dest='now',
-                    type="string",
-                    help='Run assuming now is the specified datetime (format: 2014-04-21 27:03)'),
-        make_option('--dry-run',
-                    dest='dry-run',
-                    action='store_true',
-                    help='Dry-run: only display tweets, do not post them.'),
-    )
+
+    def add_arguments(self, parser):
+        parser.add_argument('-n', '--now',
+                            dest='now',
+                            action="store",
+                            type=str,
+                            help='Run assuming now is the specified datetime (format: 2014-04-21 27:03)'),
+        parser.add_argument('--dry-run',
+                            dest='dry-run',
+                            action='store_true',
+                            help='Dry-run: only display tweets, do not post them.'),
 
     def handle(self, *args, **options):
         now = datetime.datetime.now()
@@ -50,4 +50,3 @@ class Command(BaseCommand):
                 t.statuses.update(status=tweet)
             except TwitterHTTPError:
                 self.stdout.write('Tweet already posted')
-
