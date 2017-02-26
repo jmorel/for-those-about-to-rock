@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "autoprefixer": "^6.2.3",
-    "less": "^2.5.3",
-    "postcss-cli": "^2.3.3"
+    "autoprefixer": "^6.7.5",
+    "less": "^2.7.2",
+    "postcss-cli": "^2.6.0"
   }
 }
