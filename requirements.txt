@@ -1,10 +1,10 @@
 Django==1.10.4
 Jinja2==2.8.1
 Pillow==2.6.1
-PyYAML==3.11
+PyYAML==3.5.1
 dj-static==0.0.6
 gunicorn==19.0.0
-psycopg2==2.5.4
+psycopg2==2.8.6
 easy-thumbnails==2.3
 django-haystack==2.5.1
 Whoosh==2.6.0
@@ -13,3 +13,6 @@ twitter==1.16.0
 django-compressor==2.1
 simplejson==3.6.5
 requests==2.8.0
+cloudinary==1.22.0
+django-cloudinary-storage==0.3.0
+dj_database_url==0.5.0
