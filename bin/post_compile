@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> I'm post-compile hook"
+
+echo "-----> Installing less"
+npm install -g less
+
+echo "-----> Post-compile done"

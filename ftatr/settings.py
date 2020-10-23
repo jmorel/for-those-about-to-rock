@@ -7,8 +7,13 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
-
+from distutils.util import strtobool
 import os
+
+import dj_database_url
+
+DEBUG = strtobool(os.environ.get('DEBUG', 'False'))
+TEMPLATE_DEBUG = strtobool(os.environ.get('TEMPLATE_DEBUG', 'False'))
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -19,7 +24,11 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # static files: cloudinary_storage must be before django.contrib.staticfiles
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
+    # end static files
     'easy_thumbnails',
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -27,6 +36,7 @@ INSTALLED_APPS = (
     'ftatr',
     'anthology',
     'compressor',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -133,3 +143,52 @@ COMPRESS_PRECOMPILERS = (
 COMPRESS_OUTPUT_DIR = 'compressed'
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = False
+
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+ALLOWED_HOSTS = [
+    '.forthoseabouttorock.io',
+    'forthoseabouttorock.hexagonal.io',
+    'ftatr.herokuapp.com',
+]
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
+
+# Static files
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
+# Media files
+MEDIA_ROOT = ''
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Twitter
+TWITTER_TOKEN = os.environ.get('TWITTER_TOKEN')
+TWITTER_TOKEN_SECRET = os.environ.get('TWITTER_TOKEN_SECRET')
+TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET')
+TWITTER_CONSUMER_KEY = os.environ.get('TWITTER_CONSUMER_KEY')
+
+# Facebook
+FACEBOOK_APP_ID = os.environ.get('FACEBOOK_APP_ID')
+
+# Admins
+ADMINS = (('Jérémy', 'jeremy@forthoseabouttorock.io'), )
+
+# Sites framework definition
+SITE_ID = 1
+
+# Email
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+SERVER_EMAIL = 'noreply@forthoseabouttorock.io'
+
+# reCaptcha
+RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')
+RECAPTCHA_SITE_KEY = os.environ.get('RECAPTCHA_SITE_KEY')
