@@ -1,4 +1,4 @@
-Django==1.10.4
+Django==2.2.24
 Jinja2==2.8.1
 Pillow==2.6.1
 PyYAML==5.3.1
